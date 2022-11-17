@@ -30,13 +30,17 @@ public class WitchSenses : MonoBehaviour
 
     void OnEnable()
     {
-        //Subscribe to AudioEvents
-        AudioManager.Instance.AE_Player_WitchSenses_On += Play_Audio_WitchSensesOn;
-        AudioManager.Instance.AE_Player_WitchSenses_Off += Play_Audio_WitchSensesOff;
+        ////Subscribe to AudioEvents
+        //AudioManager.Instance.AE_Player_WitchSenses_On += Play_Audio_WitchSensesOn;
+        //AudioManager.Instance.AE_Player_WitchSenses_Off += Play_Audio_WitchSensesOff;
     }
 
     void Start()
     {
+        //Subscribe to AudioEvents
+        AudioManager.Instance.AE_Player_WitchSenses_On += Play_Audio_WitchSensesOn;
+        AudioManager.Instance.AE_Player_WitchSenses_Off += Play_Audio_WitchSensesOff;
+
         //Get AudioClips from ResourceManager
         _audioClip_WitchSensesOn = ResourceManager.Instance.audio_witchSenses_on;
         _audioClip_WitchSensesOff = ResourceManager.Instance.audio_witchSenses_off;
