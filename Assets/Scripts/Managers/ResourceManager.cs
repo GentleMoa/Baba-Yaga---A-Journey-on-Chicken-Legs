@@ -29,4 +29,10 @@ public class ResourceManager : MonoBehaviour
     [Header("Witch Senses")]
     public AudioClip audio_witchSenses_on;
     public AudioClip audio_witchSenses_off;
+
+    [Header("Prefabs")]
+
+    [Header("Crafted Items")]
+    public GameObject bandages;
+    public GameObject[] witchTotems;
 }
