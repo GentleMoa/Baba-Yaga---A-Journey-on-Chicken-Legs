@@ -1,0 +1,53 @@
+//A script used for a suggested climbing action, when grabbing onto one of the lower ladder rungs, which teleports the player into the house above
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ClimbUpLadder : MonoBehaviour
+{
+    //Serialized Variables
+    [SerializeField] private Transform climbingExitInHouse;
+
+    //Private Variables
+    private GameObject _player;
+    private bool _isClimbing = false;
+    private Vector3 _ladderRungStartPosition;
+    private Vector3 _ladderRungStartRotation;
+
+    void Start()
+    {
+        _player = GameObject.FindGameObjectWithTag("Player");
+        //Saving the initial transform values of this object
+        _ladderRungStartPosition = this.transform.position;
+        _ladderRungStartRotation = this.transform.rotation.eulerAngles;
+    }
+
+    public void ClimbingUp()
+    {
+        if (_isClimbing == false)
+        {
+            //When Climbing is initiated
+            _isClimbing = true;
+
+            //Trapdoor Animation plays
+            //Screen fades to black
+            //Climbing noises are heard
+
+            //Teleport
+            _player.transform.position = climbingExitInHouse.transform.position;
+
+            //Screen fades from black
+            //Trapdoor Animation plays in reverse
+
+            //After Climbing is finished
+            _isClimbing = false;
+        }
+    }
+
+    public void ResetInteractablePosition()
+    {
+        //Resetting the transforms to the original values
+        this.gameObject.transform.position = _ladderRungStartPosition;
+        this.gameObject.transform.rotation = Quaternion.Euler(_ladderRungStartRotation);
+    }
+}
