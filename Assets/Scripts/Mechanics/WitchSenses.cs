@@ -26,7 +26,7 @@ public class WitchSenses : MonoBehaviour
     public bool _witchSensesActive = false;
 
     //Lists
-    List<GameObject> highlightedObjects = new List<GameObject>();
+    public List<GameObject> highlightedObjects = new List<GameObject>();
 
     void OnEnable()
     {
