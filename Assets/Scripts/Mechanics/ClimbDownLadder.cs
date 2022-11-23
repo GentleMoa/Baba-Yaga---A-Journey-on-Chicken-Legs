@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,9 @@ public class ClimbDownLadder : MonoBehaviour
     private bool _isClimbing = false;
     private Vector3 _buttonStartPosition;
     private Vector3 _buttonStartRotation;
+
+    //Events
+    public event Action ClimbingLadderDown;
 
     void Start()
     {
@@ -32,6 +36,9 @@ public class ClimbDownLadder : MonoBehaviour
             //Trapdoor Animation plays
             //Screen fades to black
             //Climbing noises are heard
+
+            //Fire Climbing Signifier Event
+            ClimbingLadderDown();
 
             //Teleport
             _player.transform.position = climbingExitInForest.transform.position;

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,11 +8,15 @@ public class CraftingRecipes : MonoBehaviour
     //Public Variables
     public CraftingSlot _craftingSlot_1;
     public CraftingSlot _craftingSlot_2;
+    public bool bandagesCrafted;
 
     //Serialized Variables
     [SerializeField] private Stage_1_7 _stage_1_7;
     [SerializeField] private WitchSenses witchSensesRightHand;
     [SerializeField] private WitchSenses witchSensesLeftHand;
+
+    //Events
+    public event Action DestroyCraftingIngredient;
 
     public void Craft()
     {
@@ -28,9 +33,8 @@ public class CraftingRecipes : MonoBehaviour
                 witchSensesRightHand.highlightedObjects.Remove(_craftingSlot_2.itemInSlot);
                 witchSensesLeftHand.highlightedObjects.Remove(_craftingSlot_2.itemInSlot);
 
-                //Destroy Crafting Ingredients
-                _craftingSlot_1.DestroyItemInSlot();
-                _craftingSlot_2.DestroyItemInSlot();
+                //Set Flag to initiate Ingredient Destruction after Crafting
+                bandagesCrafted = true;
 
                 //Craft Bandages
                 Instantiate(ResourceManager.Instance.bandages, transform.position, transform.rotation);
@@ -40,7 +44,7 @@ public class CraftingRecipes : MonoBehaviour
 
                 Debug.Log("Bandages have been crafted!");
             }
-            if (_craftingSlot_2.itemType.itemName == "Borage" && _craftingSlot_1.itemType.itemName == "Wool Plant")
+            else if (_craftingSlot_2.itemType.itemName == "Borage" && _craftingSlot_1.itemType.itemName == "Wool Plant")
             {
                 //Remove Crafting Ingredients from WitcHand's highlighted Object List
                 witchSensesRightHand.highlightedObjects.Remove(_craftingSlot_1.itemInSlot);
@@ -48,9 +52,8 @@ public class CraftingRecipes : MonoBehaviour
                 witchSensesRightHand.highlightedObjects.Remove(_craftingSlot_2.itemInSlot);
                 witchSensesLeftHand.highlightedObjects.Remove(_craftingSlot_2.itemInSlot);
 
-                //Destroy Crafting Ingredients
-                _craftingSlot_1.DestroyItemInSlot();
-                _craftingSlot_2.DestroyItemInSlot();
+                //Set Flag to initiate Ingredient Destruction after Crafting
+                bandagesCrafted = true;
 
                 //Craft Bandages
                 Instantiate(ResourceManager.Instance.bandages, transform.position, transform.rotation);
@@ -68,5 +71,17 @@ public class CraftingRecipes : MonoBehaviour
         }
 
         Debug.Log("At least one Crafting Ingredient is missing!");
+    }
+
+    public void PostCraftingIngredDestruction()
+    {
+        if (bandagesCrafted == true)
+        {
+            //Fire "DestroyCraftingIngredients" Event
+            DestroyCraftingIngredient();
+
+            //Reset Flag
+            bandagesCrafted = false;
+        }
     }
 }
