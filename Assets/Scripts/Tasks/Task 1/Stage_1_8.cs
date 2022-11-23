@@ -40,7 +40,12 @@ public class Stage_1_8 : Stage
                 //Disable Highlight effect for Tree
                 _witchSenses_R.highlightedObjects.Remove(tree);
                 _witchSenses_L.highlightedObjects.Remove(tree);
+                //Disable Emmission effect for Tree
+                tree.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
             }
+
+            //START STAGE_1_9 OWL DIALOGUE HERE
+            Invoke("StartTask2", 3.0f);
 
             //Stage Advancing Flag
             bandageApplied = true;
@@ -52,5 +57,11 @@ public class Stage_1_8 : Stage
         //Find Reference to both WitchSenses script (Right & Left Hands)
         _witchSenses_R = GameObject.FindGameObjectWithTag("RightHand").GetComponent<WitchSenses>();
         _witchSenses_L = GameObject.FindGameObjectWithTag("LeftHand").GetComponent<WitchSenses>();
+    }
+
+    //Timed Function here
+    private void StartTask2()
+    {
+        stage_1_9.ToggleStageAdvancingFlag();
     }
 }

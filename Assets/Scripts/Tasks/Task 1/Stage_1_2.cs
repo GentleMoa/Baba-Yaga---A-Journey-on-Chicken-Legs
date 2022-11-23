@@ -44,6 +44,8 @@ public class Stage_1_2 : Stage
                 //Disable Highlight effect for Hatchet
                 _witchSenses_R.highlightedObjects.Remove(hatchet);
                 _witchSenses_L.highlightedObjects.Remove(hatchet);
+                //Disable Emission effect for Hatchet
+                hatchet.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
             }
 
             //Stage Advancing Flag
