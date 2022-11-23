@@ -24,15 +24,17 @@ public class Stage_1_1 : Stage
         }
     }
 
+    //Stage Advancing Condition is tested here
     private void OnTriggerEnter(Collider other)
     {
         if (_conditionMet == false)
         {
             if (other.gameObject.tag == "Player")
             {
-                //Set the flag which is required to advance to the next task stage
-                _closeToTree = true;
                 _conditionMet = true;
+
+                //Stage Advancing Flag
+                _closeToTree = true;
             }
         }
     }

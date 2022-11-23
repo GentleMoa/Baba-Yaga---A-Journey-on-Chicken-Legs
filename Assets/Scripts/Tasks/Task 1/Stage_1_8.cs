@@ -7,9 +7,14 @@ public class Stage_1_8 : Stage
     //Private Variables
     private bool bandageApplied;
     private bool _conditionMet;
+    private WitchSenses _witchSenses_R;
+    private WitchSenses _witchSenses_L;
 
     //Public Variables
     public Stage_1_9 stage_1_9;
+
+    //Serialized Variables
+    [SerializeField] private GameObject tree;
 
     public override Stage RunCurrentStage()
     {
@@ -28,8 +33,24 @@ public class Stage_1_8 : Stage
     {
         if (_conditionMet == false)
         {
-            bandageApplied = true;
             _conditionMet = true;
+
+            if (_witchSenses_R != null && _witchSenses_L != null)
+            {
+                //Disable Highlight effect for Tree
+                _witchSenses_R.highlightedObjects.Remove(tree);
+                _witchSenses_L.highlightedObjects.Remove(tree);
+            }
+
+            //Stage Advancing Flag
+            bandageApplied = true;
         }
+    }
+
+    private void Start()
+    {
+        //Find Reference to both WitchSenses script (Right & Left Hands)
+        _witchSenses_R = GameObject.FindGameObjectWithTag("RightHand").GetComponent<WitchSenses>();
+        _witchSenses_L = GameObject.FindGameObjectWithTag("LeftHand").GetComponent<WitchSenses>();
     }
 }

@@ -1742,6 +1742,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage_1_3: {fileID: 1649460387}
+  borage: {fileID: 371254737777919675}
+  hatchet: {fileID: 2118193246}
 --- !u!1 &172888180
 GameObject:
   m_ObjectHideFlags: 0
@@ -3075,6 +3077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage_1_9: {fileID: 1398623129}
+  tree: {fileID: 3877882267718935659}
 --- !u!1 &324562633
 GameObject:
   m_ObjectHideFlags: 0
@@ -3877,7 +3880,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &359593910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4445,7 +4448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &416393099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8938,7 +8941,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &823152790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9583,7 +9586,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &910440552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10833,7 +10836,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1064240052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13239,8 +13242,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.90588236, b: 0.7764706, a: 1}
-  m_Intensity: 0.85
-  m_Range: 2.5
+  m_Intensity: 1
+  m_Range: 4
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -13598,7 +13601,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1314641307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14369,8 +14372,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1361921143}
-  m_LocalRotation: {x: -0, y: -0.60876125, z: -0, w: 0.7933535}
-  m_LocalPosition: {x: -16.502, y: 5.829, z: 13.838}
+  m_LocalRotation: {x: -0, y: -0.512821, z: -0, w: -0.8584955}
+  m_LocalPosition: {x: -17.72, y: 5.829, z: 13.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14378,7 +14381,7 @@ Transform:
   - {fileID: 1139758110}
   m_Father: {fileID: 0}
   m_RootOrder: 38
-  m_LocalEulerAnglesHint: {x: 0, y: -75, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -298.296, z: 0}
 --- !u!114 &1361921148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15101,7 +15104,7 @@ GameObject:
   - component: {fileID: 1414507518}
   m_Layer: 0
   m_Name: RightHand Controller
-  m_TagString: Untagged
+  m_TagString: RightHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17959,6 +17962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stage_1_4: {fileID: 1000697531}
   stage_1_5: {fileID: 1884083477}
+  woolPlant: {fileID: 7992607658323724418}
 --- !u!1 &1649823208
 GameObject:
   m_ObjectHideFlags: 0
@@ -22126,7 +22130,7 @@ GameObject:
   - component: {fileID: 1984475437}
   m_Layer: 0
   m_Name: LeftHand Controller
-  m_TagString: Untagged
+  m_TagString: LeftHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

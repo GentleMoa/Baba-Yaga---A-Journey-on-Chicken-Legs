@@ -7,9 +7,15 @@ public class Stage_1_2 : Stage
     //Private Variables
     private bool hatchedRemoved;
     private bool _conditionMet;
+    private WitchSenses _witchSenses_R;
+    private WitchSenses _witchSenses_L;
 
     //Public Variables
     public Stage_1_3 stage_1_3;
+
+    //Serialized Variables
+    [SerializeField] private GameObject borage;
+    [SerializeField] private GameObject hatchet;
 
     public override Stage RunCurrentStage()
     {
@@ -28,8 +34,27 @@ public class Stage_1_2 : Stage
     {
         if (_conditionMet == false)
         {
-            hatchedRemoved = true;
             _conditionMet = true;
+
+            if (_witchSenses_R != null && _witchSenses_L != null)
+            {
+                //Enable Highlight effect for Borage
+                _witchSenses_R.highlightedObjects.Add(borage);
+                _witchSenses_L.highlightedObjects.Add(borage);
+                //Disable Highlight effect for Hatchet
+                _witchSenses_R.highlightedObjects.Remove(hatchet);
+                _witchSenses_L.highlightedObjects.Remove(hatchet);
+            }
+
+            //Stage Advancing Flag
+            hatchedRemoved = true;
         }
+    }
+
+    private void Start()
+    {
+        //Find Reference to both WitchSenses script (Right & Left Hands)
+        _witchSenses_R = GameObject.FindGameObjectWithTag("RightHand").GetComponent<WitchSenses>();
+        _witchSenses_L = GameObject.FindGameObjectWithTag("LeftHand").GetComponent<WitchSenses>();
     }
 }
