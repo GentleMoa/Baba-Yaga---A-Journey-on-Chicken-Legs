@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 7974425571964631411}
   - component: {fileID: 8171645943926859633}
   - component: {fileID: 118876755361113837}
+  - component: {fileID: -8476153048219808339}
+  - component: {fileID: 363229764898863908}
   - component: {fileID: 4421805089187905802}
   m_Layer: 7
   m_Name: TO_TreeBandages_Item
@@ -115,6 +117,31 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-8476153048219808339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4912334215673535243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2961f50d8a97d7b448096ddcc5ef0e25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &363229764898863908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4912334215673535243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dad07bc6957e224f97304369311ba09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item: {fileID: 11400000, guid: f3c96f26b5fe79643b2db3d98d8035a7, type: 2}
 --- !u!114 &4421805089187905802
 MonoBehaviour:
   m_ObjectHideFlags: 0

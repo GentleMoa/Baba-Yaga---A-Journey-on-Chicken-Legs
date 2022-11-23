@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8212268867155138043}
   - component: {fileID: 126505053903296837}
   - component: {fileID: 8943867799031755006}
+  - component: {fileID: 253082513927358513}
   m_Layer: 0
   m_Name: TO_WitchTotem_3
   m_TagString: Untagged
@@ -83,3 +84,15 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &253082513927358513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2398531719604021261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2961f50d8a97d7b448096ddcc5ef0e25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
