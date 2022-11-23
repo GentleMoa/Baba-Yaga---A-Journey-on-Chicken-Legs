@@ -1,4 +1,5 @@
 //A script used for a suggested climbing action, when grabbing onto one of the lower ladder rungs, which teleports the player into the house above
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,9 @@ public class ClimbUpLadder : MonoBehaviour
     private bool _isClimbing = false;
     private Vector3 _ladderRungStartPosition;
     private Vector3 _ladderRungStartRotation;
+
+    //Events
+    public event Action ClimbingLadderUp;
 
     void Start()
     {
@@ -32,6 +36,9 @@ public class ClimbUpLadder : MonoBehaviour
             //Trapdoor Animation plays
             //Screen fades to black
             //Climbing noises are heard
+
+            //Fire Climbing Signifier Event
+            ClimbingLadderUp();
 
             //Teleport
             _player.transform.position = climbingExitInHouse.transform.position;
