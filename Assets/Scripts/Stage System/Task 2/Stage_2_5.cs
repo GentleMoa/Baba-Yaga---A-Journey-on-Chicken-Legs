@@ -2,34 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stage_1_9 : Stage
+public class Stage_2_5 : Stage
 {
     //Private Variables
-    private bool owlCommentFinished;
+    private bool _advancemetBool;
     private bool _conditionMet;
     private WitchSenses _witchSenses_R;
     private WitchSenses _witchSenses_L;
 
     //Public Variables
-    public Stage_2_1 stage_2_1;
+    public Stage_3_1 stage_3_1;
 
     //Serialized Variables
-    [SerializeField] private GameObject[] wondersproutSeeds;
+    [SerializeField] private GameObject[] sticks;
 
     public override Stage RunCurrentStage()
     {
-        if (owlCommentFinished == true)
+        if (_advancemetBool == true)
         {
-            Debug.Log("Task 1 Completed!");
-            return stage_2_1;
+            Debug.Log("Task 2 Completed! Next Stage: " + stage_3_1);
+            return stage_3_1;
         }
         else
         {
+            Debug.Log("Task 2 Completed!");
             return this;
         }
-
-        //Debug.Log("Task 1 Completed!");
-        //return this;
     }
 
     public void ToggleStageAdvancingFlag()
@@ -38,16 +36,19 @@ public class Stage_1_9 : Stage
         {
             _conditionMet = true;
 
-            //Enable Wondersprout Seeds
-            for (int i = 0; i < wondersproutSeeds.Length; i++)
+            //Causes
+            for (int i = 0; i < sticks.Length; i++)
             {
-                wondersproutSeeds[i].SetActive(true);
-                _witchSenses_L.highlightedObjects.Add(wondersproutSeeds[i]);
-                _witchSenses_R.highlightedObjects.Add(wondersproutSeeds[i]);
+                //Activate Sticks
+                sticks[i].SetActive(true);
+
+                //Add Sticks to highlightedObjects List
+                _witchSenses_R.highlightedObjects.Add(sticks[i]);
+                _witchSenses_L.highlightedObjects.Add(sticks[i]);
             }
 
-            //Set Advancement Flag
-            owlCommentFinished = true;
+            //Stage Advancing Flag
+            _advancemetBool = true;
         }
     }
 
@@ -57,4 +58,5 @@ public class Stage_1_9 : Stage
         _witchSenses_R = GameObject.FindGameObjectWithTag("RightHand").GetComponent<WitchSenses>();
         _witchSenses_L = GameObject.FindGameObjectWithTag("LeftHand").GetComponent<WitchSenses>();
     }
+
 }
