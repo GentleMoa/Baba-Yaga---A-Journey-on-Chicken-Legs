@@ -6,6 +6,22 @@ public class StageManager : MonoBehaviour
 {
     public Stage currentStage;
 
+    //Singleton
+    public static StageManager Instance { set; get; }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(Instance);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     void Update()
     {
         RunStageMachine();

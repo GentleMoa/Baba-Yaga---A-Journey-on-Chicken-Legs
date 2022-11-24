@@ -28,6 +28,8 @@ public class Stage_2_4 : Stage
     public void ToggleStageAdvancingFlag()
     {
         //Causes
+        //PLAY OWL COMMENTARY
+        Invoke("StartTask3", 3.0f);
 
         //Stage Advancing Flag
         _allSeedsPlanted = true;
@@ -45,5 +47,10 @@ public class Stage_2_4 : Stage
                 ToggleStageAdvancingFlag();
             }
         }
+    }
+
+    private void StartTask3()
+    {
+        stage_2_5.ToggleStageAdvancingFlag();
     }
 }

@@ -26,12 +26,15 @@ public class Stage_1_6 : Stage
 
     public void ToggleStageAdvancingFlag()
     {
-        if (_conditionMet == false)
+        if (StageManager.Instance.currentStage == GetComponent<Stage_1_6>())
         {
-            //Later, add a delay here to account for the polished and longer-lasting ladder climbing!
+            if (_conditionMet == false)
+            {
+                //Later, add a delay here to account for the polished and longer-lasting ladder climbing!
 
-            arrivedAtHouse = true;
-            _conditionMet = true;
+                arrivedAtHouse = true;
+                _conditionMet = true;
+            }
         }
     }
 }
