@@ -5,30 +5,33 @@ using UnityEngine;
 public class DiegeticInventory_Button : MonoBehaviour
 {
     //Private Variables
-    private bool _inventoryOpen;
     private Vector3 _buttonDefaultPosition;
 
     //Serialized Variables
     [SerializeField] private Animator ringMenuAnimator;
     [SerializeField] private Transform buttonDefaultTransform;
+    [SerializeField] private GameObject[] slots;
+
+    //Public Variables
+    public bool inventoryOpen;
 
     public void TriggerDIAnim()
     {
-        if (_inventoryOpen == false)
+        if (inventoryOpen == false)
         {
             //Trigger Animation DI_Open
             ringMenuAnimator.SetTrigger("DI_Open");
 
-            //Set inventoryOpen Flag
-            _inventoryOpen = true;
+            //Enable Trigger Colliders with a delay of 1 sec
+            StartCoroutine(ToggleTriggerColliders(1.5f, true, true));
         }
-        else if (_inventoryOpen == true)
+        else if (inventoryOpen == true)
         {
             //Trigger Animation DI_Close
             ringMenuAnimator.SetTrigger("DI_Close");
 
-            //Set inventoryOpen Flag
-            _inventoryOpen = false;
+            //Disable Trigger Colliders with a delay of 1 sec
+            StartCoroutine(ToggleTriggerColliders(0.1f, false, false));
         }
     }
 
@@ -43,5 +46,30 @@ public class DiegeticInventory_Button : MonoBehaviour
     {
         //Resetting the transforms to the original values
         this.gameObject.transform.position = _buttonDefaultPosition;
+    }
+
+    public void ExplicitlyCloseInventory()
+    {
+        if (inventoryOpen == true)
+        {
+            //Trigger Animation DI_Close
+            ringMenuAnimator.SetTrigger("DI_Close");
+
+            //Set inventoryOpen Flag
+            inventoryOpen = false;
+        }
+    }
+
+    private IEnumerator ToggleTriggerColliders(float waitSeconds, bool enable, bool inventoryFlag)
+    {
+        yield return new WaitForSeconds(waitSeconds);
+
+        for (int i = 0; i < slots.Length; i++)
+        {
+            slots[i].GetComponent<Collider>().enabled = enable;
+        }
+
+        //Set inventoryOpen Flag
+        inventoryOpen = inventoryFlag;
     }
 }
