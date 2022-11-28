@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - HighlightedObject
+  - RightHand
+  - LeftHand
+  - Terrain
   layers:
   - Default
   - TransparentFX
@@ -16,7 +20,7 @@ TagManager:
   - Teleport
   - WitchHat Socket
   - Test_Layer_PPExclusion
-  - 
+  - DiegeticInventory_Button
   - 
   - 
   - 
