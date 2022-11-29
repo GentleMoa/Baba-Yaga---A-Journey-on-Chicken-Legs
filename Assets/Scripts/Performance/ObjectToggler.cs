@@ -29,7 +29,7 @@ public class ObjectToggler : MonoBehaviour
     //Toggle Functions
     private void Enable_EX_Objects()
     {
-        Debug.Log("Enabling Exterior Toggle Objects!");
+        //Debug.Log("Enabling Exterior Toggle Objects!");
 
         for (int i = 0; i < exteriorToggleObjects.Length; i++)
         {
@@ -39,7 +39,7 @@ public class ObjectToggler : MonoBehaviour
 
     private void Disable_EX_Objects()
     {
-        Debug.Log("Disabling Exterior Toggle Objects!");
+        //Debug.Log("Disabling Exterior Toggle Objects!");
 
         for (int i = 0; i < exteriorToggleObjects.Length; i++)
         {
@@ -49,7 +49,7 @@ public class ObjectToggler : MonoBehaviour
 
     private void Enable_IN_Objects()
     {
-        Debug.Log("Enabling Interior Toggle Objects!");
+        //Debug.Log("Enabling Interior Toggle Objects!");
 
         for (int i = 0; i < interiorToggleObjects.Length; i++)
         {
@@ -59,7 +59,7 @@ public class ObjectToggler : MonoBehaviour
 
     private void Disable_IN_Objects()
     {
-        Debug.Log("Disabling Interior Toggle Objects!");
+        //Debug.Log("Disabling Interior Toggle Objects!");
 
         for (int i = 0; i < interiorToggleObjects.Length; i++)
         {

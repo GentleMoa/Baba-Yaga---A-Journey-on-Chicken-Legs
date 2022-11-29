@@ -26,7 +26,7 @@ public class InventoryEntry : MonoBehaviour
             {
                 case 1: //If the enteredObject is the "Borage" Item
 
-                    Debug.Log("BORAGE was added to the inventory");
+                    //Debug.Log("BORAGE was added to the inventory");
 
                     //Cycle through the RingMenuSlot Scripts until finding the one that handles the "Borage" item(s)
                     for (int i = 0; i < slots.Length; i++)
@@ -44,7 +44,7 @@ public class InventoryEntry : MonoBehaviour
                     break;
 
                 case 2: //If the enteredObject is the "Wool Plant" Item
-                    Debug.Log("WOOL PLANT was added to the inventory");
+                    //Debug.Log("WOOL PLANT was added to the inventory");
 
                     //Cycle through the RingMenuSlot Scripts until finding the one that handles the "Wool Plant" item(s)
                     for (int i = 0; i < slots.Length; i++)
@@ -62,7 +62,7 @@ public class InventoryEntry : MonoBehaviour
                     break;
 
                 case 3: //If the enteredObject is the "Bandages" Item
-                    Debug.Log("BANDAGES was added to the inventory");
+                    //Debug.Log("BANDAGES was added to the inventory");
 
                     //Cycle through the RingMenuSlot Scripts until finding the one that handles the "Bandages" item(s)
                     for (int i = 0; i < slots.Length; i++)
@@ -80,7 +80,7 @@ public class InventoryEntry : MonoBehaviour
                     break;
 
                 case 4: //If the enteredObject is the "Wondersprout Seed" Item
-                    Debug.Log("WONDERSPROUT SEED was added to the inventory");
+                    //Debug.Log("WONDERSPROUT SEED was added to the inventory");
 
                     //Cycle through the RingMenuSlot Scripts until finding the one that handles the "Wondersprout Seed" item(s)
                     for (int i = 0; i < slots.Length; i++)
@@ -98,7 +98,7 @@ public class InventoryEntry : MonoBehaviour
                     break;
 
                 case 5: //If the enteredObject is the "Stick" Item
-                    Debug.Log("STICK was added to the inventory");
+                    //Debug.Log("STICK was added to the inventory");
 
                     //Cycle through the RingMenuSlot Scripts until finding the one that handles the "Stick" item(s)
                     for (int i = 0; i < slots.Length; i++)
@@ -116,7 +116,7 @@ public class InventoryEntry : MonoBehaviour
                     break;
 
                 case 6: //If the enteredObject is the "Totem" Item
-                    Debug.Log("TOTEM was added to the inventory");
+                    //Debug.Log("TOTEM was added to the inventory");
 
                     //Cycle through the RingMenuSlot Scripts until finding the one that handles the "Totem" item(s)
                     for (int i = 0; i < slots.Length; i++)
@@ -135,6 +135,6 @@ public class InventoryEntry : MonoBehaviour
             }
         }
 
-        Debug.Log(other.gameObject.name + " doesn't have the ItemController component --> It is no stashable Item!");
+        //Debug.Log(other.gameObject.name + " doesn't have the ItemController component --> It is no stashable Item!");
     }
 }
