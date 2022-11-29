@@ -20,7 +20,7 @@ public class HandOccupationChecker : MonoBehaviour
                 if (handFull == false)
                 {
                     handFull = true;
-                    Debug.Log("handFull = " + handFull);
+                    //Debug.Log("handFull = " + handFull);
                 }
             }
             //If User is NOT pressing the Select/Grab Button
@@ -30,7 +30,7 @@ public class HandOccupationChecker : MonoBehaviour
                 if (handFull == true)
                 {
                     handFull = false;
-                    Debug.Log("handFull = " + handFull);
+                    //Debug.Log("handFull = " + handFull);
                 }
             }
         }
@@ -45,7 +45,7 @@ public class HandOccupationChecker : MonoBehaviour
             if (handFull == true)
             {
                 handFull = false;
-                Debug.Log("handFull = " + handFull);
+                //Debug.Log("handFull = " + handFull);
             }
         }
     }

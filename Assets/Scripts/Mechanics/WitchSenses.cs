@@ -27,13 +27,7 @@ public class WitchSenses : MonoBehaviour
 
     //Lists
     public List<GameObject> highlightedObjects = new List<GameObject>();
-
-    void OnEnable()
-    {
-        ////Subscribe to AudioEvents
-        //AudioManager.Instance.AE_Player_WitchSenses_On += Play_Audio_WitchSensesOn;
-        //AudioManager.Instance.AE_Player_WitchSenses_Off += Play_Audio_WitchSensesOff;
-    }
+    public List<GameObject> highlightedSockets = new List<GameObject>();
 
     void Start()
     {
@@ -84,7 +78,7 @@ public class WitchSenses : MonoBehaviour
                 SwitchSenses(witchSenses_PPVolume);
 
                 //Highlight interactive and important objects
-                HighlightObjects(true);
+                //HighlightObjects(true);
 
                 //Setting the _witchSensesActive bool to true
                 _witchSensesActive = true;
@@ -99,10 +93,20 @@ public class WitchSenses : MonoBehaviour
                     }
                 }
 
+                //Enable Renderer and activate Emissive on all highlightedSockets (relevant only after Task 3 Stage_3_4 has been completed!)
+                if (highlightedSockets.Count > 0)
+                {
+                    for (int i = 0; i < highlightedSockets.Count; i++)
+                    {
+                        highlightedSockets[i].GetComponent<Renderer>().enabled = true;
+                        highlightedSockets[i].GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+                    }
+                }
+
                 //Play Audio
                 AudioManager.Instance.ShootAudioEvent_Player_WitchSenses_On();
 
-                Debug.Log("Witch Senses are activated!");
+                //Debug.Log("Witch Senses are activated!");
             }
             else if (_witchSensesActive == true)
             {
@@ -110,7 +114,7 @@ public class WitchSenses : MonoBehaviour
                 SwitchSenses(default_PPVolume);
 
                 //Un-highlight interactive and important objects
-                HighlightObjects(false);
+                //HighlightObjects(false);
 
                 //Setting the _witchSensesActive bool to false
                 _witchSensesActive = false;
@@ -125,10 +129,20 @@ public class WitchSenses : MonoBehaviour
                     }
                 }
 
+                //Enable Renderer and activate Emissive on all highlightedSockets (relevant only after Task 3 Stage_3_4 has been completed!)
+                if (highlightedSockets.Count > 0)
+                {
+                    for (int i = 0; i < highlightedSockets.Count; i++)
+                    {
+                        highlightedSockets[i].GetComponent<Renderer>().enabled = false;
+                        highlightedSockets[i].GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
+                    }
+                }
+
                 //Play Audio
                 AudioManager.Instance.ShootAudioEvent_Player_WitchSenses_Off();
 
-                Debug.Log("Witch Senses are deactivated!");
+                //Debug.Log("Witch Senses are deactivated!");
             }
 
             //Debugging
@@ -163,12 +177,12 @@ public class WitchSenses : MonoBehaviour
         ppVolume.weight = endValue;
     }
 
-    void HighlightObjects(bool highlight)
-    {
-        //Add all interactive and important objects to a array/list (via layers) --> could also be done in start
-        //Make sure all are setup with a red emmissive color but have emmissive unchecked
-        //Activate/deactivate emmissive based on highlight bool
-    }
+    //void HighlightObjects(bool highlight)
+    //{
+    //    //Add all interactive and important objects to a array/list (via layers) --> could also be done in start
+    //    //Make sure all are setup with a red emmissive color but have emmissive unchecked
+    //    //Activate/deactivate emmissive based on highlight bool
+    //}
 
     private void Play_Audio_WitchSensesOn()
     {

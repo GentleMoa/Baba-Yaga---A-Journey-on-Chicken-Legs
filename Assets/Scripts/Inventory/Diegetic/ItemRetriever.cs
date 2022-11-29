@@ -35,7 +35,7 @@ public class ItemRetriever : MonoBehaviour
                 diButtonScript.inventoryOpen == true)
 
             {
-                Debug.Log("Grab Button Pressed!");
+                //Debug.Log("Grab Button Pressed!");
 
                 if (_ringMenuSlot.stashedItems.Count > 0)
                 {
@@ -61,8 +61,8 @@ public class ItemRetriever : MonoBehaviour
                     Invoke("ResetRetrievedFlag", 1.0f);
                 }
             }
-    
-            Debug.Log("Hand Hovered over Slot!");
+
+            //Debug.Log("Hand Hovered over Slot!");
         }
     }
 
