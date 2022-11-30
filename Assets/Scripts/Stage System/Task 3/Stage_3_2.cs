@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class Stage_3_2 : Stage
 {
-    //Private Variables
-    private bool _advancemetBool;
-    private bool _conditionMet;
-
     //Public Variables
     public Stage_3_3 stage_3_3;
 
+    //Serialized Variables
+    [SerializeField] private RingMenuSlot inventorySlotSticks;
+
     public override Stage RunCurrentStage()
     {
-        if (_advancemetBool == true)
+        if (StageManager.Instance.currentStage == this && inventorySlotSticks.stashedItems.Count > 3)
         {
             Debug.Log("Stage_3_2 completed! Next Stage: " + stage_3_3);
             return stage_3_3;
@@ -21,19 +20,6 @@ public class Stage_3_2 : Stage
         else
         {
             return this;
-        }
-    }
-
-    public void ToggleStageAdvancingFlag()
-    {
-        if (_conditionMet == false)
-        {
-            _conditionMet = true;
-
-            //Causes
-
-            //Stage Advancing Flag
-            _advancemetBool = true;
         }
     }
 }

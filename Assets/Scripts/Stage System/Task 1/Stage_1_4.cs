@@ -4,19 +4,28 @@ using UnityEngine;
 
 public class Stage_1_4 : Stage
 {
-    //SKIPPED UNTIL INVENTORY SYSTEM IS IMPLEMENTED
-
     //Private Variables
-    private bool borageStored;
-    private bool _conditionMet;
+    private WitchSenses _witchSenses_R;
+    private WitchSenses _witchSenses_L;
 
     //Public Variables
     public Stage_1_5 stage_1_5;
 
+    //Serialized Variables
+    [SerializeField] private RingMenuSlot inventorySlotBorage;
+    [SerializeField] private GameObject woolPlant;
+
     public override Stage RunCurrentStage()
     {
-        if (borageStored == true)
+        if (StageManager.Instance.currentStage == this && inventorySlotBorage.stashedItems.Count > 0)
         {
+            //Toggle Highlight effects for Wool Plant // THIS WOULD NORMALLY BE IN STAGE_1_4 BUT WE SKIP THAT FOR NOW
+            if (_witchSenses_R != null && _witchSenses_L != null)
+            {
+                _witchSenses_R.highlightedObjects.Add(woolPlant);
+                _witchSenses_L.highlightedObjects.Add(woolPlant);
+            }
+
             Debug.Log("Stage_1_4 completed! Next Stage: " + stage_1_5);
             return stage_1_5;
         }
@@ -24,5 +33,12 @@ public class Stage_1_4 : Stage
         {
             return this;
         }
+    }
+
+    private void Start()
+    {
+        //Find Reference to both WitchSenses script (Right & Left Hands)
+        _witchSenses_R = GameObject.FindGameObjectWithTag("RightHand").GetComponent<WitchSenses>();
+        _witchSenses_L = GameObject.FindGameObjectWithTag("LeftHand").GetComponent<WitchSenses>();
     }
 }

@@ -904,7 +904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f3ccf1be0371044ab48fbb1b57db914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentStage: {fileID: 483135695}
+  currentStage: {fileID: 256596213}
 --- !u!4 &62987181
 Transform:
   m_ObjectHideFlags: 0
@@ -9033,7 +9033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7af76b2df8800a241a1fe23c6a2aaed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stage_2_3: {fileID: 1255816151}
+  stage_2_2: {fileID: 920667414}
 --- !u!4 &596375997
 Transform:
   m_ObjectHideFlags: 0
@@ -10314,7 +10314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &654163387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10357,8 +10357,8 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 596375996}
-        m_TargetAssemblyTypeName: Stage_2_1, Assembly-CSharp
+      - m_Target: {fileID: 920667414}
+        m_TargetAssemblyTypeName: Stage_2_2, Assembly-CSharp
         m_MethodName: ToggleStageAdvancingFlag
         m_Mode: 1
         m_Arguments:
@@ -10562,6 +10562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantingActivated: 0
+  stage_2_3: {fileID: 1255816151}
   stage_2_4: {fileID: 229119130}
   magicPlants:
   - {fileID: 1255446884425246101, guid: 8f12bf613325f334db8537a45065558b, type: 3}
@@ -12467,7 +12468,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage_3_2: {fileID: 1526067662}
-  stage_3_3: {fileID: 1908913384}
 --- !u!1 &758886106
 GameObject:
   m_ObjectHideFlags: 0
@@ -13958,6 +13958,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage_2_3: {fileID: 1255816151}
+  seedPlantingScripts:
+  - {fileID: 8930011530191057503}
+  - {fileID: 654163394}
+  - {fileID: 1499370003}
 --- !u!1 &926043646
 GameObject:
   m_ObjectHideFlags: 0
@@ -14662,6 +14666,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage_1_5: {fileID: 1884083477}
+  inventorySlotBorage: {fileID: 9049939273757431178}
+  woolPlant: {fileID: 371254737777919675}
 --- !u!1 &1003810872
 GameObject:
   m_ObjectHideFlags: 0
@@ -18471,7 +18477,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1255816150}
   - component: {fileID: 1255816151}
-  - component: {fileID: 1255816152}
   m_Layer: 0
   m_Name: Stage_2_3
   m_TagString: Untagged
@@ -18507,23 +18512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage_2_4: {fileID: 229119130}
-  seedPlantingScripts:
-  - {fileID: 8930011530191057503}
-  - {fileID: 654163394}
-  - {fileID: 1499370003}
---- !u!65 &1255816152
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1255816149}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 15.3602085, y: 3.795908, z: 12.401845}
-  m_Center: {x: -11.043857, y: 6.890148, z: -13.1408}
+  plantedSeeds: 0
 --- !u!1 &1257203601
 GameObject:
   m_ObjectHideFlags: 0
@@ -20805,10 +20794,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage_2_1: {fileID: 596375996}
-  wondersproutSeeds:
-  - {fileID: 3713278425823334537}
-  - {fileID: 654163386}
-  - {fileID: 1499369995}
 --- !u!1 &1400444475
 GameObject:
   m_ObjectHideFlags: 0
@@ -22980,7 +22965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1499369996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23023,8 +23008,8 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 596375996}
-        m_TargetAssemblyTypeName: Stage_2_1, Assembly-CSharp
+      - m_Target: {fileID: 920667414}
+        m_TargetAssemblyTypeName: Stage_2_2, Assembly-CSharp
         m_MethodName: ToggleStageAdvancingFlag
         m_Mode: 1
         m_Arguments:
@@ -23228,6 +23213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantingActivated: 0
+  stage_2_3: {fileID: 1255816151}
   stage_2_4: {fileID: 229119130}
   magicPlants:
   - {fileID: 1255446884425246101, guid: 8f12bf613325f334db8537a45065558b, type: 3}
@@ -23651,6 +23637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage_3_3: {fileID: 1908913384}
+  inventorySlotSticks: {fileID: 5805899957807955319}
 --- !u!1 &1530048698
 GameObject:
   m_ObjectHideFlags: 0
@@ -24967,8 +24954,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage_1_4: {fileID: 1000697531}
-  stage_1_5: {fileID: 1884083477}
-  woolPlant: {fileID: 7992607658323724418}
 --- !u!1 &1649823208
 GameObject:
   m_ObjectHideFlags: 0
@@ -27129,6 +27114,18 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 669232861}
         m_TargetAssemblyTypeName: Stage_T_6_2, Assembly-CSharp
+        m_MethodName: ToggleStageAdvancingFlag
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 596375996}
+        m_TargetAssemblyTypeName: Stage_2_1, Assembly-CSharp
         m_MethodName: ToggleStageAdvancingFlag
         m_Mode: 1
         m_Arguments:
@@ -56604,7 +56601,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!33 &3713376626988575872
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -82348,8 +82345,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2699228580439151383}
-  m_LocalRotation: {x: 0.4868968, y: 0.42238066, z: -0.51495636, w: 0.5651071}
-  m_LocalPosition: {x: -15.17271, y: 5.931999, z: 13.196978}
+  m_LocalRotation: {x: -0.41906926, y: 0.44279182, z: 0.60961145, w: 0.50664616}
+  m_LocalPosition: {x: 9.507, y: 15.061441, z: 11.127}
   m_LocalScale: {x: 100.00004, y: 100.00003, z: 100.00002}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -82358,7 +82355,7 @@ Transform:
   - {fileID: 298031259}
   m_Father: {fileID: 0}
   m_RootOrder: 39
-  m_LocalEulerAnglesHint: {x: 80.168, y: 116.185, z: -91.509}
+  m_LocalEulerAnglesHint: {x: -74.688, y: -13.637, z: 110.966}
 --- !u!4 &6190238360097420198
 Transform:
   m_ObjectHideFlags: 0
@@ -101742,8 +101739,8 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 596375996}
-        m_TargetAssemblyTypeName: Stage_2_1, Assembly-CSharp
+      - m_Target: {fileID: 920667414}
+        m_TargetAssemblyTypeName: Stage_2_2, Assembly-CSharp
         m_MethodName: ToggleStageAdvancingFlag
         m_Mode: 1
         m_Arguments:
@@ -106659,6 +106656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantingActivated: 0
+  stage_2_3: {fileID: 1255816151}
   stage_2_4: {fileID: 229119130}
   magicPlants:
   - {fileID: 1255446884425246101, guid: 8f12bf613325f334db8537a45065558b, type: 3}

@@ -10,6 +10,7 @@ public class SeedPlanting : MonoBehaviour
     private WitchSenses _witchSenses_L;
 
     //Serialized Variables
+    [SerializeField] private Stage_2_3 stage_2_3;
     [SerializeField] private Stage_2_4 stage_2_4;
     [SerializeField] GameObject[] magicPlants;
 
@@ -19,7 +20,10 @@ public class SeedPlanting : MonoBehaviour
         {
             if (collision.gameObject.tag == "Terrain")
             {
-                //Up counter by 1
+                //Up stage_2_3's "plantedSeeds" counter by 1
+                stage_2_3.plantedSeeds += 1;
+
+                //Up stage_2_4's "plantedSeeds" counter by 1
                 stage_2_4.plantedSeeds += 1;
 
                 //Spawn Magic Plant
@@ -29,7 +33,7 @@ public class SeedPlanting : MonoBehaviour
                 _witchSenses_R.highlightedObjects.Remove(this.gameObject);
                 _witchSenses_L.highlightedObjects.Remove(this.gameObject);
 
-                //Disable Emission effect for Hatchet
+                //Disable Emission effect for Seed
                 this.gameObject.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
 
                 //Destroy Seed
