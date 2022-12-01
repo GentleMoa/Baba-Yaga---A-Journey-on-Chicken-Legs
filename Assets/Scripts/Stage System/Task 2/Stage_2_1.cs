@@ -11,6 +11,9 @@ public class Stage_2_1 : Stage
     //Public Variables
     public Stage_2_2 stage_2_2;
 
+    //Serialized Variables
+    [SerializeField] DiegeticInventory_Button diegeticInventory_Button;
+
     public override Stage RunCurrentStage()
     {
         if (_inventoryOpened)
@@ -24,17 +27,27 @@ public class Stage_2_1 : Stage
         }
     }
 
-    public void ToggleStageAdvancingFlag()
+    private void Update()
     {
         if (StageManager.Instance.currentStage == this)
         {
-            if (_conditionMet == false)
+            if (diegeticInventory_Button.inventoryOpen == true)
             {
-                _conditionMet = true;
+                if (_conditionMet == false)
+                {
+                    _conditionMet = true;
 
-                //Stage Advancing Flag
-                _inventoryOpened = true;
+                    ToggleStageAdvancingFlag();
+                }
             }
         }
+    }
+
+    public void ToggleStageAdvancingFlag()
+    {
+        //Causes
+
+        //Stage Advancing Flag
+        _inventoryOpened = true;
     }
 }

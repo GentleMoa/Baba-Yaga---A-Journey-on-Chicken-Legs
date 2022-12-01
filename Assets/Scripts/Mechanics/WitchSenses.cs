@@ -41,16 +41,16 @@ public class WitchSenses : MonoBehaviour
 
         //Get all Objects that are interactable / quest related and add them to a list
         foreach (GameObject taggedObjects in GameObject.FindGameObjectsWithTag("HighlightedObject"))
-        {
+        {     
             //Add Objects with Tag "HighlightedObject" to highlightedObjects List
             highlightedObjects.Add(taggedObjects);
-
+        
             //Remove Borage and Wool Plant Objects, because they are added to highlightedObjects List later tied to Task Stages
             for (int i = 0; i < highlightedObjects.Count; i++)
             {
                 if (highlightedObjects[i].GetComponent<ItemController>() != null)
                 {
-                    if (highlightedObjects[i].GetComponent<ItemController>().Item.itemName == "Borage" || highlightedObjects[i].GetComponent<ItemController>().Item.itemName == "Wool Plant")
+                    if (highlightedObjects[i].GetComponent<ItemController>().Item.id == 1 || highlightedObjects[i].GetComponent<ItemController>().Item.id == 2)
                     {
                         //Debug.Log("Found to-be-removed Object: " + highlightedObjects[i]);
                         highlightedObjects.Remove(highlightedObjects[i]);
