@@ -27,6 +27,10 @@ public class Stage_2_3 : Stage
 
     public void ToggleStageAdvancingFlag()
     {
+        //Causes
+        //Start Owl Voice Commentary for next Stage 
+        AudioManager.Instance.ShootAudioEvent_Owl_VL_2_4();
+
         //Stage Advancing Flag
         _seedOnePlanted = true;
     }

@@ -980,7 +980,7 @@ Transform:
   - {fileID: 788599046}
   - {fileID: 1870878813}
   m_Father: {fileID: 0}
-  m_RootOrder: 75
+  m_RootOrder: 76
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &63291874
 GameObject:
@@ -3761,6 +3761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stage_2_5: {fileID: 383307227}
   plantedSeeds: 0
+  owlVL_2_5_Length: 8
 --- !u!1 &231888660
 GameObject:
   m_ObjectHideFlags: 0
@@ -4347,6 +4348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage_T_1_2: {fileID: 1796801181}
+  owlVLLength: 14
 --- !u!1 &257899080
 GameObject:
   m_ObjectHideFlags: 0
@@ -5065,6 +5067,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stage_1_9: {fileID: 1398623129}
   tree: {fileID: 4191982001381338747}
+  owlVL_1_9_Length: 9
 --- !u!1 &312536694
 GameObject:
   m_ObjectHideFlags: 0
@@ -6361,7 +6364,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &377500988
 GameObject:
@@ -6680,7 +6683,7 @@ Transform:
   - {fileID: 1140331514}
   - {fileID: 1460320760}
   m_Father: {fileID: 0}
-  m_RootOrder: 66
+  m_RootOrder: 67
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &399588537
 MonoBehaviour:
@@ -6757,7 +6760,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 74
+  m_RootOrder: 75
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &403106948
 GameObject:
@@ -7075,7 +7078,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 19.519, y: -152.893, z: -4.737}
 --- !u!1 &416926389
 GameObject:
@@ -7106,7 +7109,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 71
+  m_RootOrder: 72
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &418507072
 GameObject:
@@ -7273,7 +7276,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 46
+  m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &424574948
 MonoBehaviour:
@@ -7524,7 +7527,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 52
+  m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &448118468
 GameObject:
@@ -8819,6 +8822,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 7910046052485549118}
+        m_TargetAssemblyTypeName: OwlVerbalCommentary, Assembly-CSharp
+        m_MethodName: PlayCommentary_T_6_1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
@@ -9466,7 +9481,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 36
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &540120758
 GameObject:
@@ -10276,7 +10291,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 41
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &586710842
 GameObject:
@@ -10747,7 +10762,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 50, y: -180.496, z: 0}
 --- !u!1 &607977953
 GameObject:
@@ -11159,6 +11174,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 7910046052485549118}
+        m_TargetAssemblyTypeName: OwlVerbalCommentary, Assembly-CSharp
+        m_MethodName: PlayCommentary_T_6_1
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11711,7 +11738,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: -124.292, z: 0}
 --- !u!1 &649445133
 GameObject:
@@ -12001,7 +12028,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 50
+  m_RootOrder: 51
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 135}
 --- !u!114 &654163394
 MonoBehaviour:
@@ -13190,7 +13217,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 48
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &722841363
 GameObject:
@@ -14580,6 +14607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage_T_2_1: {fileID: 691646956}
+  owlVLLength: 8
 --- !u!1 &817518585
 GameObject:
   m_ObjectHideFlags: 0
@@ -14724,7 +14752,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: -124.292, z: 0}
 --- !u!1 &827114562
 GameObject:
@@ -15724,7 +15752,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: -3.522, y: -64.345, z: 0.964}
 --- !u!1 &912159895
 GameObject:
@@ -17634,7 +17662,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: -124.292, z: 0}
 --- !u!1 &1068658354
 GameObject:
@@ -17943,7 +17971,7 @@ Transform:
   m_Children:
   - {fileID: 1241329777}
   m_Father: {fileID: 0}
-  m_RootOrder: 64
+  m_RootOrder: 65
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -32.017}
 --- !u!114 &1091330326
 MonoBehaviour:
@@ -19211,7 +19239,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: -124.292, z: 0}
 --- !u!1 &1156877384
 GameObject:
@@ -19754,6 +19782,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 7910046052485549118}
+        m_TargetAssemblyTypeName: OwlVerbalCommentary, Assembly-CSharp
+        m_MethodName: PlayCommentary_T_6_1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
@@ -20174,6 +20214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage_T_3_1: {fileID: 953516552}
+  owlVLLength: 16
 --- !u!1 &1185721046
 GameObject:
   m_ObjectHideFlags: 0
@@ -20338,7 +20379,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 65
+  m_RootOrder: 66
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1204395225
 GameObject:
@@ -21218,7 +21259,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: -124.292, z: 0}
 --- !u!1 &1294104940
 GameObject:
@@ -21536,7 +21577,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1314641306
 GameObject:
@@ -21651,7 +21692,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: -124.292, z: 0}
 --- !u!1 &1316904873
 GameObject:
@@ -22045,7 +22086,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: -124.292, z: 0}
 --- !u!1 &1334760129
 GameObject:
@@ -22560,7 +22601,7 @@ Transform:
   m_Children:
   - {fileID: 1478970757}
   m_Father: {fileID: 0}
-  m_RootOrder: 63
+  m_RootOrder: 64
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -32.017}
 --- !u!114 &1345155416
 MonoBehaviour:
@@ -22883,7 +22924,7 @@ Transform:
   - {fileID: 2121634092}
   - {fileID: 1139758110}
   m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: -298.296, z: 0}
 --- !u!114 &1361921148
 MonoBehaviour:
@@ -24287,7 +24328,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1421500095
 GameObject:
@@ -24789,7 +24830,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 69
+  m_RootOrder: 70
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1457871500
 GameObject:
@@ -25302,6 +25343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage_3_6: {fileID: 1368343250}
+  owlVL_3_6_Length: 13
 --- !u!1 &1469837425
 GameObject:
   m_ObjectHideFlags: 0
@@ -25460,7 +25502,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: -124.292, z: 0}
 --- !u!1 &1475683815
 GameObject:
@@ -26095,7 +26137,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 51
+  m_RootOrder: 52
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
 --- !u!114 &1499370003
 MonoBehaviour:
@@ -26229,7 +26271,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: -124.292, z: 0}
 --- !u!1 &1504168277
 GameObject:
@@ -26489,6 +26531,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0350553, y: 0.62324667, z: 1.1899668}
   m_Center: {x: -0.044746973, y: 0.6069987, z: 0.30608144}
+--- !u!1 &1519779635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1519779636}
+  m_Layer: 0
+  m_Name: ClimbingExit_ForOwl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1519779636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519779635}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.722, y: 6.764, z: 7.799}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1526067660
 GameObject:
   m_ObjectHideFlags: 0
@@ -28503,7 +28576,7 @@ Transform:
   m_Children:
   - {fileID: 1998223948}
   m_Father: {fileID: 0}
-  m_RootOrder: 62
+  m_RootOrder: 63
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 84.49}
 --- !u!114 &1669925583
 MonoBehaviour:
@@ -28790,7 +28863,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: -124.292, z: 0}
 --- !u!1 &1677337274
 GameObject:
@@ -31610,6 +31683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage_T_1_3: {fileID: 809912253}
+  owlVLLength: 11
 --- !u!1 &1805450030
 GameObject:
   m_ObjectHideFlags: 0
@@ -31639,10 +31713,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f9dd5eaf8fcb7e42bf034b3bace06de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio_witchSenses_on: {fileID: 8300000, guid: 6cc00500e88760e4ab7e0812eb82ef28,
-    type: 3}
-  audio_witchSenses_off: {fileID: 8300000, guid: 2d6ad7fd88bd7284eaeb6b3efdbfa578,
-    type: 3}
   bandages: {fileID: 4912334215673535243, guid: ca2d8c1fac3d6d246bcd5d5915c17ba4,
     type: 3}
   witchTotems:
@@ -31650,6 +31720,51 @@ MonoBehaviour:
   - {fileID: 6696138369569346073, guid: 96ba574b5e948d44cb8f24064c8ddb21, type: 3}
   - {fileID: 2398531719604021261, guid: eb9bda70981611340885cd2c61c08371, type: 3}
   - {fileID: 4814949152981265176, guid: 9e9a8f7e2eea65c42a6780fcd030fdf8, type: 3}
+  audio_witchSenses_on: {fileID: 8300000, guid: 6cc00500e88760e4ab7e0812eb82ef28,
+    type: 3}
+  audio_witchSenses_off: {fileID: 8300000, guid: 2d6ad7fd88bd7284eaeb6b3efdbfa578,
+    type: 3}
+  owl_VL_T_1_1: {fileID: 8300000, guid: 0b1000eb710e2c44289a9db07436ed50, type: 3}
+  owl_VL_T_1_2: {fileID: 8300000, guid: c7b12e0d5d695ba4687762508f0ce3b6, type: 3}
+  owl_VL_T_1_3: {fileID: 8300000, guid: 756311ca421ded148bb3d1a4efdbab31, type: 3}
+  owl_VL_T_2_1: {fileID: 8300000, guid: fe685dff00fb0c3448dede5d79194b4e, type: 3}
+  owl_VL_T_2_2: {fileID: 8300000, guid: 50d661e280fb08b4d9703e978893896e, type: 3}
+  owl_VL_T_2_3: {fileID: 8300000, guid: e3699f91cdc66cf4992f1d61277896c8, type: 3}
+  owl_VL_T_2_4: {fileID: 8300000, guid: 606e52668c73cc94e86f272a91b288f0, type: 3}
+  owl_VL_T_3_1: {fileID: 8300000, guid: 31ef2493631c7844da53fc41c50b035c, type: 3}
+  owl_VL_T_3_2: {fileID: 8300000, guid: 823dc1043945d5a4c805c7c25942427d, type: 3}
+  owl_VL_T_4_1: {fileID: 8300000, guid: f2cebc90730e6b14bb08406a13a9fcce, type: 3}
+  owl_VL_T_4_2: {fileID: 8300000, guid: 501c787fb7c91374e8282567e746abcc, type: 3}
+  owl_VL_T_5_1: {fileID: 8300000, guid: 2f65ade2acd69874694d0237fdd228f4, type: 3}
+  owl_VL_T_5_2: {fileID: 8300000, guid: c537a7ff966869a499f58dd3096eb607, type: 3}
+  owl_VL_T_5_3: {fileID: 8300000, guid: 70db5ac9130ba9b4fa5b070fcbd9f0ec, type: 3}
+  owl_VL_T_5_4: {fileID: 8300000, guid: ea998b34678265a46af1d5d189af4cc9, type: 3}
+  owl_VL_T_6_1: {fileID: 8300000, guid: e0af64719f3fa1849a03d05a77f720ce, type: 3}
+  owl_VL_T_6_2: {fileID: 8300000, guid: 81b19eaca78fea24cba9b9e66a90f887, type: 3}
+  owl_VL_T_6_3: {fileID: 8300000, guid: 25e8fd88bfe7f7f4cbeb1ff531804f4a, type: 3}
+  owl_VL_T_6_4: {fileID: 8300000, guid: f5827197ad038c34a908a6373d6b7556, type: 3}
+  owl_VL_T_6_5: {fileID: 8300000, guid: 50232177921a99642a460cdb36986322, type: 3}
+  owl_VL_1_1: {fileID: 8300000, guid: 59ebe364e4e0c834d8c476c3a3961372, type: 3}
+  owl_VL_1_2: {fileID: 8300000, guid: dfdb290ba2a586a4eabd0bee048d887c, type: 3}
+  owl_VL_1_3: {fileID: 8300000, guid: b27910faaa1138046b4c752d959e2974, type: 3}
+  owl_VL_1_4: {fileID: 8300000, guid: ffcbc441a3049294987c9b7fea93c1e1, type: 3}
+  owl_VL_1_5: {fileID: 8300000, guid: 32077c822d2f91b4cacb1b7c05742cf6, type: 3}
+  owl_VL_1_6: {fileID: 8300000, guid: 824a40cc04c0488409e5eeff776bb73f, type: 3}
+  owl_VL_1_7: {fileID: 8300000, guid: bcf041ad25ee45e418c93fd3a9b6675a, type: 3}
+  owl_VL_1_8: {fileID: 8300000, guid: a7638600413694b4ba75141d9103c306, type: 3}
+  owl_VL_1_9: {fileID: 8300000, guid: dae165f43640f054eb9027790fa2894f, type: 3}
+  owl_VL_2_1: {fileID: 8300000, guid: be339818391c38141b2d73dd6aff5948, type: 3}
+  owl_VL_2_2: {fileID: 8300000, guid: 5a05f479863aca54d8258b56435a8d38, type: 3}
+  owl_VL_2_3: {fileID: 8300000, guid: cfeaa06200c40864c8c8a046e34b8954, type: 3}
+  owl_VL_2_4: {fileID: 8300000, guid: 0d9d755315d3e8a49aacfb97088e44af, type: 3}
+  owl_VL_2_5: {fileID: 8300000, guid: b67006728fbad844e8220f396af89c5a, type: 3}
+  owl_VL_3_1: {fileID: 8300000, guid: 212a585cb40e2c24dbccf7909216cfd9, type: 3}
+  owl_VL_3_2: {fileID: 8300000, guid: de6594376165b0d498a078a475892d5e, type: 3}
+  owl_VL_3_3: {fileID: 8300000, guid: 6f9d2f02ece12fc4f8e7095c2e457483, type: 3}
+  owl_VL_3_4: {fileID: 8300000, guid: 3f83ddefef799e74683b2c0e6b6a547b, type: 3}
+  owl_VL_3_5: {fileID: 8300000, guid: da553e0a85d9ac648a5421ccb4a2d3be, type: 3}
+  owl_VL_3_6: {fileID: 8300000, guid: 987f928ccec26d24ab4bcf4eace743a5, type: 3}
+  owl_VL_Ending: {fileID: 8300000, guid: 8a9d4e3d8016093469debf05779a0391, type: 3}
 --- !u!4 &1805450032
 Transform:
   m_ObjectHideFlags: 0
@@ -31663,7 +31778,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 72
+  m_RootOrder: 73
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1812798319
 GameObject:
@@ -31907,6 +32022,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 7910046052485549118}
+        m_TargetAssemblyTypeName: OwlVerbalCommentary, Assembly-CSharp
+        m_MethodName: PlayCommentary_T_6_1
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -32792,7 +32919,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 73
+  m_RootOrder: 74
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1881666691
 GameObject:
@@ -33838,6 +33965,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage_T_5_4: {fileID: 525185754}
+  owlVL_T_5_4_Length: 13
+  owlVL_1_1_Length: 6
 --- !u!1 &1931937664
 GameObject:
   m_ObjectHideFlags: 0
@@ -34177,7 +34306,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1938443275}
   - component: {fileID: 1938443274}
+  - component: {fileID: 1938443279}
   - component: {fileID: 1938443277}
+  - component: {fileID: 1938443278}
   - component: {fileID: 1938443276}
   m_Layer: 10
   m_Name: OwlCompanion_Nav
@@ -34221,7 +34352,7 @@ Transform:
   - {fileID: 208166299}
   - {fileID: 2127794528}
   m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: -85.492, z: 0}
 --- !u!195 &1938443276
 NavMeshAgent:
@@ -34241,8 +34372,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2.1
-  m_BaseOffset: 1.6
+  m_Height: 1.7
+  m_BaseOffset: 1.25
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &1938443277
@@ -34257,6 +34388,119 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eba5dec3ef1df34ba000d615a792847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  owlLadderTeleportSpot: {fileID: 1519779636}
+--- !u!82 &1938443278
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938443273}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.75
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 7.5
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1938443279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938443273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348a4f2b018c54f9999693aa2a6f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stage_T_1_1: {fileID: 256596213}
+  stage_T_5_2: {fileID: 1223334027}
+  stage_T_6_1: {fileID: 1723878757}
+  stage_T_5_4: {fileID: 525185754}
 --- !u!1 &1939068644
 GameObject:
   m_ObjectHideFlags: 0
@@ -37583,7 +37827,7 @@ Transform:
   m_Children:
   - {fileID: 2107533239}
   m_Father: {fileID: 0}
-  m_RootOrder: 42
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: -43.079, y: -135.489, z: -20.754}
 --- !u!65 &2118193248
 BoxCollider:
@@ -42416,7 +42660,7 @@ Transform:
   - {fileID: 8556975880215834347}
   - {fileID: 8634130633984239809}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: -124.292, z: 0}
 --- !u!1 &544167862483477943
 GameObject:
@@ -42935,7 +43179,7 @@ Transform:
   - {fileID: 8984500105398674031}
   - {fileID: 6842635333571649111}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: -124.292, z: 0}
 --- !u!1 &635944085117876829
 GameObject:
@@ -48252,7 +48496,7 @@ Transform:
   - {fileID: 5448426804087131749}
   - {fileID: 7954300875396529835}
   m_Father: {fileID: 0}
-  m_RootOrder: 67
+  m_RootOrder: 68
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 45}
 --- !u!33 &1482005572094935901
 MeshFilter:
@@ -50566,7 +50810,7 @@ Transform:
   - {fileID: 2526353725493755402}
   - {fileID: 7490088827952310911}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: -124.292, z: 0}
 --- !u!1 &1853154519389820420
 GameObject:
@@ -50985,7 +51229,7 @@ Transform:
   - {fileID: 7198257620873108916}
   - {fileID: 6419249464790887547}
   m_Father: {fileID: 0}
-  m_RootOrder: 68
+  m_RootOrder: 69
   m_LocalEulerAnglesHint: {x: -180, y: 90, z: 0}
 --- !u!1 &1913144868748294309
 GameObject:
@@ -55775,7 +56019,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 47
+  m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2722429313748905670
 MeshFilter:
@@ -58773,7 +59017,7 @@ Transform:
   m_Children:
   - {fileID: 1109643692}
   m_Father: {fileID: 0}
-  m_RootOrder: 61
+  m_RootOrder: 62
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 15}
 --- !u!33 &3292287053760203914
 MeshFilter:
@@ -60027,7 +60271,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 45
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 166.038, z: 0}
 --- !u!1 &3587472596544554296
 GameObject:
@@ -60131,7 +60375,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 49
+  m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3615679922221487999
 GameObject:
@@ -67976,7 +68220,7 @@ Transform:
   - {fileID: 6582709471306367427}
   - {fileID: 7011233492866147594}
   m_Father: {fileID: 0}
-  m_RootOrder: 70
+  m_RootOrder: 71
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &4177468416269567457
 Animator:
@@ -68375,7 +68619,7 @@ Transform:
   - {fileID: 1837905380384098606}
   - {fileID: 7259070711496538328}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: -124.292, z: 0}
 --- !u!4 &4216266202039722535
 Transform:
@@ -74298,7 +74542,7 @@ Transform:
   - {fileID: 6771448192812741396}
   - {fileID: 4118007516577399239}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: -124.292, z: 0}
 --- !u!1 &5083075214272098142
 GameObject:
@@ -79976,7 +80220,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 56
+  m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 75}
 --- !u!4 &5195753846295223643
 Transform:
@@ -79991,7 +80235,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 55
+  m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: -92.89, y: 0, z: 0}
 --- !u!33 &5202430990467014445
 MeshFilter:
@@ -84439,7 +84683,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 58
+  m_RootOrder: 59
   m_LocalEulerAnglesHint: {x: -210, y: 0, z: 0}
 --- !u!4 &5876118606952482660
 Transform:
@@ -84454,7 +84698,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 57
+  m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 59.324}
 --- !u!1 &5876288347510284955
 GameObject:
@@ -86198,7 +86442,7 @@ Transform:
   - {fileID: 4221432410496808660}
   - {fileID: 2059178262}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: -124.292, z: 0}
 --- !u!1 &6107389000938749501
 GameObject:
@@ -93380,7 +93624,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 54
+  m_RootOrder: 55
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 75}
 --- !u!4 &7203312805020043042
 Transform:
@@ -93395,7 +93639,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 53
+  m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: 101.289, y: -20.787994, z: -65.16901}
 --- !u!4 &7204452644658616162
 Transform:
@@ -93836,7 +94080,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 59
+  m_RootOrder: 60
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7309917049021876495
 GameObject:
@@ -94621,7 +94865,7 @@ Transform:
   - {fileID: 3041090633011017177}
   - {fileID: 1218403648573544877}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: -24.683, z: 0}
 --- !u!4 &7392107903149131734
 Transform:
@@ -95286,7 +95530,7 @@ Transform:
   - {fileID: 1047605290}
   - {fileID: 908541614}
   m_Father: {fileID: 0}
-  m_RootOrder: 44
+  m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: -74.261, y: 90, z: -90}
 --- !u!23 &7509965630885509734
 MeshRenderer:
@@ -95925,7 +96169,7 @@ Transform:
   - {fileID: 4886257440329599185}
   - {fileID: 1784515394}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: -124.292, z: 0}
 --- !u!1 &7622647895172189107
 GameObject:
@@ -103034,13 +103278,16 @@ GameObject:
   m_Component:
   - component: {fileID: 7389826812015122054}
   - component: {fileID: 7910046052485549117}
+  - component: {fileID: 7910046052485549120}
+  - component: {fileID: 7910046052485549118}
+  - component: {fileID: 7910046052485549119}
   m_Layer: 10
   m_Name: OwlCompanion_Static
   m_TagString: HighlightedObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &7910046052485549117
 Animator:
   serializedVersion: 4
@@ -103061,6 +103308,130 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7910046052485549118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7910046052485549116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348a4f2b018c54f9999693aa2a6f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stage_T_1_1: {fileID: 256596213}
+  stage_T_5_2: {fileID: 1223334027}
+  stage_T_6_1: {fileID: 1723878757}
+  stage_T_5_4: {fileID: 525185754}
+--- !u!82 &7910046052485549119
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7910046052485549116}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.75
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 0.75
+  MaxDistance: 4
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &7910046052485549120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7910046052485549116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a75024f0516aa45bc5fa99a9108347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7910734908966306916
 Transform:
   m_ObjectHideFlags: 0
@@ -104279,7 +104650,7 @@ Transform:
   - {fileID: 2036266601}
   - {fileID: 1785923998}
   m_Father: {fileID: 0}
-  m_RootOrder: 43
+  m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8083711692540978516
 GameObject:
@@ -104466,6 +104837,30 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1938443277}
+        m_TargetAssemblyTypeName: OwlNavigation, Assembly-CSharp
+        m_MethodName: TeleportOwlToLadder
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1938443279}
+        m_TargetAssemblyTypeName: OwlVerbalCommentary, Assembly-CSharp
+        m_MethodName: PlayCommentary_T_5_4
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -108993,7 +109388,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 60
+  m_RootOrder: 61
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 360}
 --- !u!1 &8673342351470881259
 GameObject:
@@ -110187,7 +110582,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -124.292}
 --- !u!23 &8833783662290223492
 MeshRenderer:

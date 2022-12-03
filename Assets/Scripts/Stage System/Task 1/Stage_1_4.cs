@@ -19,6 +19,10 @@ public class Stage_1_4 : Stage
     {
         if (StageManager.Instance.currentStage == this && inventorySlotBorage.stashedItems.Count > 0)
         {
+            //Causes
+            //Start Owl Voice Commentary for next Stage 
+            AudioManager.Instance.ShootAudioEvent_Owl_VL_1_5();
+
             //Toggle Highlight effects for Wool Plant // THIS WOULD NORMALLY BE IN STAGE_1_4 BUT WE SKIP THAT FOR NOW
             if (_witchSenses_R != null && _witchSenses_L != null)
             {

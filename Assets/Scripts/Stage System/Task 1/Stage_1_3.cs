@@ -30,6 +30,10 @@ public class Stage_1_3 : Stage
         {
             _conditionMet = true;
 
+            //Causes
+            //Start Owl Voice Commentary for next Stage 
+            AudioManager.Instance.ShootAudioEvent_Owl_VL_1_4();
+
             //Stage Advancing Flag
             borageGathered = true;
         }

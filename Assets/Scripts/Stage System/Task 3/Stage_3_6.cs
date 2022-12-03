@@ -35,6 +35,8 @@ public class Stage_3_6 : Stage
             _conditionMet = true;
 
             //Causes
+            //Start Owl Voice Commentary for next Stage 
+            AudioManager.Instance.ShootAudioEvent_Owl_VL_Ending();
 
             //Stage Advancing Flag
             _advancemetBool = true;

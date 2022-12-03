@@ -37,6 +37,9 @@ public class Stage_3_4 : Stage
             _conditionMet = true;
 
             //Causes
+            //Start Owl Voice Commentary for next Stage 
+            AudioManager.Instance.ShootAudioEvent_Owl_VL_3_5();
+
             //Enable all Totem Socket Interactors at the clearing
             for (int i = 0; i < TotemSocketInteractors.Length; i++)
             {

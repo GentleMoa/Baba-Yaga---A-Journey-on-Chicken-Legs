@@ -11,6 +11,9 @@ public class Stage_3_5 : Stage
     //Public Variables
     public Stage_3_6 stage_3_6;
 
+    //Serialized Variables
+    [SerializeField] private int owlVL_3_6_Length;
+
     public override Stage RunCurrentStage()
     {
         if (_advancemetBool == true)
@@ -32,8 +35,11 @@ public class Stage_3_5 : Stage
             _conditionMet = true;
 
             //Causes
-            //Play Owl Commentary
-            Invoke("BeginEnding", 3.0f);
+            //Start Owl Voice Commentary for next Stage 
+            AudioManager.Instance.ShootAudioEvent_Owl_VL_3_6();
+
+
+            Invoke("BeginEnding", owlVL_3_6_Length);
 
             //Stage Advancing Flag
             _advancemetBool = true;

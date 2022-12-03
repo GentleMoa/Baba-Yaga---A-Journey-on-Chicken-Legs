@@ -14,6 +14,10 @@ public class Stage_3_2 : Stage
     {
         if (StageManager.Instance.currentStage == this && inventorySlotSticks.stashedItems.Count > 3)
         {
+            //Causes
+            //Start Owl Voice Commentary for next Stage 
+            AudioManager.Instance.ShootAudioEvent_Owl_VL_3_3();
+
             Debug.Log("Stage_3_2 completed! Next Stage: " + stage_3_3);
             return stage_3_3;
         }

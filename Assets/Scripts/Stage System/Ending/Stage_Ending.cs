@@ -4,9 +4,21 @@ using UnityEngine;
 
 public class Stage_Ending : Stage
 {
+    //Private Variables
+    private bool _experienceCompleted;
+
     public override Stage RunCurrentStage()
     {
-        Debug.Log("Congratulations! You have finished the experience! Thank you for playing!");
-        return this;
+        if (_experienceCompleted == false)
+        {
+            _experienceCompleted = true;
+
+            Debug.Log("Congratulations! You have finished the experience! Thank you for playing!");
+            return this;
+        }
+        else
+        {
+            return this;
+        }
     }
 }

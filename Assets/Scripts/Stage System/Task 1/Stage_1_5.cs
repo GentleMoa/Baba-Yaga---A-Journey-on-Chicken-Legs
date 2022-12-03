@@ -28,8 +28,13 @@ public class Stage_1_5 : Stage
     {
         if (_conditionMet == false)
         {
-            woolPlantGathered = true;
             _conditionMet = true;
+
+            //Causes
+            //Start Owl Voice Commentary for next Stage 
+            AudioManager.Instance.ShootAudioEvent_Owl_VL_1_6();
+
+            woolPlantGathered = true;
         }
     }
 }
