@@ -8,19 +8,16 @@ public class OwlNavigation : MonoBehaviour
     //Private Variables
     private NavMeshAgent _navMeshAgent;
     private GameObject _player;
-    public float distToPlayer;
-
-    //Serialized Variables
-    [SerializeField] private GameObject staticOwl;
+    private float _distToPlayer;
+    private Animator _animator;
+    private bool _inMotion;
 
     void Start()
     {
         //Get reference to private variables
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _player = GameObject.FindGameObjectWithTag("Player");
-
-        //Set stopping distance of NavMeshAgent component to keep some distance between player and owl
-        _navMeshAgent.stoppingDistance = 1.0f;
+        _animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -36,31 +33,34 @@ public class OwlNavigation : MonoBehaviour
     private void FollowPlayerBehavior()
     {
         //Getting the squared magnitude (aka the distance from the owl to the player), this is a little more performant than writing Vector3.Distance(transform.position - _player.transform.position);
-        distToPlayer = Mathf.Sqrt((transform.position - _player.transform.position).sqrMagnitude);
+        _distToPlayer = Mathf.Sqrt((transform.position - _player.transform.position).sqrMagnitude);
 
-        if (distToPlayer > 0.75f)
+        //If the player is farther away than 1.5 meters...
+        if (_distToPlayer > 1.5f)
         {
+            //Steer towards the player
             _navMeshAgent.SetDestination(_player.transform.position);
         }
-    }
 
-    public void ToggleNavOwl(bool navOwlActive)
-    {
-        if (navOwlActive)
+        //If the NavMeshAgent is moved at all...
+        if (_navMeshAgent.velocity.sqrMagnitude > 0.0f)
         {
-            //Enable the Nav Owl
-            gameObject.SetActive(true);
-
-            //Disable the Static Owl
-            staticOwl.SetActive(false);
+            //...Trigger the flying in motion animation
+            if (_inMotion == false)
+            {
+                _inMotion = true;
+                _animator.SetBool("Bool_Flying", true);
+            }
         }
+        //If the NavMeshAgent is completely still...
         else
         {
-            //Disable the Nav Owl
-            gameObject.SetActive(false);
-
-            //Enable the Static Owl
-            staticOwl.SetActive(true);
+            //...Trigger the flying idle animation
+            if (_inMotion == true)
+            {
+                _inMotion = false;
+                _animator.SetBool("Bool_Flying", false);
+            }
         }
     }
 }
