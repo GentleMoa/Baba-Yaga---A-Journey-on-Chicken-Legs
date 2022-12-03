@@ -15,6 +15,7 @@ public class Stage_1_8 : Stage
 
     //Serialized Variables
     [SerializeField] private GameObject tree;
+    [SerializeField] private int owlVL_1_9_Length;
 
     public override Stage RunCurrentStage()
     {
@@ -35,6 +36,10 @@ public class Stage_1_8 : Stage
         {
             _conditionMet = true;
 
+            //Causes
+            //Start Owl Voice Commentary for next Stage 
+            AudioManager.Instance.ShootAudioEvent_Owl_VL_1_9();
+
             if (_witchSenses_R != null && _witchSenses_L != null)
             {
                 //Disable Highlight effect for Tree
@@ -45,7 +50,7 @@ public class Stage_1_8 : Stage
             }
 
             //START STAGE_1_9 OWL DIALOGUE HERE
-            Invoke("StartTask2", 3.0f);
+            Invoke("StartTask2", owlVL_1_9_Length);
 
             //Stage Advancing Flag
             bandageApplied = true;

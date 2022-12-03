@@ -11,6 +11,10 @@ public class Stage_T_5_3 : Stage
     //Public Variables
     public Stage_T_5_4 stage_T_5_4;
 
+    //Serialized Variables
+    [SerializeField] private int owlVL_T_5_4_Length;
+    [SerializeField] private int owlVL_1_1_Length;
+
     public override Stage RunCurrentStage()
     {
         if (_advancementBool)
@@ -33,15 +37,18 @@ public class Stage_T_5_3 : Stage
                 _conditionMet = true;
 
                 //Causes
+                //Start Owl Voice Commentary for next Stage 
+                AudioManager.Instance.ShootAudioEvent_Owl_VL_T_5_4();
 
-                Invoke("DelayedFlagSetter_T_5_3", 3.0f);
-                Invoke("DelayedFlagSetter_T_5_4", 6.0f);
+                Invoke("DelayedFlagSetter_T_5_3", owlVL_T_5_4_Length);
             }
         }
     }
 
     private void DelayedFlagSetter_T_5_3()
     {
+        Invoke("DelayedFlagSetter_T_5_4", owlVL_1_1_Length);
+
         //Stage Advancing Flag
         _advancementBool = true;
     }

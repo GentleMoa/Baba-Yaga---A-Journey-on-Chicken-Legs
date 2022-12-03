@@ -28,8 +28,13 @@ public class Stage_1_7 : Stage
     {
         if (_conditionMet == false)
         {
-            craftingComplete = true;
             _conditionMet = true;
+
+            //Causes
+            //Start Owl Voice Commentary for next Stage 
+            AudioManager.Instance.ShootAudioEvent_Owl_VL_1_8();
+
+            craftingComplete = true;
         }
     }
 }

@@ -30,10 +30,14 @@ public class Stage_1_6 : Stage
         {
             if (_conditionMet == false)
             {
-                //Later, add a delay here to account for the polished and longer-lasting ladder climbing!
-
-                arrivedAtHouse = true;
                 _conditionMet = true;
+
+                //Causes
+                //Start Owl Voice Commentary for next Stage 
+                AudioManager.Instance.ShootAudioEvent_Owl_VL_1_7();
+
+                //Later, add a delay here to account for the polished and longer-lasting ladder climbing!
+                arrivedAtHouse = true;
             }
         }
     }

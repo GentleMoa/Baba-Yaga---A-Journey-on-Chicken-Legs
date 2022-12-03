@@ -37,6 +37,9 @@ public class Stage_2_5 : Stage
             _conditionMet = true;
 
             //Causes
+            //Start Owl Voice Commentary for next Stage 
+            AudioManager.Instance.ShootAudioEvent_Owl_VL_3_1();
+
             for (int i = 0; i < sticks.Length; i++)
             {
                 //Activate Sticks

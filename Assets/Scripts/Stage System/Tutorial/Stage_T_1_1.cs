@@ -11,6 +11,9 @@ public class Stage_T_1_1 : Stage
     //Public Variables
     public Stage_T_1_2 stage_T_1_2;
 
+    //Serialized Variables
+    [SerializeField] private int owlVLLength;
+
     public override Stage RunCurrentStage()
     {
         //If tutorial hasn't started yet...
@@ -37,9 +40,10 @@ public class Stage_T_1_1 : Stage
     private void OwlCommentary()
     {
         //Start Owl Voice Commentary
+        AudioManager.Instance.ShootAudioEvent_Owl_VL_T_1_1();
 
         //Start delay Coroutine to toggle the stage advancing flag when the voice commentary has finished
-        StartCoroutine(ToggleStageAdvancingFlag(3.0f)); //3 secs as a default value
+        StartCoroutine(ToggleStageAdvancingFlag(owlVLLength)); //3 secs as a default value
     }
 
     IEnumerator ToggleStageAdvancingFlag(float waitSeconds)

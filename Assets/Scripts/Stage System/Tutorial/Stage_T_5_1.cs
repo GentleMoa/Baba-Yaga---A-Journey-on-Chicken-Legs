@@ -32,6 +32,8 @@ public class Stage_T_5_1 : Stage
 
             //Causes
             GetComponent<Collider>().enabled = false;
+            //Start Owl Voice Commentary for next Stage 
+            AudioManager.Instance.ShootAudioEvent_Owl_VL_T_5_2();
 
             //Stage Advancing Flag
             _advancementBool = true;

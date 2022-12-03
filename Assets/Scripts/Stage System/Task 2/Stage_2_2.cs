@@ -36,6 +36,9 @@ public class Stage_2_2 : Stage
                 _conditionMet = true;
 
                 //Causes
+                //Start Owl Voice Commentary for next Stage 
+                AudioManager.Instance.ShootAudioEvent_Owl_VL_2_3();
+
                 //Enable Planting Counter script
                 for (int i = 0; i < seedPlantingScripts.Length; i++)
                 {

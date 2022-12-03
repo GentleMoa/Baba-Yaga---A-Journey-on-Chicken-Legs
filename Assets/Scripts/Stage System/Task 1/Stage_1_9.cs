@@ -30,8 +30,17 @@ public class Stage_1_9 : Stage
         {
             _conditionMet = true;
 
-            //Set Advancement Flag
-            owlCommentFinished = true;
+            //Causes
+            //Start Owl Voice Commentary for next Stage 
+            AudioManager.Instance.ShootAudioEvent_Owl_VL_2_1();
+
+            Invoke("StartTask2", 17.0f);
         }
+    }
+
+    private void StartTask2()
+    {
+        //Set Advancement Flag
+        owlCommentFinished = true;
     }
 }

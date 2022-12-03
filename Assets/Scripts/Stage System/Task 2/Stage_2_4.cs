@@ -12,6 +12,9 @@ public class Stage_2_4 : Stage
     public Stage_2_5 stage_2_5;
     public int plantedSeeds = 0;
 
+    //Serialized Variables
+    [SerializeField] private int owlVL_2_5_Length;
+
     public override Stage RunCurrentStage()
     {
         if (_allSeedsPlanted == true)
@@ -28,8 +31,11 @@ public class Stage_2_4 : Stage
     public void ToggleStageAdvancingFlag()
     {
         //Causes
+        //Start Owl Voice Commentary for next Stage 
+        AudioManager.Instance.ShootAudioEvent_Owl_VL_2_5();
+
         //PLAY OWL COMMENTARY
-        Invoke("StartTask3", 3.0f);
+        Invoke("StartTask3", owlVL_2_5_Length);
 
         //Stage Advancing Flag
         _allSeedsPlanted = true;

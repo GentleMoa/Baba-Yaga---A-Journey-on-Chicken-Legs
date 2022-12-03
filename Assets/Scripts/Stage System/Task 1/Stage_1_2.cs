@@ -36,6 +36,10 @@ public class Stage_1_2 : Stage
         {
             _conditionMet = true;
 
+            //Causes
+            //Start Owl Voice Commentary for next Stage 
+            AudioManager.Instance.ShootAudioEvent_Owl_VL_1_3();
+
             if (_witchSenses_R != null && _witchSenses_L != null)
             {
                 //Enable Highlight effect for Borage
@@ -47,6 +51,8 @@ public class Stage_1_2 : Stage
                 //Disable Emission effect for Hatchet
                 hatchet.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
             }
+
+
 
             //Stage Advancing Flag
             hatchedRemoved = true;
