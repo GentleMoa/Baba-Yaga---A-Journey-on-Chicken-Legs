@@ -13,7 +13,7 @@ public class ObjectToggler : MonoBehaviour
     [SerializeField] private GameObject[] exteriorToggleObjects;
     
 
-    void Start()
+    private void Start()
     {
         //Subscribe to ClimbUpLadder/ClimbDownLadder Signifier Events
         _climbDownLadder.ClimbingLadderDown += Enable_EX_Objects;

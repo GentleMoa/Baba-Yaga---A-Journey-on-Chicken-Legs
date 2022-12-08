@@ -11,6 +11,10 @@ public class Stage_T_5_1 : Stage
     //Public Variables
     public Stage_T_5_2 stage_T_5_2;
 
+    //Serialized Variables
+    [SerializeField] private Animator houseAnimator;
+    [SerializeField] private RigidbodyInPlaceHolder rbStatisScript;
+
     public override Stage RunCurrentStage()
     {
         if (_advancementBool)
@@ -32,8 +36,15 @@ public class Stage_T_5_1 : Stage
 
             //Causes
             GetComponent<Collider>().enabled = false;
+
             //Start Owl Voice Commentary for next Stage 
-            AudioManager.Instance.ShootAudioEvent_Owl_VL_T_5_2();
+            Invoke("StartOwlVoiceCommentaryForNextStage", 5.0f);
+
+            //Start House Animation
+            houseAnimator.SetTrigger("BowDown");
+
+            //Disable Rigidbody Stasis of interactables inside the house
+            rbStatisScript.Invoke("DisableRigidbodyStasis", 29.0f);
 
             //Stage Advancing Flag
             _advancementBool = true;
@@ -49,5 +60,11 @@ public class Stage_T_5_1 : Stage
                 ToggleStageAdvancingFlag();
             }
         }
+    }
+
+    private void StartOwlVoiceCommentaryForNextStage()
+    {
+        //Start Owl Voice Commentary for next Stage 
+        AudioManager.Instance.ShootAudioEvent_Owl_VL_T_5_2();
     }
 }
