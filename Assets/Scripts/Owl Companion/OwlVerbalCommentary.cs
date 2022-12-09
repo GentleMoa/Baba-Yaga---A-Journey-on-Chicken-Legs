@@ -12,6 +12,7 @@ public class OwlVerbalCommentary : MonoBehaviour
     [SerializeField] Stage_T_5_2 stage_T_5_2;
     [SerializeField] Stage_T_6_1 stage_T_6_1;
     [SerializeField] Stage_T_5_4 stage_T_5_4;
+    [SerializeField] Stage_T_5_3 stage_T_5_3;
 
     // Start is called before the first frame update
     void Start()
@@ -336,7 +337,7 @@ public class OwlVerbalCommentary : MonoBehaviour
 
     public void PlayCommentary_T_5_4()
     {
-        if (StageManager.Instance.currentStage == stage_T_5_4)
+        if (StageManager.Instance.currentStage == stage_T_5_4 || StageManager.Instance.currentStage == stage_T_5_3)
         {
             _audioSource.clip = ResourceManager.Instance.owl_VL_T_5_4;
             _audioSource.Play();

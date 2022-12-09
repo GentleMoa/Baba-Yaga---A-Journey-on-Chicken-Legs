@@ -11,6 +11,7 @@ public class DiegeticInventory_Button : MonoBehaviour
     [SerializeField] private Animator ringMenuAnimator;
     [SerializeField] private Transform buttonDefaultTransform;
     [SerializeField] private GameObject[] slots;
+    [SerializeField] private Material emissiveMat;
 
     //Public Variables
     public bool inventoryOpen;
@@ -71,5 +72,17 @@ public class DiegeticInventory_Button : MonoBehaviour
 
         //Set inventoryOpen Flag
         inventoryOpen = inventoryFlag;
+    }
+
+    public void RefreshEmissiveMat()
+    {
+        bool refreshed = false;
+
+        if (refreshed == false)
+        {
+            refreshed = true;
+
+            GetComponent<Renderer>().material = emissiveMat;
+        }
     }
 }
