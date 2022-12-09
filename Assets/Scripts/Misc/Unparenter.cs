@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WitchHatUnparenter : MonoBehaviour
+public class Unparenter : MonoBehaviour
 {
     //Private Variables
     private bool _parented = true;
 
-    public void UnparentWitchHat()
+    public void Unparent()
     {
         if (_parented)
         {

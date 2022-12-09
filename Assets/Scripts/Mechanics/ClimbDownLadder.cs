@@ -20,9 +20,6 @@ public class ClimbDownLadder : MonoBehaviour
     void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
-        //Saving the initial transform values of this object
-        _buttonStartPosition = this.transform.position;
-        _buttonStartRotation = this.transform.rotation.eulerAngles;
     }
 
     public void ClimbingDown()
@@ -51,6 +48,15 @@ public class ClimbDownLadder : MonoBehaviour
         }
     }
 
+    //Called in "HouseAnimEvent_SaveRungResetPos" on GameObject "Animated House" via Animation Event
+    public void SaveInteractableStartPos()
+    {
+        //Saving the initial transform values of this object
+        _buttonStartPosition = this.transform.position;
+        _buttonStartRotation = this.transform.rotation.eulerAngles;
+    }
+
+    //Called on GameObject Button via XR Interactable Event
     public void ResetInteractablePosition()
     {
         //Resetting the transforms to the original values

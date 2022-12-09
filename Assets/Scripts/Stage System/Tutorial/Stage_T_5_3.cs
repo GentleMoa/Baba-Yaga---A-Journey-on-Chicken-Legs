@@ -47,7 +47,7 @@ public class Stage_T_5_3 : Stage
 
     private void DelayedFlagSetter_T_5_3()
     {
-        Invoke("DelayedFlagSetter_T_5_4", owlVL_1_1_Length);
+        Invoke("DelayedFlagSetter_T_5_4", 0.25f);
 
         //Stage Advancing Flag
         _advancementBool = true;
