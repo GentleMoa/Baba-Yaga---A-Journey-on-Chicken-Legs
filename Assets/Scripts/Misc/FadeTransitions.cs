@@ -47,6 +47,7 @@ public class FadeTransitions : MonoBehaviour
         }
     }
 
+    //DON'T disable these objects, since A) they are not connected to the visual glitches experienced and B) they will break the animator triggering due to being disabled
     private void EnableFadeEffectObjects()
     {
         for (int i = 0; i < fadeCanvas.Length; i++)
@@ -55,7 +56,7 @@ public class FadeTransitions : MonoBehaviour
             fadeCanvas[i].gameObject.SetActive(true);
         }
     }
-
+    
     private void DisableFadeEffectObjects()
     {
         for (int i = 0; i < fadeCanvas.Length; i++)

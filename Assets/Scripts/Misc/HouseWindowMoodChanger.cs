@@ -105,4 +105,10 @@ public class HouseWindowMoodChanger : MonoBehaviour
             _searchLightTracking = true;
         }
     }
+
+    public void EnableSearchLight()
+    {
+        //Enable Searchlight
+        _searchLightParent.SetActive(true);
+    }
 }

@@ -12,9 +12,18 @@ public class AudioManager : MonoBehaviour
     //Audio Events
     //Audio Events named by this convention: "AudioEvent" + "Audio Source Gameobject" + "Audio Specification"
     //For example: "AE_Player_WitchSenses_On" ---> "AE" (marking it as Audio Event), "Player" (the gameobject which will play the sound), "WitchSenses_On" (the specific sound that will be played)
+    //Witch Senses
     public event Action AE_Player_WitchSenses_On;
     public event Action AE_Player_WitchSenses_Off;
 
+    //Trapdoor Action
+    public event Action AE_Trapdoor_Open;
+    public event Action AE_Trapdoor_Close;
+
+    //Ladder Climbing
+    public event Action AE_Ladder_Climbing;
+
+    //Owl Companion Voice Lines
     public event Action AE_Owl_VL_T_1_1;
     public event Action AE_Owl_VL_T_1_2;
     public event Action AE_Owl_VL_T_1_3;
@@ -82,6 +91,7 @@ public class AudioManager : MonoBehaviour
     #region Audio Events Activation
 
     //Audio Events Activation
+    //Witch Senses
     public void ShootAudioEvent_Player_WitchSenses_On()
     {
         AE_Player_WitchSenses_On();
@@ -92,6 +102,24 @@ public class AudioManager : MonoBehaviour
         AE_Player_WitchSenses_Off();
     }
 
+    //Trapdoor Actions
+    public void ShootAudioEvent_Trapdoor_Open()
+    {
+        AE_Trapdoor_Open();
+    }
+
+    public void ShootAudioEvent_Trapdoor_Close()
+    {
+        AE_Trapdoor_Close();
+    }
+
+    //Ladder Climbing
+    public void ShootAudioEvent_Ladder_Climbing()
+    {
+        AE_Ladder_Climbing();
+    }
+
+    //Owl Companion Voice Lines
     public void ShootAudioEvent_Owl_VL_T_1_1()
     {
         if (AE_Owl_VL_T_1_1 != null)

@@ -35,6 +35,13 @@ public class ResourceManager : MonoBehaviour
     public AudioClip audio_witchSenses_on;
     public AudioClip audio_witchSenses_off;
 
+    [Header("Trapdoor Action")]
+    public AudioClip audio_trapdoor_open;
+    public AudioClip audio_trapdoor_close;
+
+    [Header("Ladder Climbing")]
+    public AudioClip audio_ladder_climbing;
+
     [Header("Owl Voice Lines")]
     [Header("Tutorial")]
     public AudioClip owl_VL_T_1_1;
