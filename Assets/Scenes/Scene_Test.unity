@@ -8367,7 +8367,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &464788144
 Transform:
   m_ObjectHideFlags: 0
@@ -9112,6 +9112,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   climbingExitInHouse: {fileID: 1616146466}
+  fadeScript: {fileID: 0}
+  houseAnimator: {fileID: 0}
+  entranceMechAnimator: {fileID: 0}
+  audioSource: {fileID: 0}
+  stage_T_5_2: {fileID: 0}
+  stage_1_6: {fileID: 0}
+  stage_3_3: {fileID: 0}
 --- !u!114 &508164483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11357,6 +11364,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   climbingExitInHouse: {fileID: 1616146466}
+  fadeScript: {fileID: 0}
+  houseAnimator: {fileID: 0}
+  entranceMechAnimator: {fileID: 0}
+  audioSource: {fileID: 0}
+  stage_T_5_2: {fileID: 0}
+  stage_1_6: {fileID: 0}
+  stage_3_3: {fileID: 0}
 --- !u!114 &621363751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13074,6 +13088,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   climbingExitInHouse: {fileID: 1616146466}
+  fadeScript: {fileID: 1361921150}
+  houseAnimator: {fileID: 6763414478379361105}
+  entranceMechAnimator: {fileID: 1051224284028865321}
+  audioSource: {fileID: 7657109189856197726}
+  stage_T_5_2: {fileID: 1223334027}
+  stage_1_6: {fileID: 1240743499}
+  stage_3_3: {fileID: 1908913384}
 --- !u!114 &692400232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13152,18 +13173,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 7910046052485549118}
-        m_TargetAssemblyTypeName: OwlVerbalCommentary, Assembly-CSharp
-        m_MethodName: PlayCommentary_T_6_1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 7788730019491808793}
         m_TargetAssemblyTypeName: Unparenter, Assembly-CSharp
         m_MethodName: Unparent
@@ -13194,42 +13203,6 @@ MonoBehaviour:
       - m_Target: {fileID: 692400231}
         m_TargetAssemblyTypeName: ClimbUpLadder, Assembly-CSharp
         m_MethodName: ResetInteractablePosition
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1240743499}
-        m_TargetAssemblyTypeName: Stage_1_6, Assembly-CSharp
-        m_MethodName: ToggleStageAdvancingFlag
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1908913384}
-        m_TargetAssemblyTypeName: Stage_3_3, Assembly-CSharp
-        m_MethodName: ToggleStageAdvancingFlag
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1223334027}
-        m_TargetAssemblyTypeName: Stage_T_5_2, Assembly-CSharp
-        m_MethodName: ToggleStageAdvancingFlag
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15824,6 +15797,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   climbingExitInHouse: {fileID: 1616146466}
+  fadeScript: {fileID: 1361921150}
+  houseAnimator: {fileID: 6763414478379361105}
+  entranceMechAnimator: {fileID: 1051224284028865321}
+  audioSource: {fileID: 7657109189856197726}
+  stage_T_5_2: {fileID: 1223334027}
+  stage_1_6: {fileID: 1240743499}
+  stage_3_3: {fileID: 1908913384}
 --- !u!114 &842015506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15902,18 +15882,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 7910046052485549118}
-        m_TargetAssemblyTypeName: OwlVerbalCommentary, Assembly-CSharp
-        m_MethodName: PlayCommentary_T_6_1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 7788730019491808793}
         m_TargetAssemblyTypeName: Unparenter, Assembly-CSharp
         m_MethodName: Unparent
@@ -15944,42 +15912,6 @@ MonoBehaviour:
       - m_Target: {fileID: 842015505}
         m_TargetAssemblyTypeName: ClimbUpLadder, Assembly-CSharp
         m_MethodName: ResetInteractablePosition
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1240743499}
-        m_TargetAssemblyTypeName: Stage_1_6, Assembly-CSharp
-        m_MethodName: ToggleStageAdvancingFlag
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1908913384}
-        m_TargetAssemblyTypeName: Stage_3_3, Assembly-CSharp
-        m_MethodName: ToggleStageAdvancingFlag
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1223334027}
-        m_TargetAssemblyTypeName: Stage_T_5_2, Assembly-CSharp
-        m_MethodName: ToggleStageAdvancingFlag
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21044,6 +20976,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   climbingExitInHouse: {fileID: 1616146466}
+  fadeScript: {fileID: 0}
+  houseAnimator: {fileID: 0}
+  entranceMechAnimator: {fileID: 0}
+  audioSource: {fileID: 0}
+  stage_T_5_2: {fileID: 0}
+  stage_1_6: {fileID: 0}
+  stage_3_3: {fileID: 0}
 --- !u!114 &1179802085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28664,6 +28603,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   climbingExitInHouse: {fileID: 1616146466}
+  fadeScript: {fileID: 1361921150}
+  houseAnimator: {fileID: 6763414478379361105}
+  entranceMechAnimator: {fileID: 1051224284028865321}
+  audioSource: {fileID: 7657109189856197726}
+  stage_T_5_2: {fileID: 1223334027}
+  stage_1_6: {fileID: 1240743499}
+  stage_3_3: {fileID: 1908913384}
 --- !u!114 &1580607198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28742,18 +28688,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 7910046052485549118}
-        m_TargetAssemblyTypeName: OwlVerbalCommentary, Assembly-CSharp
-        m_MethodName: PlayCommentary_T_6_1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 7788730019491808793}
         m_TargetAssemblyTypeName: Unparenter, Assembly-CSharp
         m_MethodName: Unparent
@@ -28784,42 +28718,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1580607197}
         m_TargetAssemblyTypeName: ClimbUpLadder, Assembly-CSharp
         m_MethodName: ResetInteractablePosition
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1240743499}
-        m_TargetAssemblyTypeName: Stage_1_6, Assembly-CSharp
-        m_MethodName: ToggleStageAdvancingFlag
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1908913384}
-        m_TargetAssemblyTypeName: Stage_3_3, Assembly-CSharp
-        m_MethodName: ToggleStageAdvancingFlag
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1223334027}
-        m_TargetAssemblyTypeName: Stage_T_5_2, Assembly-CSharp
-        m_MethodName: ToggleStageAdvancingFlag
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29678,6 +29576,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   climbingExitInHouse: {fileID: 1616146466}
+  fadeScript: {fileID: 1361921150}
+  houseAnimator: {fileID: 6763414478379361105}
+  entranceMechAnimator: {fileID: 1051224284028865321}
+  audioSource: {fileID: 7657109189856197726}
+  stage_T_5_2: {fileID: 1223334027}
+  stage_1_6: {fileID: 1240743499}
+  stage_3_3: {fileID: 1908913384}
 --- !u!114 &1639875103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29756,18 +29661,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 7910046052485549118}
-        m_TargetAssemblyTypeName: OwlVerbalCommentary, Assembly-CSharp
-        m_MethodName: PlayCommentary_T_6_1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 7788730019491808793}
         m_TargetAssemblyTypeName: Unparenter, Assembly-CSharp
         m_MethodName: Unparent
@@ -29798,42 +29691,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1639875102}
         m_TargetAssemblyTypeName: ClimbUpLadder, Assembly-CSharp
         m_MethodName: ResetInteractablePosition
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1240743499}
-        m_TargetAssemblyTypeName: Stage_1_6, Assembly-CSharp
-        m_MethodName: ToggleStageAdvancingFlag
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1908913384}
-        m_TargetAssemblyTypeName: Stage_3_3, Assembly-CSharp
-        m_MethodName: ToggleStageAdvancingFlag
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1223334027}
-        m_TargetAssemblyTypeName: Stage_T_5_2, Assembly-CSharp
-        m_MethodName: ToggleStageAdvancingFlag
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34173,6 +34030,11 @@ MonoBehaviour:
     type: 3}
   audio_witchSenses_off: {fileID: 8300000, guid: 2d6ad7fd88bd7284eaeb6b3efdbfa578,
     type: 3}
+  audio_trapdoor_open: {fileID: 8300000, guid: 676e07aa704e1a84b884c05933279877, type: 3}
+  audio_trapdoor_close: {fileID: 8300000, guid: 15b2abfc80f495e44a1de0f7b1d5f926,
+    type: 3}
+  audio_ladder_climbing: {fileID: 8300000, guid: da72458979754784c82ec566dfef38b5,
+    type: 3}
   owl_VL_T_1_1: {fileID: 8300000, guid: 0b1000eb710e2c44289a9db07436ed50, type: 3}
   owl_VL_T_1_2: {fileID: 8300000, guid: c7b12e0d5d695ba4687762508f0ce3b6, type: 3}
   owl_VL_T_1_3: {fileID: 8300000, guid: 756311ca421ded148bb3d1a4efdbab31, type: 3}
@@ -34401,6 +34263,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   climbingExitInHouse: {fileID: 1616146466}
+  fadeScript: {fileID: 0}
+  houseAnimator: {fileID: 0}
+  entranceMechAnimator: {fileID: 0}
+  audioSource: {fileID: 0}
+  stage_T_5_2: {fileID: 0}
+  stage_1_6: {fileID: 0}
+  stage_3_3: {fileID: 0}
 --- !u!114 &1830207434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102471,6 +102340,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   climbingExitInForest: {fileID: 390858251}
+  fadeScript: {fileID: 1361921150}
+  houseAnimator: {fileID: 6763414478379361105}
+  entranceMechAnimator: {fileID: 1051224284028865321}
+  audioSource: {fileID: 7657109189856197726}
+  stage_T_5_3: {fileID: 1925543294}
 --- !u!114 &7456267786009394851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102561,36 +102435,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1938443279}
-        m_TargetAssemblyTypeName: OwlVerbalCommentary, Assembly-CSharp
-        m_MethodName: PlayCommentary_T_5_4
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7456267786009394850}
         m_TargetAssemblyTypeName: ClimbDownLadder, Assembly-CSharp
         m_MethodName: ResetInteractablePosition
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1925543294}
-        m_TargetAssemblyTypeName: Stage_T_5_3, Assembly-CSharp
-        m_MethodName: ToggleStageAdvancingFlag
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -104192,6 +104042,7 @@ GameObject:
   - component: {fileID: 7657109189856197723}
   - component: {fileID: 7657109189856197722}
   - component: {fileID: 7657109189856197721}
+  - component: {fileID: 7657109189856197726}
   m_Layer: 0
   m_Name: TH_I_FirePlace
   m_TagString: Untagged
@@ -104264,6 +104115,102 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.013688892, y: 0.0121354, z: 0.0002924578}
   m_Center: {x: -0.0000000017881393, y: 0.006067699, z: 0.0001462346}
+--- !u!82 &7657109189856197726
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7657109189856197720}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 10
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.6
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &7657268660392769177
 Transform:
   m_ObjectHideFlags: 0
@@ -113037,6 +112984,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   climbingExitInForest: {fileID: 390858251}
+  fadeScript: {fileID: 0}
+  houseAnimator: {fileID: 0}
+  entranceMechAnimator: {fileID: 0}
+  audioSource: {fileID: 0}
+  stage_T_5_3: {fileID: 0}
 --- !u!4 &8097158698462955298
 Transform:
   m_ObjectHideFlags: 0
