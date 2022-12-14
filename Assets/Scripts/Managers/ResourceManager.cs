@@ -42,6 +42,74 @@ public class ResourceManager : MonoBehaviour
     [Header("Ladder Climbing")]
     public AudioClip audio_ladder_climbing;
 
+    [Header("Lantern Pickup / Drop")]
+    public AudioClip audio_lantern_pickup;
+    public AudioClip audio_lantern_drop;
+
+    [Header("Teleport Magic")]
+    public AudioClip audio_teleport_magic;
+
+    [Header("Page Flipping")]
+    public AudioClip audio_page_flipping;
+
+    [Header("Cauldron Boiling")]
+    public AudioClip audio_cauldron_boiling;
+
+    [Header("Button Press")]
+    public AudioClip audio_button_press;
+
+    [Header("Entering Mechanism Linkage")]
+    public AudioClip audio_enteringMechanism_linkage;
+
+    [Header("Axe Sounds")]
+    public AudioClip audio_axe_pullout;
+    public AudioClip audio_axe_drop;
+
+    [Header("Plant Pickup")]
+    public AudioClip audio_plant_pickup;
+
+    [Header("Magic Inventory")]
+    public AudioClip audio_hat_inventory_open;
+    public AudioClip audio_hat_inventory_close;
+    public AudioClip audio_hat_inventory_stash;
+    public AudioClip audio_hat_inventory_retrieve;
+    public AudioClip audio_putHat_on;
+    public AudioClip audio_putHat_off;
+
+    [Header("Crafting")]
+    public AudioClip audio_crafting_bandages;
+    public AudioClip audio_crafting_totems;
+
+    [Header("Bandage Wrapping")]
+    public AudioClip audio_bandage_wrapping;
+
+    [Header("Seed Planting")]
+    public AudioClip audio_seed_planting;
+    public AudioClip audio_plant_growing;
+
+    [Header("Sticks Pickup / Drop")]
+    public AudioClip audio_stick_pickup;
+    public AudioClip audio_stick_drop;
+
+    [Header("Totem Hanging")]
+    public AudioClip audio_totem_hanging;
+
+    [Header("TheHouse Vocalisation")]
+    public AudioClip audio_house_sleeping_1;
+    public AudioClip audio_house_sleeping_2;
+    public AudioClip audio_house_confused_1;
+    public AudioClip audio_house_sniffing_1;
+    public AudioClip audio_house_acknowledgement_1;
+    public AudioClip audio_house_sigh_1;
+
+    [Header("TheHouse Shutters")]
+    public AudioClip audio_shutters_open_withCreak;
+    public AudioClip audio_shutters_open_withoutCreak;
+    public AudioClip audio_shutters_close;
+
+    [Header("TheHouse Rope Ladder")]
+    public AudioClip audio_rope_ladder;
+
     [Header("Owl Voice Lines")]
     [Header("Tutorial")]
     public AudioClip owl_VL_T_1_1;
