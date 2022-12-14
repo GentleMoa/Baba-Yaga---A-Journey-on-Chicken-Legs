@@ -50,6 +50,12 @@ public class Stage_1_2 : Stage
                 _witchSenses_L.highlightedObjects.Remove(hatchet);
                 //Disable Emission effect for Hatchet
                 hatchet.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
+
+                //If witch senses are alreay active, enable emission keyword for freshly added quest items
+                if (_witchSenses_R._witchSensesActive || _witchSenses_L._witchSensesActive)
+                {
+                    borage.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+                }
             }
 
 

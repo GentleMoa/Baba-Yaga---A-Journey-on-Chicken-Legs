@@ -28,6 +28,12 @@ public class Stage_1_4 : Stage
             {
                 _witchSenses_R.highlightedObjects.Add(woolPlant);
                 _witchSenses_L.highlightedObjects.Add(woolPlant);
+
+                //If witch senses are alreay active, enable emission keyword for freshly added quest items
+                if (_witchSenses_R._witchSensesActive || _witchSenses_L._witchSensesActive)
+                {
+                    woolPlant.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+                }
             }
 
             Debug.Log("Stage_1_4 completed! Next Stage: " + stage_1_5);

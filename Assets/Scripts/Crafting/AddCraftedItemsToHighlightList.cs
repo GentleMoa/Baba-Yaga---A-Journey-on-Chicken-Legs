@@ -19,6 +19,12 @@ public class AddCraftedItemsToHighlightList : MonoBehaviour
         {
             _witchSenses_R.highlightedObjects.Add(this.gameObject);
             _witchSenses_L.highlightedObjects.Add(this.gameObject);
+
+            //If witch senses are alreay active, enable emission keyword for freshly added quest items
+            if (_witchSenses_R._witchSensesActive || _witchSenses_L._witchSensesActive)
+            {
+                this.gameObject.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+            }
         }
     }
 }
