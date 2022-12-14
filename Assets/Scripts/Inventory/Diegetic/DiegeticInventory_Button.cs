@@ -6,6 +6,9 @@ public class DiegeticInventory_Button : MonoBehaviour
 {
     //Private Variables
     private Vector3 _buttonDefaultPosition;
+    private AudioSource _audioSource;
+    private AudioClip _audioClip_HatInventoryOpen;
+    private AudioClip _audioClip_HatInventoryClose;
 
     //Serialized Variables
     [SerializeField] private Animator ringMenuAnimator;
@@ -16,6 +19,16 @@ public class DiegeticInventory_Button : MonoBehaviour
     //Public Variables
     public bool inventoryOpen;
 
+    void Start()
+    {
+        //Grab a reference to the audio source
+        _audioSource = GetComponent<AudioSource>();
+
+        //Assign the correct audio clips from the ResourceManagers
+        _audioClip_HatInventoryOpen = ResourceManager.Instance.audio_hat_inventory_open;
+        _audioClip_HatInventoryClose = ResourceManager.Instance.audio_hat_inventory_close;
+    }
+
     public void TriggerDIAnim()
     {
         if (inventoryOpen == false)
@@ -25,6 +38,10 @@ public class DiegeticInventory_Button : MonoBehaviour
 
             //Enable Trigger Colliders with a delay of 1 sec
             StartCoroutine(ToggleTriggerColliders(1.5f, true, true));
+
+            //Play Audio
+            _audioSource.clip = _audioClip_HatInventoryOpen;
+            _audioSource.Play();
         }
         else if (inventoryOpen == true)
         {
@@ -33,6 +50,10 @@ public class DiegeticInventory_Button : MonoBehaviour
 
             //Disable Trigger Colliders with a delay of 1 sec
             StartCoroutine(ToggleTriggerColliders(0.1f, false, false));
+
+            //Play Audio
+            _audioSource.clip = _audioClip_HatInventoryClose;
+            _audioSource.Play();
         }
     }
 
@@ -55,6 +76,10 @@ public class DiegeticInventory_Button : MonoBehaviour
         {
             //Trigger Animation DI_Close
             ringMenuAnimator.SetTrigger("DI_Close");
+
+            //Play Audio
+            _audioSource.clip = _audioClip_HatInventoryClose;
+            _audioSource.Play();
 
             //Set inventoryOpen Flag
             inventoryOpen = false;

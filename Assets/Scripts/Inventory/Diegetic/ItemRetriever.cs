@@ -14,6 +14,8 @@ public class ItemRetriever : MonoBehaviour
     private RingMenuSlot _ringMenuSlot;
     private Vector3 _defaultSize;
     private Vector3 _hoverSize = new Vector3(110.0f, 110.0f, 110.0f);
+    private AudioSource _audioSource;
+    private AudioClip _audioClip_HatInventoryRetrieve;
 
     void Start()
     {
@@ -22,6 +24,12 @@ public class ItemRetriever : MonoBehaviour
 
         //Save the default Size
         _defaultSize = transform.localScale;
+
+        //Grab a reference to the audio source
+        _audioSource = GetComponent<AudioSource>();
+
+        //Assign the correct audio clips from the ResourceManagers
+        _audioClip_HatInventoryRetrieve = ResourceManager.Instance.audio_hat_inventory_retrieve;
     }
 
     private void OnTriggerStay(Collider other)
@@ -35,8 +43,6 @@ public class ItemRetriever : MonoBehaviour
                 diButtonScript.inventoryOpen == true)
 
             {
-                //Debug.Log("Grab Button Pressed!");
-
                 if (_ringMenuSlot.stashedItems.Count > 0)
                 {
                     //Reposition item from RingMenuSlot Script's stashedItems List
@@ -59,6 +65,10 @@ public class ItemRetriever : MonoBehaviour
 
                     //Reset Flag after a delay
                     Invoke("ResetRetrievedFlag", 1.0f);
+
+                    //Play Audio
+                    _audioSource.clip = _audioClip_HatInventoryRetrieve;
+                    _audioSource.Play();
                 }
             }
 

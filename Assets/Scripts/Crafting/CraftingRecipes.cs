@@ -17,6 +17,9 @@ public class CraftingRecipes : MonoBehaviour
     //Private Variables
     private WitchSenses _witchSenses_L;
     private WitchSenses _witchSenses_R;
+    private AudioSource _audioSource;
+    private AudioClip _audioClip_CraftingBandages;
+    private AudioClip _audioClip_CraftingTotems;
 
     //Events
     public event Action DestroyCraftingIngredients;
@@ -27,6 +30,13 @@ public class CraftingRecipes : MonoBehaviour
         //Find Reference to both WitchSenses script (Right & Left Hands)
         _witchSenses_L = GameObject.FindGameObjectWithTag("LeftHand").GetComponent<WitchSenses>();
         _witchSenses_R = GameObject.FindGameObjectWithTag("RightHand").GetComponent<WitchSenses>();
+
+        //Grab a reference to the audio source
+        _audioSource = GetComponent<AudioSource>();
+
+        //Assign the correct audio clips from the ResourceManagers
+        _audioClip_CraftingBandages = ResourceManager.Instance.audio_crafting_bandages;
+        _audioClip_CraftingTotems = ResourceManager.Instance.audio_crafting_totems;
     }
 
 
@@ -78,6 +88,10 @@ public class CraftingRecipes : MonoBehaviour
                 //Advance Task Stage_1_7 to Stage_1_8
                 stage_1_7.ToggleStageAdvancingFlag();
 
+                //Play Audio
+                _audioSource.clip = _audioClip_CraftingBandages;
+                _audioSource.Play();
+
             }
             //Recipe - BANDAGE 2
             else if (craftingSlot_L.craftingItem.GetComponent<ItemController>().Item.id == 2 &&
@@ -99,6 +113,10 @@ public class CraftingRecipes : MonoBehaviour
 
                 //Advance Task Stage_1_7 to Stage_1_8
                 stage_1_7.ToggleStageAdvancingFlag();
+
+                //Play Audio
+                _audioSource.clip = _audioClip_CraftingBandages;
+                _audioSource.Play();
 
             }
             //Recipe - TOTEM
@@ -127,6 +145,10 @@ public class CraftingRecipes : MonoBehaviour
                 {
                     stage_3_4.ToggleStageAdvancingFlag();
                 }
+
+                //Play Audio
+                _audioSource.clip = _audioClip_CraftingTotems;
+                _audioSource.Play();
 
             }
             //Recipe - UNDEFINED

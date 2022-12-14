@@ -14,12 +14,32 @@ public class SeedPlanting : MonoBehaviour
     [SerializeField] private Stage_2_4 stage_2_4;
     [SerializeField] GameObject[] magicPlants;
 
+    //Private Variables
+    private AudioSource _audioSource;
+    private AudioClip _audioClip_SeedPlanting;
+
+    private void Start()
+    {
+        //Find Reference to both WitchSenses script (Right & Left Hands)
+        _witchSenses_R = GameObject.FindGameObjectWithTag("RightHand").GetComponent<WitchSenses>();
+        _witchSenses_L = GameObject.FindGameObjectWithTag("LeftHand").GetComponent<WitchSenses>();
+
+        //Grab a reference to the audio source
+        _audioSource = GetComponent<AudioSource>();
+
+        //Assign the correct audio clips from the ResourceManagers
+        _audioClip_SeedPlanting = ResourceManager.Instance.audio_seed_planting;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (plantingActivated == true)
         {
             if (collision.gameObject.tag == "Terrain")
             {
+                //Bool to prohibit multiple effect calls
+                plantingActivated = false;
+
                 //Up stage_2_3's "plantedSeeds" counter by 1
                 stage_2_3.plantedSeeds += 1;
 
@@ -36,16 +56,22 @@ public class SeedPlanting : MonoBehaviour
                 //Disable Emission effect for Seed
                 this.gameObject.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
 
-                //Destroy Seed
-                Destroy(this.gameObject);
+                //Play Audio
+                _audioSource.clip = _audioClip_SeedPlanting;
+                _audioSource.Play();
+
+                //Disable mesh renderer to make the seed disappear
+                GetComponent<MeshRenderer>().enabled = false;
+
+                //Delayed destruction of seed so the audio clip playback can finish first
+                Invoke("DestroySeed", 1.5f);
             }
         }
     }
 
-    private void Start()
+    private void DestroySeed()
     {
-        //Find Reference to both WitchSenses script (Right & Left Hands)
-        _witchSenses_R = GameObject.FindGameObjectWithTag("RightHand").GetComponent<WitchSenses>();
-        _witchSenses_L = GameObject.FindGameObjectWithTag("LeftHand").GetComponent<WitchSenses>();
+        //Destroy Seed
+        Destroy(this.gameObject);
     }
 }

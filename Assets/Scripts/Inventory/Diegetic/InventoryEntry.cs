@@ -4,17 +4,34 @@ using UnityEngine;
 
 public class InventoryEntry : MonoBehaviour
 {
+    //Private Variables
+    private AudioSource _audioSource;
+    private AudioClip _audioClip_HatInventoryStash;
+
     //Public Variables
     public GameObject enteredObject;
 
     //Serialized Variables
     [SerializeField] private RingMenuSlot[] slots;
 
+    void Start()
+    {
+        //Grab a reference to the audio source
+        _audioSource = GetComponent<AudioSource>();
+
+        //Assign the correct audio clips from the ResourceManagers
+        _audioClip_HatInventoryStash = ResourceManager.Instance.audio_hat_inventory_stash;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         //Check if object has ItemController component
         if (other.gameObject.GetComponent<ItemController>() != null)
         {
+            //Play Audio
+            _audioSource.clip = _audioClip_HatInventoryStash;
+            _audioSource.Play();
+
             //Assigning the object entering the trigger collider to the enteredObject varible
             enteredObject = other.gameObject;
 

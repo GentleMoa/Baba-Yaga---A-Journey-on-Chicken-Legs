@@ -23,6 +23,68 @@ public class AudioManager : MonoBehaviour
     //Ladder Climbing
     public event Action AE_Ladder_Climbing;
 
+    //Lantern Pickup / Drop
+    public event Action AE_Lantern_Pickup;
+    public event Action AE_Lantern_Drop;
+
+    //Teleport Magic
+    public event Action AE_Teleport_Magic;
+
+    //Page Flipping
+    public event Action AE_Page_Flipping;
+
+    //Cauldron Boiling
+    public event Action AE_Cauldron_Boiling;
+
+    //Button Press
+    public event Action AE_Button_Press;
+
+    //Entrance Mechanism Linkage
+    public event Action AE_EntranceMechanism_Linkage;
+
+    //Axe Sounds
+    public event Action AE_Axe_Pullout;
+    public event Action AE_Axe_Drop;
+
+    //Plant Pickup
+    public event Action AE_Plant_Pickup;
+
+    //Magic Inventory
+    public event Action AE_Hat_Inventory_Open;
+    public event Action AE_Hat_Inventory_Close;
+    public event Action AE_Hat_Inventory_Stash;
+    public event Action AE_Hat_Inventory_Retrieve;
+    public event Action AE_PutHat_On;
+    public event Action AE_PutHat_Off;
+
+    //Crafting
+    public event Action AE_Crafting_Bandages;
+    public event Action AE_Crafting_Totems;
+
+    //Bandage Wrapping
+    public event Action AE_Bandage_Wrapping;
+
+    //Seed Planting
+    public event Action AE_Seed_Planting;
+    public event Action AE_Plant_Growing;
+
+    //Stick Pickup / Drop
+    public event Action AE_Stick_Pickup;
+    public event Action AE_Stick_Drop;
+
+    //Totem Hanging
+    public event Action AE_Totem_Hanging;
+
+    //The House Vocalisation
+    public event Action AE_TheHouse_Vocalisation;
+
+    //The House Shutters
+    public event Action AE_TheHouse_Shutters_Open;
+    public event Action AE_TheHouse_Shutters_Close;
+
+    //The House Shutters
+    public event Action AE_TheHouse_Rope_Ladder;
+
     //Owl Companion Voice Lines
     public event Action AE_Owl_VL_T_1_1;
     public event Action AE_Owl_VL_T_1_2;
@@ -117,6 +179,156 @@ public class AudioManager : MonoBehaviour
     public void ShootAudioEvent_Ladder_Climbing()
     {
         AE_Ladder_Climbing();
+    }
+
+    //Lantern Pickup
+    public void ShootAudioEvent_Lantern_Pickup()
+    {
+        AE_Lantern_Pickup();
+    }
+
+    //Lantern Drop
+    public void ShootAudioEvent_Lantern_Drop()
+    {
+        AE_Lantern_Drop();
+    }
+
+    //Teleport Magic
+    public void ShootAudioEvent_Teleport_Magic()
+    {
+        AE_Teleport_Magic();
+    }
+
+    //Page Flipping
+    public void ShootAudioEvent_Page_Flipping()
+    {
+        AE_Page_Flipping();
+    }
+
+    //Cauldron Boiling
+    public void ShootAudioEvent_Cauldron_Boiling()
+    {
+        AE_Cauldron_Boiling();
+    }
+
+    //Button Press
+    public void ShootAudioEvent_Button_Press()
+    {
+        AE_Button_Press();
+    }
+
+    //Axe Pullout
+    public void ShootAudioEvent_Axe_Pullout()
+    {
+        AE_Axe_Pullout();
+    }
+
+    //Axe Drop
+    public void ShootAudioEvent_Axe_Drop()
+    {
+        AE_Axe_Drop();
+    }
+
+    //Plant Pickup
+    public void ShootAudioEvent_Plant_Pickup()
+    {
+        AE_Plant_Pickup();
+    }
+
+    //Hat Inventory Open
+    public void ShootAudioEvent_Hat_Inventory_Open()
+    {
+        AE_Hat_Inventory_Open();
+    }
+
+    //Hat Inventory Close
+    public void ShootAudioEvent_Hat_Inventory_Close()
+    {
+        AE_Hat_Inventory_Close();
+    }
+
+    //Hat Inventory Stash
+    public void ShootAudioEvent_Hat_Inventory_Stash()
+    {
+        AE_Hat_Inventory_Stash();
+    }
+
+    //Hat Inventory Retrieve
+    public void ShootAudioEvent_Hat_Inventory_Retrieve()
+    {
+        AE_Hat_Inventory_Retrieve();
+    }
+
+    //Crafting Bandages
+    public void ShootAudioEvent_Crafting_Bandages()
+    {
+        AE_Crafting_Bandages();
+    }
+
+    //Crafting Totems
+    public void ShootAudioEvent_Crafting_Totems()
+    {
+        AE_Crafting_Totems();
+    }
+
+    //Bandage Wrapping
+    public void ShootAudioEvent_Bandage_Wrapping()
+    {
+        AE_Bandage_Wrapping();
+    }
+
+    //Seed Planting
+    public void ShootAudioEvent_Seed_Planting()
+    {
+        AE_Seed_Planting();
+    }
+
+    //Plant Growing
+    public void ShootAudioEvent_Plant_Growing()
+    {
+        AE_Plant_Growing();
+    }
+
+    //Stick Pickup
+    public void ShootAudioEvent_Stick_Pickup()
+    {
+        AE_Stick_Pickup();
+    }
+
+    //Plant Drop
+    public void ShootAudioEvent_Stick_Drop()
+    {
+        AE_Stick_Drop();
+    }
+
+    //Totem Hanging
+    public void ShootAudioEvent_Totem_Hanging()
+    {
+        AE_Totem_Hanging();
+    }
+
+    //The House Vocalisation
+    public void ShootAudioEvent_TheHouse_Vocalisation()
+    {
+        AE_TheHouse_Vocalisation();
+    }
+
+    //TheHouse Shutters Open
+    public void ShootAudioEvent_TheHouse_Shutters_Open()
+    {
+        AE_TheHouse_Shutters_Open();
+    }
+
+    //TheHouse Shutters Close
+    public void ShootAudioEvent_TheHouse_Shutters_Close()
+    {
+        AE_TheHouse_Shutters_Close();
+    }
+
+    //TheHouse Rope Ladder
+    public void ShootAudioEvent_TheHouse_Rope_Ladder()
+    {
+        AE_TheHouse_Rope_Ladder();
     }
 
     //Owl Companion Voice Lines
