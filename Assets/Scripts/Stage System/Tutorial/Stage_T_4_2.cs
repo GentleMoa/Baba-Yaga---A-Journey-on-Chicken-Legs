@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Stage_T_4_2 : Stage
 {
@@ -10,6 +11,10 @@ public class Stage_T_4_2 : Stage
 
     //Public Variables
     public Stage_T_5_1 stage_T_5_1;
+
+    //Serialized Variables
+    [SerializeField] private OwlNavigation owlNavScript;
+    [SerializeField] private NavMeshAgent owlNavMeshAgent;
 
     public override Stage RunCurrentStage()
     {
@@ -35,6 +40,11 @@ public class Stage_T_4_2 : Stage
                 //Causes
                 //Start Owl Voice Commentary for next Stage 
                 AudioManager.Instance.ShootAudioEvent_Owl_VL_T_5_1();
+
+                //Enable Owl Companion Follower Behavior by enabling the Owl Navigation Script
+                owlNavScript.enabled = true;
+                //Enable Owl Companion Follower Behavior by enabling the Owl Nav Mesh Agent
+                owlNavMeshAgent.enabled = true;
 
                 //Stage Advancing Flag
                 _advancementBool = true;

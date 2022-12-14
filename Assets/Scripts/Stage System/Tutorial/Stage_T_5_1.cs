@@ -38,7 +38,7 @@ public class Stage_T_5_1 : Stage
             GetComponent<Collider>().enabled = false;
 
             //Start Owl Voice Commentary for next Stage 
-            Invoke("StartOwlVoiceCommentaryForNextStage", 5.0f);
+            Invoke("StartOwlVoiceCommentaryForNextStage", 6.0f);
 
             //Start House Animation
             houseAnimator.SetTrigger("BowDown");

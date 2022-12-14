@@ -10,6 +10,7 @@ public class CraftingRecipes : MonoBehaviour
     [SerializeField] private CraftingSlot craftingSlot_R;
     [SerializeField] private Stage_1_7 stage_1_7;
     [SerializeField] private Stage_3_4 stage_3_4;
+    [SerializeField] private FadeTransitions fadeScript;
 
     //Public Variables
     public bool craftingOngoing;
@@ -76,22 +77,12 @@ public class CraftingRecipes : MonoBehaviour
                 _witchSenses_L.highlightedObjects.Remove(craftingSlot_R.craftingItem);
                 _witchSenses_R.highlightedObjects.Remove(craftingSlot_R.craftingItem);
                 _witchSenses_R.highlightedObjects.Remove(craftingSlot_L.craftingItem);
-
                 //Destroy Ingredients (via Event)
                 DestroyCraftingIngredients();
-
-                Debug.Log("Item Crafted: Bandages");
-
-                //Instantiate Bandages
-                Instantiate(ResourceManager.Instance.bandages, transform.position, transform.rotation);
-
-                //Advance Task Stage_1_7 to Stage_1_8
-                stage_1_7.ToggleStageAdvancingFlag();
-
-                //Play Audio
-                _audioSource.clip = _audioClip_CraftingBandages;
-                _audioSource.Play();
-
+                //Fade screen to black
+                fadeScript.Fade(true);
+                //Start Crafting Sequence
+                Invoke("NestedCraftingFunction_Bandages_0", 2.0f);
             }
             //Recipe - BANDAGE 2
             else if (craftingSlot_L.craftingItem.GetComponent<ItemController>().Item.id == 2 &&
@@ -102,21 +93,12 @@ public class CraftingRecipes : MonoBehaviour
                 _witchSenses_L.highlightedObjects.Remove(craftingSlot_R.craftingItem);
                 _witchSenses_R.highlightedObjects.Remove(craftingSlot_R.craftingItem);
                 _witchSenses_R.highlightedObjects.Remove(craftingSlot_L.craftingItem);
-
                 //Destroy Ingredients (via Event)
                 DestroyCraftingIngredients();
-
-                Debug.Log("Item Crafted: Bandages");
-
-                //Instantiate Bandages
-                Instantiate(ResourceManager.Instance.bandages, transform.position, transform.rotation);
-
-                //Advance Task Stage_1_7 to Stage_1_8
-                stage_1_7.ToggleStageAdvancingFlag();
-
-                //Play Audio
-                _audioSource.clip = _audioClip_CraftingBandages;
-                _audioSource.Play();
+                //Fade screen to black
+                fadeScript.Fade(true);
+                //Start Crafting Sequence
+                Invoke("NestedCraftingFunction_Bandages_0", 2.0f);
 
             }
             //Recipe - TOTEM
@@ -128,28 +110,12 @@ public class CraftingRecipes : MonoBehaviour
                 _witchSenses_L.highlightedObjects.Remove(craftingSlot_R.craftingItem);
                 _witchSenses_R.highlightedObjects.Remove(craftingSlot_R.craftingItem);
                 _witchSenses_R.highlightedObjects.Remove(craftingSlot_L.craftingItem);
-
                 //Destroy Ingredients (via Event)
                 DestroyCraftingIngredients();
-
-                //Advance Stage_3_4 counter
-                stage_3_4.totemsCrafted += 1;
-
-                //Craft Totem
-                Instantiate(ResourceManager.Instance.witchTotems[stage_3_4.totemsCrafted - 1], transform.position, transform.rotation);
-
-                Debug.Log("Item Crafted: Witch Totem");
-
-                //Advance Stage_3_4
-                if (StageManager.Instance.currentStage == stage_3_4)
-                {
-                    stage_3_4.ToggleStageAdvancingFlag();
-                }
-
-                //Play Audio
-                _audioSource.clip = _audioClip_CraftingTotems;
-                _audioSource.Play();
-
+                //Fade screen to black
+                fadeScript.Fade(true);
+                //Start Crafting Sequence
+                Invoke("NestedCraftingFunction_Totems_0", 2.0f);
             }
             //Recipe - UNDEFINED
             else
@@ -169,138 +135,71 @@ public class CraftingRecipes : MonoBehaviour
         }
     }
 
+    //Nested functions for sequenced fades / audio / stage advancing
+    private void NestedCraftingFunction_Bandages_0()
+    {
+        Debug.Log("Item Crafted: Bandages");
 
+        //Instantiate Bandages
+        Instantiate(ResourceManager.Instance.bandages, transform.position, transform.rotation);
 
+        //Play Audio
+        _audioSource.clip = _audioClip_CraftingBandages;
+        _audioSource.Play();
 
+        //Invoke next nested crafting sequence function
+        Invoke("NestedCraftingFunction_Bandages_1", 7.0f);
+    }
 
+    private void NestedCraftingFunction_Bandages_1()
+    {
+        //Screen fades from black
+        fadeScript.Fade(false);
 
+        //Invoke next nested crafting sequence function
+        Invoke("NestedCraftingFunction_Bandages_2", 2.0f);
+    }
 
+    private void NestedCraftingFunction_Bandages_2()
+    {
+        //Advance Task Stage_1_7 to Stage_1_8
+        stage_1_7.ToggleStageAdvancingFlag();
+    }
 
+    private void NestedCraftingFunction_Totems_0()
+    {
+        //Advance Stage_3_4 counter
+        stage_3_4.totemsCrafted += 1;
 
+        //Craft Totem
+        Instantiate(ResourceManager.Instance.witchTotems[stage_3_4.totemsCrafted - 1], transform.position, transform.rotation);
 
+        Debug.Log("Item Crafted: Witch Totem");
 
+        //Play Audio
+        _audioSource.clip = _audioClip_CraftingTotems;
+        _audioSource.Play();
 
+        //Invoke next nested crafting sequence function
+        Invoke("NestedCraftingFunction_Totems_1", 4.0f);
+    }
 
+    private void NestedCraftingFunction_Totems_1()
+    {
+        //Screen fades from black
+        fadeScript.Fade(false);
 
+        //Invoke next nested crafting sequence function
+        Invoke("NestedCraftingFunction_Totems_2", 2.0f);
+    }
 
+    private void NestedCraftingFunction_Totems_2()
+    {
+        //Advance Stage_3_4
+        if (StageManager.Instance.currentStage == stage_3_4)
+        {
+            stage_3_4.ToggleStageAdvancingFlag();
+        }
+    }
 
-
-
-
-
-
-
-
-
-
-
-    ////Public Variables
-    //public CraftingSlot _craftingSlot_1;
-    //public CraftingSlot _craftingSlot_2;
-    //
-    ////Serialized Variables
-    //[SerializeField] private Stage_1_7 stage_1_7;
-    //[SerializeField] private Stage_3_4 stage_3_4;
-    //private WitchSenses _witchSenses_R;
-    //private WitchSenses _witchSenses_L;
-    //private bool _craftingOngoig;
-    //
-    ////Events
-    //public event Action DestroyCraftingIngredient;
-    //
-    //private void Update()
-    //{
-    //    if (_craftingSlot_1.readyForCrafting == true && _craftingSlot_2.readyForCrafting)
-    //    {
-    //        if (_craftingOngoig == false)
-    //        {
-    //            _craftingOngoig = true;
-    //            Craft();
-    //        }
-    //    }
-    //}
-    //
-    //public void Craft()
-    //{
-    //    Debug.Log("Crafting Function was called!");
-    //
-    //    //Bandage Recipe 1
-    //    if (_craftingSlot_1.itemType.id == 1 && _craftingSlot_2.itemType.id == 2 
-    //        && _craftingSlot_1.itemInSlot != _craftingSlot_2.itemInSlot)
-    //    {
-    //        //Remove Crafting Ingredients from WitcHand's highlighted Object List
-    //        _witchSenses_R.highlightedObjects.Remove(_craftingSlot_1.itemInSlot);
-    //        _witchSenses_L.highlightedObjects.Remove(_craftingSlot_1.itemInSlot);
-    //        _witchSenses_R.highlightedObjects.Remove(_craftingSlot_2.itemInSlot);
-    //        _witchSenses_L.highlightedObjects.Remove(_craftingSlot_2.itemInSlot);
-    //
-    //        //Fire Ingredient Destroy Event
-    //        DestroyCraftingIngredient();
-    //
-    //        //Craft Bandages
-    //        Instantiate(ResourceManager.Instance.bandages, transform.position, transform.rotation);
-    //    
-    //        //Advance Task Stage_1_7 to Stage_1_8
-    //        stage_1_7.ToggleStageAdvancingFlag();
-    //    
-    //        Debug.Log("Bandages have been crafted!");
-    //        _craftingOngoig = false;
-    //    }
-    //    //Bandage Recipe 2
-    //    else if (_craftingSlot_2.itemType.id == 2 && _craftingSlot_1.itemType.id == 1 &&
-    //        _craftingSlot_1.itemInSlot != _craftingSlot_2.itemInSlot)
-    //    {
-    //        //Remove Crafting Ingredients from WitcHand's highlighted Object List
-    //        _witchSenses_R.highlightedObjects.Remove(_craftingSlot_1.itemInSlot);
-    //        _witchSenses_L.highlightedObjects.Remove(_craftingSlot_1.itemInSlot);
-    //        _witchSenses_R.highlightedObjects.Remove(_craftingSlot_2.itemInSlot);
-    //        _witchSenses_L.highlightedObjects.Remove(_craftingSlot_2.itemInSlot);
-    //
-    //        //Fire Ingredient Destroy Event
-    //        DestroyCraftingIngredient();
-    //
-    //        //Craft Bandages
-    //        Instantiate(ResourceManager.Instance.bandages, transform.position, transform.rotation);
-    //    
-    //        //Advance Task Stage_1_7 to Stage_1_8
-    //        stage_1_7.ToggleStageAdvancingFlag();
-    //    
-    //        Debug.Log("Bandages have been crafted!");
-    //        _craftingOngoig = false;
-    //    }
-    //    //Witch Totem Recipe
-    //    else if (_craftingSlot_2.itemType.id == 5 && _craftingSlot_1.itemType.id == 5 && 
-    //        _craftingSlot_1.itemInSlot != _craftingSlot_2.itemInSlot)
-    //    {
-    //        //Remove Crafting Ingredients from WitcHand's highlighted Object List
-    //        _witchSenses_R.highlightedObjects.Remove(_craftingSlot_1.itemInSlot);
-    //        _witchSenses_L.highlightedObjects.Remove(_craftingSlot_1.itemInSlot);
-    //        _witchSenses_R.highlightedObjects.Remove(_craftingSlot_2.itemInSlot);
-    //        _witchSenses_L.highlightedObjects.Remove(_craftingSlot_2.itemInSlot);
-    //
-    //        //Fire Ingredient Destroy Event
-    //        DestroyCraftingIngredient();
-    //
-    //        stage_3_4.totemsCrafted += 1;
-    //    
-    //        //Craft Totem
-    //        Instantiate(ResourceManager.Instance.witchTotems[stage_3_4.totemsCrafted - 1], transform.position, transform.rotation);
-    //    
-    //        //Advance Stage_3_4
-    //        if (StageManager.Instance.currentStage == stage_3_4)
-    //        {
-    //            stage_3_4.ToggleStageAdvancingFlag();
-    //        }
-    //    
-    //        Debug.Log("Totem has been crafted!");
-    //        _craftingOngoig = false;
-    //    }
-    //}
-    //
-    //private void Start()
-    //{
-    //    //Find Reference to both WitchSenses script (Right & Left Hands)
-    //    _witchSenses_R = GameObject.FindGameObjectWithTag("RightHand").GetComponent<WitchSenses>();
-    //    _witchSenses_L = GameObject.FindGameObjectWithTag("LeftHand").GetComponent<WitchSenses>();
-    //}
 }
