@@ -52,20 +52,21 @@ public class HandOccupationChecker : MonoBehaviour
         }
     }
 
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    //If object is an XR Grab Interactable and there was an object close to it before... 
-    //    if (other.gameObject.GetComponent<XRGrabInteractable>() != null && objectCloseToHand == true)
-    //    {
-    //        //Toggle the Flag
-    //        objectCloseToHand = false;
-    //
-    //        //Delete reference to the held Item
-    //        storedObject = null;
-    //    }
-    //}
+    public void ClearStorageVariable()
+    {
+        //Clear the storage variable
+        storedObject = null;
+    }
 
-
+    private void OnTriggerExit(Collider other)
+    {
+        //If object is an XR Grab Interactable and there was NO object close to it before... 
+        if (other.gameObject.GetComponent<XRGrabInteractable>() != null && objectCloseToHand == true)
+        {
+            //Toggle the Flag
+            objectCloseToHand = false;
+        }
+    }
 
 
 
