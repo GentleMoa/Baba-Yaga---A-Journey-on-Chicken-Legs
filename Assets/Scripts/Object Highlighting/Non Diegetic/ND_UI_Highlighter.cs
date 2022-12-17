@@ -6,14 +6,14 @@ public class ND_UI_Highlighter : MonoBehaviour
 {
     //Private Variable
     private GameObject _playerCam;
-    private Vector3 sizeSmall;
+    private Vector3 sizeSmall = new Vector3(0.0001f, 0.0001f, 1.0f);
     private Vector3 sizeBig = new Vector3(0.0125f, 0.0125f, 1.0f);
     private float duration = 0.25f;
 
     void Start()
     {
-        //Save the small beginning size
-        sizeSmall = transform.localScale;
+        //Start with the small beginning size
+        transform.localScale = sizeSmall;
 
         //Find _playerCam by tag
         _playerCam = GameObject.FindGameObjectWithTag("MainCamera");
