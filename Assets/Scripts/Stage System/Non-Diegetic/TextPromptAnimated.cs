@@ -12,6 +12,8 @@ public class TextPromptAnimated : MonoBehaviour
 
     //Public Variables
     public bool advanceTouch;
+    [HideInInspector]
+    public bool coroutineAnimFinished;
 
     void Start()
     {
@@ -54,14 +56,23 @@ public class TextPromptAnimated : MonoBehaviour
         }
 
         transform.localScale = endSize;
+        coroutineAnimFinished = true;
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        //If either hand of the user is touching this trigger collider and the advancement bool is false yet...
         if (other.gameObject.GetComponent<ActionBasedController>() != null && advanceTouch == false)
         {
             //Set flag after user touches the prompt to progress the stage
             advanceTouch = true;
+        }
+
+        //If either hand of the user is touching this trigger collider and this UI Prompt DOES have an Animator Component
+        if (other.gameObject.GetComponent<ActionBasedController>() != null && gameObject.GetComponent<Animator>() != null)
+        {
+            //Trigger Hiding animation
+            gameObject.GetComponent<Animator>().SetTrigger("UI_Hide");
         }
     }
 }

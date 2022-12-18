@@ -13,7 +13,7 @@ public class ND_Stage_T_3_2 : Stage
     public ND_Stage_T_4_1 ND_stage_T_4_1;
 
     //Serialized Variables
-    [SerializeField] private TextPromptAnimated uiPrompt;
+    //[SerializeField] private TextPromptAnimated uiPrompt;
     [SerializeField] private InputActionReference highlightingButton_L;
     [SerializeField] private InputActionReference highlightingButton_R;
 
@@ -29,6 +29,7 @@ public class ND_Stage_T_3_2 : Stage
             Invoke("ShowUIPrompt", 2.0f);
         }
 
+        //Same as writing: if (highlightingButton_L.action.ReadValue<float>() != 0.0f || highlightingButton_R.action.ReadValue<float>() != 0.0f && _conditionMet == false)
         if (highlightingButton_L.action.ReadValue<float>() != 0.0f || highlightingButton_R.action.ReadValue<float>() != 0.0f && _conditionMet == false)
         {
             //Set Flag

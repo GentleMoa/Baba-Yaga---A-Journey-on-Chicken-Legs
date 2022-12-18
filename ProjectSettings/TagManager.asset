@@ -8,6 +8,7 @@ TagManager:
   - RightHand
   - LeftHand
   - Terrain
+  - ToggleableUIPrompt
   layers:
   - Default
   - TransparentFX

@@ -13,7 +13,7 @@ public class ND_Stage_T_5_1 : Stage
     public ND_Stage_T_5_2 ND_stage_T_5_2;
 
     //Serialized Variables
-    [SerializeField] private TextPromptAnimated uiPrompt;
+    //[SerializeField] private TextPromptAnimated uiPrompt;
     [SerializeField] private Animator houseAnimator;
     [SerializeField] private RigidbodyInPlaceHolder rbStatisScript;
 
@@ -26,18 +26,18 @@ public class ND_Stage_T_5_1 : Stage
             _tutorialInitiated = true;
 
             //Start tutorial
-            Invoke("ShowUIPrompt", 2.0f);
-        }
+            //Invoke("ShowUIPrompt", 2.0f);
 
-        if (uiPrompt.advanceTouch == true)
-        {
-            //Hide the UI Prompt
-            uiPrompt.ShrinkUISize();
-            uiPrompt.Invoke("DisableUI", 0.3f);
+            //Start tutorial
+            Invoke("UnhideUIPrompt", 2.0f);
         }
 
         if (_advancementBool)
         {
+            //Hide the UI Prompt
+            uiPrompt.GetComponent<Animator>().SetTrigger("UI_Hide");
+            uiPrompt.Invoke("DisableUI", 0.3f);
+
             Debug.Log("Stage_T_5_1 completed! Next Stage: " + ND_stage_T_5_2);
             return ND_stage_T_5_2;
         }
@@ -76,5 +76,17 @@ public class ND_Stage_T_5_1 : Stage
                 ToggleStageAdvancingFlag();
             }
         }
+    }
+
+    //private void ShowUIPrompt()
+    //{
+    //    uiPrompt.EnableUI();
+    //    uiPrompt.GrowUISize();
+    //}
+
+    private void UnhideUIPrompt()
+    {
+        uiPrompt.EnableUI();
+        uiPrompt.GetComponent<Animator>().SetTrigger("UI_Show");
     }
 }

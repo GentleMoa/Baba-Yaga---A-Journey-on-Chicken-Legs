@@ -12,7 +12,7 @@ public class ND_Stage_T_2_3 : Stage
     public ND_Stage_T_2_4 ND_stage_T_2_4;
 
     //Serialized Variables
-    [SerializeField] private TextPromptAnimated uiPrompt;
+    //[SerializeField] private TextPromptAnimated uiPrompt;
     [SerializeField] private InputActionReference teleportInput_L;
     [SerializeField] private InputActionReference teleportInput_R;
 

@@ -12,7 +12,7 @@ public class ND_Stage_T_2_1 : Stage
     public ND_Stage_T_2_2 ND_stage_T_2_2;
 
     //Serialized Variables
-    [SerializeField] private TextPromptAnimated uiPrompt;
+    //[SerializeField] private TextPromptAnimated uiPrompt;
     [SerializeField] private InputActionReference snapTurnInput;
 
     public override Stage RunCurrentStage()
