@@ -46,7 +46,7 @@ public class ND_Stage_T_4_2 : Stage
 
     public void ToggleStageAdvancingFlag()
     {
-        if (StageManager.Instance.currentStage == this)
+        if (StageManager.Instance.currentStage == this && uiPrompt.coroutineAnimFinished == true)
         {
             if (_conditionMet == false)
             {

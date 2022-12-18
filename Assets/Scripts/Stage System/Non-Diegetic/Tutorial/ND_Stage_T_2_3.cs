@@ -28,7 +28,7 @@ public class ND_Stage_T_2_3 : Stage
             Invoke("ShowUIPrompt", 2.0f);
         }
 
-        if (teleportInput_L.action.ReadValue<float>() != 0.0f || teleportInput_R.action.ReadValue<float>() != 0.0f)
+        if (teleportInput_L.action.ReadValue<float>() != 0.0f || teleportInput_R.action.ReadValue<float>() != 0.0f && uiPrompt.coroutineAnimFinished == true)
         {
             //Hide the UI Prompt
             uiPrompt.ShrinkUISize();

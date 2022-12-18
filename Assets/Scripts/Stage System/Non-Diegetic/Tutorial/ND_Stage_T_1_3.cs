@@ -25,7 +25,7 @@ public class ND_Stage_T_1_3 : Stage
             Invoke("ShowUIPrompt", 2.0f);
         }
 
-        if (uiPrompt.advanceTouch == true)
+        if (uiPrompt.advanceTouch == true && uiPrompt.coroutineAnimFinished == true)
         {
             //Hide the UI Prompt
             uiPrompt.ShrinkUISize();

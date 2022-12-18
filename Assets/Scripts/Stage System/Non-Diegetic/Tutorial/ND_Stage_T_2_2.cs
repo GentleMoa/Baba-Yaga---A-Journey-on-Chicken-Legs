@@ -27,7 +27,7 @@ public class ND_Stage_T_2_2 : Stage
             Invoke("ShowUIPrompt", 2.0f);
         }
 
-        if (continuousMoveInput.action.ReadValue<Vector2>() != new Vector2(0.0f, 0.0f))
+        if (continuousMoveInput.action.ReadValue<Vector2>() != new Vector2(0.0f, 0.0f) && uiPrompt.coroutineAnimFinished == true)
         {
             //Hide the UI Prompt
             uiPrompt.ShrinkUISize();

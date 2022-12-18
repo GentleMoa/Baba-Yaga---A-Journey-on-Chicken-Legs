@@ -29,8 +29,7 @@ public class ND_Stage_T_3_2 : Stage
             Invoke("ShowUIPrompt", 2.0f);
         }
 
-        //Same as writing: if (highlightingButton_L.action.ReadValue<float>() != 0.0f || highlightingButton_R.action.ReadValue<float>() != 0.0f && _conditionMet == false)
-        if (highlightingButton_L.action.ReadValue<float>() != 0.0f || highlightingButton_R.action.ReadValue<float>() != 0.0f && _conditionMet == false)
+        if (highlightingButton_L.action.ReadValue<float>() != 0.0f || highlightingButton_R.action.ReadValue<float>() != 0.0f && _conditionMet == false && uiPrompt.coroutineAnimFinished == true)
         {
             //Set Flag
             _conditionMet = true;
