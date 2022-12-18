@@ -5,4 +5,6 @@ using UnityEngine;
 public abstract class Stage : MonoBehaviour
 {
     public abstract Stage RunCurrentStage();
+
+    public TextPromptAnimated uiPrompt;
 }

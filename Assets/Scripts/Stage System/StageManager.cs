@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,9 @@ public class StageManager : MonoBehaviour
 
     //Singleton
     public static StageManager Instance { set; get; }
+
+    //Event
+    public event Action SS_OnStageSwitched;
 
     private void Awake()
     {
@@ -40,5 +44,11 @@ public class StageManager : MonoBehaviour
     private void SwitchToTheNextStage(Stage nextStage)
     {
         currentStage = nextStage;
+
+        //Shoot Event
+        if (SS_OnStageSwitched != null)
+        {
+            SS_OnStageSwitched();
+        }
     }
 }
