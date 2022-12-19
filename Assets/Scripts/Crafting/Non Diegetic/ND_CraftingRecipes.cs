@@ -38,11 +38,21 @@ public class ND_CraftingRecipes : MonoBehaviour
         //Assign the correct audio clips from the ResourceManagers
         _audioClip_CraftingBandages = ResourceManager.Instance.audio_crafting_bandages;
         _audioClip_CraftingTotems = ResourceManager.Instance.audio_crafting_totems;
+
+        //Disabling the right crafting slot in the beginning to avoid the crafting system breaking by placing an ingred in the right slot first
+        ND_craftingSlot_R.gameObject.SetActive(false);
     }
 
 
     private void Update()
     {
+        //if the left slot is filled...
+        if (ND_craftingSlot_L.craftingReady == true && ND_craftingSlot_R.gameObject.activeInHierarchy == false)
+        {
+            //enable the right slot as well
+            ND_craftingSlot_R.gameObject.SetActive(true);
+        }
+
         //Checking if both crafting slots are occupied and ready
         if (ND_craftingSlot_L.craftingReady && ND_craftingSlot_R.craftingReady)
         {
@@ -92,8 +102,6 @@ public class ND_CraftingRecipes : MonoBehaviour
                 //    ND_craftingSlot_R.craftingItem.GetComponentInChildren<ND_UI_Highlighter>(true).Invoke("DisableHighlightingUI", 0.3f);
                 //}
 
-
-
                 //Clear and Destroy Ingredients from both slots
                 ND_craftingSlot_L.craftingReady = false;
                 ND_craftingSlot_R.craftingReady = false;
@@ -112,7 +120,8 @@ public class ND_CraftingRecipes : MonoBehaviour
 
                 Debug.Log("Crafting Ingredient successfully cleared and destroyed!");
 
-
+                //Disabling the right crafting slot again until the left one is filled
+                ND_craftingSlot_R.gameObject.SetActive(false);
 
                 //Fade screen to black
                 fadeScript.Fade(true);
@@ -137,8 +146,6 @@ public class ND_CraftingRecipes : MonoBehaviour
                 //    ND_craftingSlot_R.craftingItem.GetComponentInChildren<ND_UI_Highlighter>(true).Invoke("DisableHighlightingUI", 0.3f);
                 //}
 
-
-
                 //Clear and Destroy Ingredients from both slots
                 ND_craftingSlot_L.craftingReady = false;
                 ND_craftingSlot_R.craftingReady = false;
@@ -157,8 +164,8 @@ public class ND_CraftingRecipes : MonoBehaviour
 
                 Debug.Log("Crafting Ingredient successfully cleared and destroyed!");
 
-
-
+                //Disabling the righ crafting slot again until the left one is filled
+                ND_craftingSlot_R.gameObject.SetActive(false);
 
                 //Fade screen to black
                 fadeScript.Fade(true);
@@ -184,9 +191,6 @@ public class ND_CraftingRecipes : MonoBehaviour
                 //    ND_craftingSlot_R.craftingItem.GetComponentInChildren<ND_UI_Highlighter>(true).Invoke("DisableHighlightingUI", 0.3f);
                 //}
 
-
-
-
                 //Clear and Destroy Ingredients from both slots
                 ND_craftingSlot_L.craftingReady = false;
                 ND_craftingSlot_R.craftingReady = false;
@@ -205,8 +209,8 @@ public class ND_CraftingRecipes : MonoBehaviour
 
                 Debug.Log("Crafting Ingredient successfully cleared and destroyed!");
 
-
-
+                //Disabling the righ crafting slot again until the left one is filled
+                ND_craftingSlot_R.gameObject.SetActive(false);
 
                 //Fade screen to black
                 fadeScript.Fade(true);
