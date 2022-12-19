@@ -12,6 +12,9 @@ public class ND_Stage_3_3 : Stage
     //Public Variables
     public ND_Stage_3_4 ND_stage_3_4;
 
+    //Serialized Variables
+    [SerializeField] private ND_CraftingSlot craftingSlot_R;
+
     public override Stage RunCurrentStage()
     {
         //If tutorial hasn't started yet...
@@ -22,6 +25,9 @@ public class ND_Stage_3_3 : Stage
 
             //Start tutorial
             Invoke("UnhideUIPrompt", 2.0f);
+
+            //Disable the right Craftin Slot to prevent crafting system from falling apart due to inproper ingred placement
+            craftingSlot_R.gameObject.SetActive(false);
         }
 
         if (_advancemetBool == true)

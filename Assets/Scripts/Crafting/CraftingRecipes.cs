@@ -38,11 +38,21 @@ public class CraftingRecipes : MonoBehaviour
         //Assign the correct audio clips from the ResourceManagers
         _audioClip_CraftingBandages = ResourceManager.Instance.audio_crafting_bandages;
         _audioClip_CraftingTotems = ResourceManager.Instance.audio_crafting_totems;
+
+        //Disabling the right crafting slot in the beginning to avoid the crafting system breaking by placing an ingred in the right slot first
+        craftingSlot_R.gameObject.SetActive(false);
     }
 
 
     private void Update()
     {
+        //if the left slot is filled...
+        if (craftingSlot_L.craftingReady == true && craftingSlot_R.gameObject.activeInHierarchy == false)
+        {
+            //enable the right slot as well
+            craftingSlot_R.gameObject.SetActive(true);
+        }
+
         //Checking if both crafting slots are occupied and ready
         if (craftingSlot_L.craftingReady && craftingSlot_R.craftingReady)
         {

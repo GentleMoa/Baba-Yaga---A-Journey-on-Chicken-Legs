@@ -22,7 +22,7 @@ public class ND_Stage_2_4 : Stage
             _tutorialInitiated = true;
 
             //Start tutorial
-            Invoke("UnhideUIPrompt", 2.0f);
+            Invoke("UnhideUIPrompt", 3.0f);
         }
 
         if (_advancementBool == true)

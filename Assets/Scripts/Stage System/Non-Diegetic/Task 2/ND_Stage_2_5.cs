@@ -33,9 +33,9 @@ public class ND_Stage_2_5 : Stage
             _tutorialInitiated = true;
 
             //Start tutorial
-            Invoke("UnhideUIPrompt", 2.0f);
+            Invoke("UnhideUIPrompt", 3.0f);
 
-            Invoke("ToggleStageAdvancingFlag", 7.0f);
+            Invoke("ToggleStageAdvancingFlag", 8.0f);
         }
 
         if (_advancemetBool == true)

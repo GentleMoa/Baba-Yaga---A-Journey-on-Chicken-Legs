@@ -36885,6 +36885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiPrompt: {fileID: 0}
   stage_3_4: {fileID: 2135927490}
+  craftingSlot_R: {fileID: 1460320761}
 --- !u!1 &1910988678
 GameObject:
   m_ObjectHideFlags: 0
