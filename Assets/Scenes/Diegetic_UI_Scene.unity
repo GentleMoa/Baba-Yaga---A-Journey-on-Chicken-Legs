@@ -2915,6 +2915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7e10f60df3d96e4582d1d323e277976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_1_3: {fileID: 1649460387}
   borage: {fileID: 371254737777919675}
   hatchet: {fileID: 2118193246}
@@ -3856,6 +3857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 940a65d713db1714ba226891aa403f9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_2_5: {fileID: 383307227}
   plantedSeeds: 0
   owlVL_2_5_Length: 8
@@ -4444,6 +4446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8961798cd345314591ad7fdcf380727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_T_1_2: {fileID: 1796801181}
   owlVLLength: 14
 --- !u!1 &257899080
@@ -5131,6 +5134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f26a6fe6b7722424f9b2fb78204bee4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_1_9: {fileID: 1398623129}
   tree: {fileID: 4191982001381338747}
   owlVL_1_9_Length: 9
@@ -6624,6 +6628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27f21d3cfa503ba48a7b6100e679767b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_3_1: {fileID: 756721614}
   sticks:
   - {fileID: 8234294351821028521}
@@ -8830,6 +8835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce6e630b44eb658479bbaa16531f8ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_1_2: {fileID: 171882710}
 --- !u!65 &483135696
 BoxCollider:
@@ -9876,6 +9882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 715044697d2a17b4cbdfb767ca4287c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_1_1: {fileID: 483135695}
 --- !u!4 &525185755
 Transform:
@@ -10559,6 +10566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3e79848ed5b10f42bd08b01b6df6cac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_T_5_3: {fileID: 1925543294}
   inventorySlotSeeds: {fileID: 8514139883999701963}
 --- !u!1 &571135105
@@ -10822,6 +10830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 529475398264c5b41b422e20d11cd37c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_T_2_3: {fileID: 909008416}
   continuousMoveInput: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
@@ -10886,6 +10895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7af76b2df8800a241a1fe23c6a2aaed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_2_2: {fileID: 920667414}
   diegeticInventory_Button: {fileID: 1733203712}
 --- !u!4 &596375997
@@ -12818,6 +12828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80fa6a21c2de3084ba3cf582d5d0919f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_T_6_3: {fileID: 1215987191}
 --- !u!1 &679294658
 GameObject:
@@ -13055,6 +13066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379cebf7ba058e84da89a7b037513182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_T_2_2: {fileID: 587153265}
   snapTurnInput: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
@@ -14788,6 +14800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a62b916f973084c498a98167605b1654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_T_5_2: {fileID: 1223334027}
   houseAnimator: {fileID: 6763414478379361105}
   rbStatisScript: {fileID: 400656177}
@@ -15177,6 +15190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 108bc6272eb98b749a905bc03e073723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_3_2: {fileID: 1526067662}
 --- !u!1 &758886106
 GameObject:
@@ -15222,6 +15236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cdc15a720b9bcd488ab114ef064dc07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_T_4_1: {fileID: 1494809799}
   highlightingButton_L: {fileID: -5566006060551468057, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
@@ -15668,6 +15683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 998f6b6a19a2ad84fb56cdd061b97ebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_T_2_1: {fileID: 691646956}
   owlVLLength: 8
 --- !u!1 &817518585
@@ -16898,6 +16914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d5919d3fe65915438477bdafdf8bf5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_T_2_4: {fileID: 1184064874}
   teleportInput_L: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
@@ -17305,6 +17322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5097232cdc5f53a4b86e7044bd4057be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_2_3: {fileID: 1255816151}
   seedPlantingScripts:
   - {fileID: 8930011530191057503}
@@ -17565,6 +17583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b50e6e4316b84ef409f08731ae21d02b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_T_3_2: {fileID: 758886108}
   highlightingButton_L: {fileID: -5566006060551468057, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
@@ -18044,6 +18063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eb70ba6088e4374fa0c66d85c117739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_1_5: {fileID: 1884083477}
   inventorySlotBorage: {fileID: 9049939273757431178}
   woolPlant: {fileID: 7992607658323724418}
@@ -19967,6 +19987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5f1263b29678649a2600c8abdb55a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_1_8: {fileID: 312162102}
 --- !u!1 &1128022174
 GameObject:
@@ -20621,6 +20642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a66f013076a22498448d920fc35c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_T_6_5: {fileID: 562830803}
   inventorySlotSeeds: {fileID: 8514139883999701963}
 --- !u!1 &1146536042
@@ -21085,6 +21107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd93c031456b1f04995ff93ee3d8ba99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_T_5_1: {fileID: 749043620}
   owlNavScript: {fileID: 1938443277}
   owlNavMeshAgent: {fileID: 1938443276}
@@ -21796,6 +21819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8cb7af80ecc1a4db0111dde8ed1764, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_T_3_1: {fileID: 953516552}
   owlVLLength: 16
 --- !u!1 &1185721046
@@ -22054,6 +22078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 898ea5c2c73e3464183d076bbf3d70fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_T_6_4: {fileID: 1143563685}
   inventorySlotSeeds: {fileID: 8514139883999701963}
 --- !u!1 &1220091548
@@ -22202,6 +22227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c0b77b952271ef4e96a994a69f6ca5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_T_6_1: {fileID: 1723878757}
 --- !u!1 &1223918321
 GameObject:
@@ -22518,6 +22544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9492dea7a5eb4d64ca07a14a9d2e3ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_1_7: {fileID: 1122204159}
 --- !u!1 &1241329776
 GameObject:
@@ -22670,6 +22697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede05094092af73408eae0d4c90edee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_2_4: {fileID: 229119130}
   plantedSeeds: 0
 --- !u!1 &1257203601
@@ -24852,6 +24880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 456138c828c73cd40b13f47a4a32f13b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_ending: {fileID: 1870878812}
 --- !u!1 &1372825067
 GameObject:
@@ -25270,6 +25299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aee62fe0b328c9e4283edf2486d89df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_2_1: {fileID: 596375996}
 --- !u!1 &1400444475
 GameObject:
@@ -25780,7 +25810,6 @@ GameObject:
   - component: {fileID: 1414507515}
   - component: {fileID: 1414507517}
   - component: {fileID: 1414507518}
-  - component: {fileID: 1414507520}
   - component: {fileID: 1414507521}
   m_Layer: 0
   m_Name: RightHand Controller
@@ -26098,19 +26127,6 @@ CapsuleCollider:
   m_Height: 0.2
   m_Direction: 2
   m_Center: {x: 0, y: 0.007, z: 0.01}
---- !u!114 &1414507520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1414507510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e1c5deb7f48cce4ba6151007edbdc12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handFull: 0
 --- !u!114 &1414507521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27166,6 +27182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b69813c4342c6544a9324706e557b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_3_6: {fileID: 1368343250}
   owlVL_3_6_Length: 13
 --- !u!1 &1469837425
@@ -27615,6 +27632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17b67ef9dadeef54da7000f64685f958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_T_4_2: {fileID: 1168775723}
 --- !u!1 &1499211643
 GameObject:
@@ -28661,6 +28679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc1a9af789e81c04da0ee7d0823d8eb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_3_3: {fileID: 1908913384}
   inventorySlotSticks: {fileID: 5805899957807955319}
 --- !u!1 &1530048698
@@ -30812,6 +30831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6398031ebdb7ed4e992ce898526abd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_1_4: {fileID: 1000697531}
 --- !u!1 &1649823208
 GameObject:
@@ -33016,6 +33036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61c5f64c01b22564090dc6cad30230a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_T_6_2: {fileID: 669232861}
 --- !u!1 &1724638267
 GameObject:
@@ -34689,6 +34710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e28dc868f66c8f4ab581ad50b9eb115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_T_1_3: {fileID: 809912253}
   owlVLLength: 11
 --- !u!1 &1805450030
@@ -34727,6 +34749,8 @@ MonoBehaviour:
   - {fileID: 6696138369569346073, guid: 96ba574b5e948d44cb8f24064c8ddb21, type: 3}
   - {fileID: 2398531719604021261, guid: eb9bda70981611340885cd2c61c08371, type: 3}
   - {fileID: 4814949152981265176, guid: 9e9a8f7e2eea65c42a6780fcd030fdf8, type: 3}
+  ND_bandages: {fileID: 0}
+  ND_witchTotems: []
   audio_witchSenses_on: {fileID: 8300000, guid: 6cc00500e88760e4ab7e0812eb82ef28,
     type: 3}
   audio_witchSenses_off: {fileID: 8300000, guid: 2d6ad7fd88bd7284eaeb6b3efdbfa578,
@@ -35934,6 +35958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efe42258b0fc8aa4a9b376006ce0bd67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
 --- !u!4 &1870878813
 Transform:
   m_ObjectHideFlags: 0
@@ -36179,6 +36204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a120d0f5104892644aa2f76c234e70da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_1_6: {fileID: 1240743499}
 --- !u!1 &1885655674
 GameObject:
@@ -36857,6 +36883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10c31a2ca56158940aaa5d43e1d31dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_3_4: {fileID: 2135927490}
 --- !u!1 &1910988678
 GameObject:
@@ -37133,6 +37160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c5fefcea2fd324ebe45dcdb46bd89d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_T_5_4: {fileID: 525185754}
   owlVL_T_5_4_Length: 13
   owlVL_1_1_Length: 6
@@ -38182,7 +38210,6 @@ GameObject:
   - component: {fileID: 1984475434}
   - component: {fileID: 1984475436}
   - component: {fileID: 1984475437}
-  - component: {fileID: 1984475439}
   - component: {fileID: 1984475440}
   m_Layer: 0
   m_Name: LeftHand Controller
@@ -38500,19 +38527,6 @@ CapsuleCollider:
   m_Height: 0.2
   m_Direction: 2
   m_Center: {x: 0, y: 0.007, z: 0.01}
---- !u!114 &1984475439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1984475429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e1c5deb7f48cce4ba6151007edbdc12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handFull: 0
 --- !u!114 &1984475440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42059,6 +42073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5306bb6aee01e5247ad6a31305f4e35c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPrompt: {fileID: 0}
   stage_3_5: {fileID: 1467227549}
   totemsCrafted: 0
   TotemSocketInteractors:

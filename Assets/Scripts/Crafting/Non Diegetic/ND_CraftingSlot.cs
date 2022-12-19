@@ -15,7 +15,6 @@ public class ND_CraftingSlot : MonoBehaviour
     private void Start()
     {
         //Subscribe function to craftingRecipeScript's event
-        ND_craftingRecipeScript.DestroyCraftingIngredients += ClearAndDestroyIngredient;
         ND_craftingRecipeScript.RefreshSocketInteractors += ResetSocketInteractor;
     }
 
@@ -69,25 +68,25 @@ public class ND_CraftingSlot : MonoBehaviour
         Debug.Log(gameObject.name + ", craftingReady: " + ready);
     }
 
-    private void ClearAndDestroyIngredient()
-    {
-        //Set flag to indicate readiness for crafting procedure in craftingRecipeScript
-        craftingReady = false;
-
-        //Disabling the XR Socket Interactor component
-        GetComponent<XRSocketInteractor>().enabled = false;
-
-        //Destroying the crafting Ingredient
-        Destroy(craftingItem);
-
-        //Clear the storage variable
-        craftingItem = null;
-
-        //Re-enabling the XR Socket Interactor component
-        GetComponent<XRSocketInteractor>().enabled = true;
-
-        Debug.Log("Crafting Ingredient successfully cleared and destroyed!");
-    }
+    //private void ClearAndDestroyIngredient()
+    //{
+    //    //Set flag to indicate readiness for crafting procedure in craftingRecipeScript
+    //    craftingReady = false;
+    //
+    //    //Disabling the XR Socket Interactor component
+    //    GetComponent<XRSocketInteractor>().enabled = false;
+    //
+    //    //Destroying the crafting Ingredient
+    //    Destroy(craftingItem);
+    //
+    //    //Clear the storage variable
+    //    craftingItem = null;
+    //
+    //    //Re-enabling the XR Socket Interactor component
+    //    GetComponent<XRSocketInteractor>().enabled = true;
+    //
+    //    Debug.Log("Crafting Ingredient successfully cleared and destroyed!");
+    //}
 
     private void ResetSocketInteractor()
     {
@@ -101,7 +100,6 @@ public class ND_CraftingSlot : MonoBehaviour
     private void OnDisable()
     {
         //Unsubscribe function from craftingRecipeScript's event
-        ND_craftingRecipeScript.DestroyCraftingIngredients -= ClearAndDestroyIngredient;
         ND_craftingRecipeScript.RefreshSocketInteractors -= ResetSocketInteractor;
     }
 

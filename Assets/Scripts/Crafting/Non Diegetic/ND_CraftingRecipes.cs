@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class ND_CraftingRecipes : MonoBehaviour
 {
@@ -23,7 +24,6 @@ public class ND_CraftingRecipes : MonoBehaviour
     private AudioClip _audioClip_CraftingTotems;
 
     //Events
-    public event Action DestroyCraftingIngredients;
     public event Action RefreshSocketInteractors;
 
     private void Start()
@@ -72,21 +72,47 @@ public class ND_CraftingRecipes : MonoBehaviour
             if (ND_craftingSlot_L.craftingItem.GetComponent<ItemController>().Item.id == 1 &&
                 ND_craftingSlot_R.craftingItem.GetComponent<ItemController>().Item.id == 2)
             {
+                //DEBUGGING
+                Debug.Log("REMOVING FROM HIGHLIGHTED LIST - STARTED");
+
                 //Remove Ingredients from Witch Senses List
                 _highlightingScript_L.highlightedObjects.Remove(ND_craftingSlot_L.craftingItem);
                 _highlightingScript_L.highlightedObjects.Remove(ND_craftingSlot_R.craftingItem);
                 _highlightingScript_R.highlightedObjects.Remove(ND_craftingSlot_R.craftingItem);
                 _highlightingScript_R.highlightedObjects.Remove(ND_craftingSlot_L.craftingItem);
 
-                //If highlighting is currently active...
-                if (_highlightingScript_L._highlightingActive || _highlightingScript_R._highlightingActive)
-                {
-                    //Disable highlighting effect for tree
-                    ND_craftingSlot_L.craftingItem.GetComponentInChildren<ND_UI_Highlighter>(true).ShrinkUISize();
-                    ND_craftingSlot_R.craftingItem.GetComponentInChildren<ND_UI_Highlighter>(true).Invoke("DisableHighlightingUI", 0.3f);
-                }
+                //DEBUGGING
+                Debug.Log("REMOVING FROM HIGHLIGHTED LIST - FINISHED");
 
-                Invoke("DestroyIngredientsWithMinorDelay", 0.1f);
+                //If highlighting is currently active...
+                //if (_highlightingScript_L._highlightingActive || _highlightingScript_R._highlightingActive)
+                //{
+                //    //Disable highlighting effect for tree
+                //    ND_craftingSlot_L.craftingItem.GetComponentInChildren<ND_UI_Highlighter>(true).ShrinkUISize();
+                //    ND_craftingSlot_R.craftingItem.GetComponentInChildren<ND_UI_Highlighter>(true).Invoke("DisableHighlightingUI", 0.3f);
+                //}
+
+
+
+                //Clear and Destroy Ingredients from both slots
+                ND_craftingSlot_L.craftingReady = false;
+                ND_craftingSlot_R.craftingReady = false;
+
+                ND_craftingSlot_L.GetComponent<XRSocketInteractor>().enabled = false;
+                ND_craftingSlot_R.GetComponent<XRSocketInteractor>().enabled = false;
+
+                Destroy(ND_craftingSlot_L.craftingItem);
+                Destroy(ND_craftingSlot_R.craftingItem);
+
+                ND_craftingSlot_L.craftingItem = null;
+                ND_craftingSlot_R.craftingItem = null;
+
+                ND_craftingSlot_L.GetComponent<XRSocketInteractor>().enabled = true;
+                ND_craftingSlot_R.GetComponent<XRSocketInteractor>().enabled = true;
+
+                Debug.Log("Crafting Ingredient successfully cleared and destroyed!");
+
+
 
                 //Fade screen to black
                 fadeScript.Fade(true);
@@ -104,14 +130,35 @@ public class ND_CraftingRecipes : MonoBehaviour
                 _highlightingScript_R.highlightedObjects.Remove(ND_craftingSlot_L.craftingItem);
 
                 //If highlighting is currently active...
-                if (_highlightingScript_L._highlightingActive || _highlightingScript_R._highlightingActive)
-                {
-                    //Disable highlighting effect for tree
-                    ND_craftingSlot_L.craftingItem.GetComponentInChildren<ND_UI_Highlighter>(true).ShrinkUISize();
-                    ND_craftingSlot_R.craftingItem.GetComponentInChildren<ND_UI_Highlighter>(true).Invoke("DisableHighlightingUI", 0.3f);
-                }
+                //if (_highlightingScript_L._highlightingActive || _highlightingScript_R._highlightingActive)
+                //{
+                //    //Disable highlighting effect for tree
+                //    ND_craftingSlot_L.craftingItem.GetComponentInChildren<ND_UI_Highlighter>(true).ShrinkUISize();
+                //    ND_craftingSlot_R.craftingItem.GetComponentInChildren<ND_UI_Highlighter>(true).Invoke("DisableHighlightingUI", 0.3f);
+                //}
 
-                Invoke("DestroyIngredientsWithMinorDelay", 0.1f);
+
+
+                //Clear and Destroy Ingredients from both slots
+                ND_craftingSlot_L.craftingReady = false;
+                ND_craftingSlot_R.craftingReady = false;
+
+                ND_craftingSlot_L.GetComponent<XRSocketInteractor>().enabled = false;
+                ND_craftingSlot_R.GetComponent<XRSocketInteractor>().enabled = false;
+
+                Destroy(ND_craftingSlot_L.craftingItem);
+                Destroy(ND_craftingSlot_R.craftingItem);
+
+                ND_craftingSlot_L.craftingItem = null;
+                ND_craftingSlot_R.craftingItem = null;
+
+                ND_craftingSlot_L.GetComponent<XRSocketInteractor>().enabled = true;
+                ND_craftingSlot_R.GetComponent<XRSocketInteractor>().enabled = true;
+
+                Debug.Log("Crafting Ingredient successfully cleared and destroyed!");
+
+
+
 
                 //Fade screen to black
                 fadeScript.Fade(true);
@@ -130,14 +177,36 @@ public class ND_CraftingRecipes : MonoBehaviour
                 _highlightingScript_R.highlightedObjects.Remove(ND_craftingSlot_L.craftingItem);
 
                 //If highlighting is currently active...
-                if (_highlightingScript_L._highlightingActive || _highlightingScript_R._highlightingActive)
-                {
-                    //Disable highlighting effect for tree
-                    ND_craftingSlot_L.craftingItem.GetComponentInChildren<ND_UI_Highlighter>(true).ShrinkUISize();
-                    ND_craftingSlot_R.craftingItem.GetComponentInChildren<ND_UI_Highlighter>(true).Invoke("DisableHighlightingUI", 0.3f);
-                }
+                //if (_highlightingScript_L._highlightingActive || _highlightingScript_R._highlightingActive)
+                //{
+                //    //Disable highlighting effect for tree
+                //    ND_craftingSlot_L.craftingItem.GetComponentInChildren<ND_UI_Highlighter>(true).ShrinkUISize();
+                //    ND_craftingSlot_R.craftingItem.GetComponentInChildren<ND_UI_Highlighter>(true).Invoke("DisableHighlightingUI", 0.3f);
+                //}
 
-                Invoke("DestroyIngredientsWithMinorDelay", 0.1f);
+
+
+
+                //Clear and Destroy Ingredients from both slots
+                ND_craftingSlot_L.craftingReady = false;
+                ND_craftingSlot_R.craftingReady = false;
+
+                ND_craftingSlot_L.GetComponent<XRSocketInteractor>().enabled = false;
+                ND_craftingSlot_R.GetComponent<XRSocketInteractor>().enabled = false;
+
+                Destroy(ND_craftingSlot_L.craftingItem);
+                Destroy(ND_craftingSlot_R.craftingItem);
+
+                ND_craftingSlot_L.craftingItem = null;
+                ND_craftingSlot_R.craftingItem = null;
+
+                ND_craftingSlot_L.GetComponent<XRSocketInteractor>().enabled = true;
+                ND_craftingSlot_R.GetComponent<XRSocketInteractor>().enabled = true;
+
+                Debug.Log("Crafting Ingredient successfully cleared and destroyed!");
+
+
+
 
                 //Fade screen to black
                 fadeScript.Fade(true);
@@ -227,11 +296,5 @@ public class ND_CraftingRecipes : MonoBehaviour
         {
             ND_stage_3_4.ToggleStageAdvancingFlag();
         }
-    }
-
-    private void DestroyIngredientsWithMinorDelay()
-    {
-        //Destroy Ingredients (via Event)
-        DestroyCraftingIngredients();
     }
 }

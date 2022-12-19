@@ -8,6 +8,7 @@ public class Audio_Sticks : MonoBehaviour
     private AudioSource _audioSource;
     private AudioClip _audioClip_StickPickup;
     private AudioClip _audioClip_StickDrop;
+    private bool audioImmunity = true;
 
     void Start()
     {
@@ -17,6 +18,9 @@ public class Audio_Sticks : MonoBehaviour
         //Assign the correct audio clips from the ResourceManagers
         _audioClip_StickPickup = ResourceManager.Instance.audio_stick_pickup;
         _audioClip_StickDrop = ResourceManager.Instance.audio_stick_drop;
+
+        //Trigger removal of audio immunity to avoid immediate drop sound on activation
+        Invoke("SpawnAudioImmunity", 0.3f);
     }
 
     public void PlaySFX_StickPickup()
@@ -35,9 +39,14 @@ public class Audio_Sticks : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Terrain")
+        if (collision.gameObject.tag == "Terrain" && audioImmunity == false)
         {
             PlaySFX_StickDrop();
         }
+    }
+
+    private void SpawnAudioImmunity()
+    {
+        audioImmunity = false;
     }
 }

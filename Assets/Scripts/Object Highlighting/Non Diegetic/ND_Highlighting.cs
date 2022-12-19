@@ -54,6 +54,15 @@ public class ND_Highlighting : MonoBehaviour
         //On button press...
         if (input_primaryButton.action.ReadValue<float>() > 0 && _primaryButtonCooldown == false)
         {
+            //Removing destroyed and null objects from the list to avoid errors
+            for (int i = 0; i < highlightedObjects.Count; i++)
+            {
+                if (highlightedObjects[i] == null)
+                {
+                    highlightedObjects.Remove(highlightedObjects[i]);
+                }
+            }
+
             //Checking wether to activate or deactivate Highlighting
             if (_highlightingActive == false || oppositeHandScript._highlightingActive == false)
             {
