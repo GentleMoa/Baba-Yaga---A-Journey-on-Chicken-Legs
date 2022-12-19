@@ -23,14 +23,15 @@ public class ND_Stage_3_6 : Stage
             //Start tutorial
             Invoke("UnhideUIPrompt", 2.0f);
 
-            Invoke("DelayedAdvancementFlagToggle", 6.0f);
+            Invoke("DelayedAdvancementFlagToggle", 5.0f);
         }
 
         if (_advancemetBool == true)
         {
-            //Hide the UI Prompt
-            uiPrompt.GetComponent<Animator>().SetTrigger("UI_Hide");
-            uiPrompt.Invoke("DisableUI", 0.3f);
+            //Not necessary to hide the last UI prompt
+            ////Hide the UI Prompt
+            //uiPrompt.GetComponent<Animator>().SetTrigger("UI_Hide");
+            //uiPrompt.Invoke("DisableUI", 0.3f);
 
             Debug.Log("Task 3 Completed! Next Stage: " + ND_stage_ending);
             return ND_stage_ending;

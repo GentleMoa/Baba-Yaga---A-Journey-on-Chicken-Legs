@@ -41,15 +41,12 @@ public class ND_Stage_3_3 : Stage
 
     public void ToggleStageAdvancingFlag()
     {
-        if (StageManager.Instance.currentStage == this.GetComponent<Stage_3_3>())
+        if (_conditionMet == false)
         {
-            if (_conditionMet == false)
-            {
-                _conditionMet = true;
+            _conditionMet = true;
 
-                //Stage Advancing Flag
-                _advancemetBool = true;
-            }
+            //Stage Advancing Flag
+            _advancemetBool = true;
         }
     }
 
