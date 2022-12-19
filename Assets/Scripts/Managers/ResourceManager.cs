@@ -26,8 +26,14 @@ public class ResourceManager : MonoBehaviour
     [Header("Prefabs")]
 
     [Header("Crafted Items")]
+
+    [Header("Diegetic")]
     public GameObject bandages;
     public GameObject[] witchTotems;
+
+    [Header("Non-Diegetic")]
+    public GameObject ND_bandages;
+    public GameObject[] ND_witchTotems;
 
     [Header("Audio")]
 

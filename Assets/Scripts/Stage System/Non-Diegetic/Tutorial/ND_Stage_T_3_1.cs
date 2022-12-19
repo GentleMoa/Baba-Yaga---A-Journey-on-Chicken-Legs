@@ -14,7 +14,6 @@ public class ND_Stage_T_3_1 : Stage
     public ND_Stage_T_3_2 ND_stage_T_3_2;
 
     //Serialized Variables
-    //[SerializeField] private TextPromptAnimated uiPrompt;
     [SerializeField] private InputActionReference highlightingButton_L;
     [SerializeField] private InputActionReference highlightingButton_R;
 

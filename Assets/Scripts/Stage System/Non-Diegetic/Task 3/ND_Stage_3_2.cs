@@ -4,19 +4,32 @@ using UnityEngine;
 
 public class ND_Stage_3_2 : Stage
 {
+    //Private Variables
+    private bool _tutorialInitiated;
+
     //Public Variables
     public ND_Stage_3_3 ND_stage_3_3;
 
     //Serialized Variables
-    [SerializeField] private RingMenuSlot inventorySlotSticks;
+    [SerializeField] private ND_I_ItemSlots inventorySlotSticks;
 
     public override Stage RunCurrentStage()
     {
-        if (StageManager.Instance.currentStage == this && inventorySlotSticks.stashedItems.Count > 3)
+        //If tutorial hasn't started yet...
+        if (_tutorialInitiated == false)
         {
-            //Causes
-            //Start Owl Voice Commentary for next Stage 
-            AudioManager.Instance.ShootAudioEvent_Owl_VL_3_3();
+            //Set Flag
+            _tutorialInitiated = true;
+
+            //Start tutorial
+            Invoke("UnhideUIPrompt", 2.0f);
+        }
+
+        if (inventorySlotSticks.stashedItems.Count > 3)
+        {
+            //Hide the UI Prompt
+            uiPrompt.GetComponent<Animator>().SetTrigger("UI_Hide");
+            uiPrompt.Invoke("DisableUI", 0.3f);
 
             Debug.Log("Stage_3_2 completed! Next Stage: " + ND_stage_3_3);
             return ND_stage_3_3;
@@ -25,5 +38,11 @@ public class ND_Stage_3_2 : Stage
         {
             return this;
         }
+    }
+
+    private void UnhideUIPrompt()
+    {
+        uiPrompt.EnableUI();
+        uiPrompt.GetComponent<Animator>().SetTrigger("UI_Show");
     }
 }

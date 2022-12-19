@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Stage_T_6_3 : Stage
 {
-    //Private Variables
-    private bool _advancementBool;
-    private bool _conditionMet;
-
     //Public Variables
     public Stage_T_6_4 stage_T_6_4;
 

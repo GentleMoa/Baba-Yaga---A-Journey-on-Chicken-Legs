@@ -5,19 +5,34 @@ using UnityEngine;
 public class ND_Stage_2_2 : Stage
 {
     //Private Variables
-    private bool _seedGrabbed;
+    private bool _tutorialInitiated;
+    private bool _advancementBool;
     private bool _conditionMet;
 
     //Public Variables
     public ND_Stage_2_3 ND_stage_2_3;
 
     //Serialized Variables
-    [SerializeField] private SeedPlanting[] seedPlantingScripts;
+    [SerializeField] private ND_SeedPlanting[] ND_seedPlantingScripts;
 
     public override Stage RunCurrentStage()
     {
-        if (_seedGrabbed == true)
+        //If tutorial hasn't started yet...
+        if (_tutorialInitiated == false)
         {
+            //Set Flag
+            _tutorialInitiated = true;
+
+            //Start tutorial
+            Invoke("UnhideUIPrompt", 2.0f);
+        }
+
+        if (_advancementBool == true)
+        {
+            //Hide the UI Prompt
+            uiPrompt.GetComponent<Animator>().SetTrigger("UI_Hide");
+            uiPrompt.Invoke("DisableUI", 0.3f);
+
             Debug.Log("Stage_2_2 completed! Next Stage: " + ND_stage_2_3);
             return ND_stage_2_3;
         }
@@ -35,21 +50,21 @@ public class ND_Stage_2_2 : Stage
             {
                 _conditionMet = true;
 
-                //Causes
-                //Start Owl Voice Commentary for next Stage 
-                AudioManager.Instance.ShootAudioEvent_Owl_VL_2_3();
-
                 //Enable Planting Counter script
-                for (int i = 0; i < seedPlantingScripts.Length; i++)
+                for (int i = 0; i < ND_seedPlantingScripts.Length; i++)
                 {
-                    seedPlantingScripts[i].plantingActivated = true;
+                    ND_seedPlantingScripts[i].plantingActivated = true;
                 }
 
                 //Stage Advancing Flag
-                _seedGrabbed = true;
+                _advancementBool = true;
             }
         }
-
     }
 
+    private void UnhideUIPrompt()
+    {
+        uiPrompt.EnableUI();
+        uiPrompt.GetComponent<Animator>().SetTrigger("UI_Show");
+    }
 }

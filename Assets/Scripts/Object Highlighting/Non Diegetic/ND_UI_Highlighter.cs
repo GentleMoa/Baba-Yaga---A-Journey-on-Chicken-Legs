@@ -35,23 +35,27 @@ public class ND_UI_Highlighter : MonoBehaviour
     public void EnableHighlightingUI()
     {
         gameObject.SetActive(true);
-        //gameObject.transform.GetChild(0).gameObject.SetActive(true);
     }
 
     public void DisableHighlightingUI()
     {
         gameObject.SetActive(false);
-        //gameObject.transform.GetChild(0).gameObject.SetActive(false);
     }
 
     public void GrowUISize()
     {
-        StartCoroutine(LerpSize(sizeSmall, sizeBig, duration));
+        if (gameObject.activeInHierarchy)
+        {
+            StartCoroutine(LerpSize(sizeSmall, sizeBig, duration));
+        }
     }
 
     public void ShrinkUISize()
     {
-        StartCoroutine(LerpSize(sizeBig, sizeSmall, duration));
+        if (gameObject.activeInHierarchy)
+        {
+            StartCoroutine(LerpSize(sizeBig, sizeSmall, duration));
+        }
     }
 
     IEnumerator LerpSize(Vector3 startSize, Vector3 endSize, float duration)

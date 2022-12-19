@@ -5,7 +5,8 @@ using UnityEngine;
 public class ND_Stage_1_6 : Stage
 {
     //Private Variables
-    private bool arrivedAtHouse;
+    private bool _tutorialInitiated;
+    private bool _advancementBool;
     private bool _conditionMet;
 
     //Public Variables
@@ -13,8 +14,22 @@ public class ND_Stage_1_6 : Stage
 
     public override Stage RunCurrentStage()
     {
-        if (arrivedAtHouse == true)
+        //If tutorial hasn't started yet...
+        if (_tutorialInitiated == false)
         {
+            //Set Flag
+            _tutorialInitiated = true;
+
+            //Start tutorial
+            Invoke("UnhideUIPrompt", 2.0f);
+        }
+
+        if (_advancementBool == true)
+        {
+            //Hide the UI Prompt
+            uiPrompt.GetComponent<Animator>().SetTrigger("UI_Hide");
+            uiPrompt.Invoke("DisableUI", 0.3f);
+
             Debug.Log("Stage_1_6 completed! Next Stage: " + ND_stage_1_7);
             return ND_stage_1_7;
         }
@@ -26,19 +41,25 @@ public class ND_Stage_1_6 : Stage
 
     public void ToggleStageAdvancingFlag()
     {
-        if (StageManager.Instance.currentStage == GetComponent<Stage_1_6>())
+        if (StageManager.Instance.currentStage == GetComponent<ND_Stage_1_6>())
         {
             if (_conditionMet == false)
             {
                 _conditionMet = true;
 
-                //Causes
-                //Start Owl Voice Commentary for next Stage 
-                AudioManager.Instance.ShootAudioEvent_Owl_VL_1_7();
-
-                //Later, add a delay here to account for the polished and longer-lasting ladder climbing!
-                arrivedAtHouse = true;
+                Invoke("DelayedAvnacementFlagToggle", 5.0f);
             }
         }
+    }
+
+    private void DelayedAvnacementFlagToggle()
+    {
+        _advancementBool = true;
+    }
+
+    private void UnhideUIPrompt()
+    {
+        uiPrompt.EnableUI();
+        uiPrompt.GetComponent<Animator>().SetTrigger("UI_Show");
     }
 }

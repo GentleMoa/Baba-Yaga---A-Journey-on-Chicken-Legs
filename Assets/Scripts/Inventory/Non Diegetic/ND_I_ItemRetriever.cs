@@ -10,8 +10,8 @@ public class ND_I_ItemRetriever : MonoBehaviour
     private ND_I_ItemSlots _itemSlotScript;
     private Vector3 _defaultSize;
     private Vector3 _hoverSize = new Vector3(1.25f, 1.25f, 1.0f);
-
-
+    private ND_Highlighting _highlightingHand_L;
+    private ND_Highlighting _highlightingHand_R;
 
     void Start()
     {
@@ -20,6 +20,10 @@ public class ND_I_ItemRetriever : MonoBehaviour
 
         //Save the default Size
         _defaultSize = transform.localScale;
+
+        //Find Reference to both ND_Highlighting scripts (Right & Left Hands)
+        _highlightingHand_L = GameObject.FindGameObjectWithTag("LeftHand").GetComponent<ND_Highlighting>();
+        _highlightingHand_R = GameObject.FindGameObjectWithTag("RightHand").GetComponent<ND_Highlighting>();
     }
 
     private void OnTriggerStay(Collider other)
@@ -36,10 +40,14 @@ public class ND_I_ItemRetriever : MonoBehaviour
                 if (_itemSlotScript.stashedItems.Count > 0)
                 {
                     //Reposition item from RingMenuSlot Script's stashedItems List
-                    _itemSlotScript.stashedItems[0].transform.position = this.gameObject.transform.position + new Vector3(0.0f, 0.15f, 0.0f);
+                    _itemSlotScript.stashedItems[0].transform.position = this.gameObject.transform.position;
 
                     //Set Rigidbody velocity to 0
                     _itemSlotScript.stashedItems[0].GetComponent<Rigidbody>().velocity = new Vector3(0.0f, 0.0f, 0.0f);
+
+                    //Add object to the highlighted objects list
+                    _highlightingHand_L.highlightedObjects.Add(_itemSlotScript.stashedItems[0]);
+                    _highlightingHand_R.highlightedObjects.Add(_itemSlotScript.stashedItems[0]);
 
                     //Activate item from RingMenuSlot Script's stashedItems List
                     _itemSlotScript.stashedItems[0].SetActive(true);

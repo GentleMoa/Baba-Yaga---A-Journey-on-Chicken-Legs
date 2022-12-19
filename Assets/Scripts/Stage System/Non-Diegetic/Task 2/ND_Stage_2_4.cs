@@ -5,20 +5,32 @@ using UnityEngine;
 public class ND_Stage_2_4 : Stage
 {
     //Private Variables
-    private bool _allSeedsPlanted;
+    private bool _tutorialInitiated;
+    private bool _advancementBool;
     private bool _conditionMet;
 
     //Public Variables
     public ND_Stage_2_5 ND_stage_2_5;
     public int plantedSeeds = 0;
 
-    //Serialized Variables
-    [SerializeField] private int owlVL_2_5_Length;
-
     public override Stage RunCurrentStage()
     {
-        if (_allSeedsPlanted == true)
+        //If tutorial hasn't started yet...
+        if (_tutorialInitiated == false)
         {
+            //Set Flag
+            _tutorialInitiated = true;
+
+            //Start tutorial
+            Invoke("UnhideUIPrompt", 2.0f);
+        }
+
+        if (_advancementBool == true)
+        {
+            //Hide the UI Prompt
+            uiPrompt.GetComponent<Animator>().SetTrigger("UI_Hide");
+            uiPrompt.Invoke("DisableUI", 0.3f);
+
             Debug.Log("Stage_2_4 completed! Next Stage: " + ND_stage_2_5);
             return ND_stage_2_5;
         }
@@ -26,19 +38,6 @@ public class ND_Stage_2_4 : Stage
         {
             return this;
         }
-    }
-
-    public void ToggleStageAdvancingFlag()
-    {
-        //Causes
-        //Start Owl Voice Commentary for next Stage 
-        AudioManager.Instance.ShootAudioEvent_Owl_VL_2_5();
-
-        //PLAY OWL COMMENTARY
-        Invoke("StartTask3", owlVL_2_5_Length);
-
-        //Stage Advancing Flag
-        _allSeedsPlanted = true;
     }
 
     private void Update()
@@ -50,13 +49,15 @@ public class ND_Stage_2_4 : Stage
             {
                 _conditionMet = true;
 
-                ToggleStageAdvancingFlag();
+                //Stage Advancing Flag
+                _advancementBool = true;
             }
         }
     }
 
-    private void StartTask3()
+    private void UnhideUIPrompt()
     {
-        ND_stage_2_5.ToggleStageAdvancingFlag();
+        uiPrompt.EnableUI();
+        uiPrompt.GetComponent<Animator>().SetTrigger("UI_Show");
     }
 }

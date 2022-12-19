@@ -12,8 +12,6 @@ public class ND_Stage_T_4_1 : Stage
     //Public Variables
     public ND_Stage_T_4_2 ND_stage_T_4_2;
 
-    //Serialized Variables
-    //[SerializeField] private TextPromptAnimated uiPrompt;
 
     public override Stage RunCurrentStage()
     {

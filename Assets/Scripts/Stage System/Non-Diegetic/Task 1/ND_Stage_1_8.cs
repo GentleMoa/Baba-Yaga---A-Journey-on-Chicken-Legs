@@ -5,22 +5,43 @@ using UnityEngine;
 public class ND_Stage_1_8 : Stage
 {
     //Private Variables
-    private bool bandageApplied;
+    private bool _tutorialInitiated;
+    private bool _advancementBool;
     private bool _conditionMet;
-    private WitchSenses _witchSenses_R;
-    private WitchSenses _witchSenses_L;
+    private ND_Highlighting _highlightingScript_L;
+    private ND_Highlighting _highlightingScript_R;
 
     //Public Variables
     public ND_Stage_1_9 ND_stage_1_9;
 
     //Serialized Variables
     [SerializeField] private GameObject tree;
-    [SerializeField] private int owlVL_1_9_Length;
+
+    private void Start()
+    {
+        //Find Reference to both ND_Highlighting scripts (Right & Left Hands)
+        _highlightingScript_L = GameObject.FindGameObjectWithTag("LeftHand").GetComponent<ND_Highlighting>();
+        _highlightingScript_R = GameObject.FindGameObjectWithTag("RightHand").GetComponent<ND_Highlighting>();
+    }
 
     public override Stage RunCurrentStage()
     {
-        if (bandageApplied == true)
+        //If tutorial hasn't started yet...
+        if (_tutorialInitiated == false)
         {
+            //Set Flag
+            _tutorialInitiated = true;
+
+            //Start tutorial
+            Invoke("UnhideUIPrompt", 2.0f);
+        }
+
+        if (_advancementBool == true)
+        {
+            //Hide the UI Prompt
+            uiPrompt.GetComponent<Animator>().SetTrigger("UI_Hide");
+            uiPrompt.Invoke("DisableUI", 0.3f);
+
             Debug.Log("Stage_1_8 completed! Next Stage: " + ND_stage_1_9);
             return ND_stage_1_9;
         }
@@ -36,37 +57,31 @@ public class ND_Stage_1_8 : Stage
         {
             _conditionMet = true;
 
-            //Causes
-            //Start Owl Voice Commentary for next Stage 
-            AudioManager.Instance.ShootAudioEvent_Owl_VL_1_9();
+            //Remove Ingredients from highlightedObjects List
+            _highlightingScript_L.highlightedObjects.Remove(tree);
+            _highlightingScript_R.highlightedObjects.Remove(tree);
 
-            if (_witchSenses_R != null && _witchSenses_L != null)
+            //If highlighting is currently active...
+            if (_highlightingScript_L._highlightingActive || _highlightingScript_R._highlightingActive)
             {
-                //Disable Highlight effect for Tree
-                _witchSenses_R.highlightedObjects.Remove(tree);
-                _witchSenses_L.highlightedObjects.Remove(tree);
-                //Disable Emmission effect for Tree
-                tree.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
+                //Disable highlighting effect for tree
+                tree.GetComponentInChildren<ND_UI_Highlighter>(true).ShrinkUISize();
+                tree.GetComponentInChildren<ND_UI_Highlighter>(true).Invoke("DisableHighlightingUI", 0.3f);
             }
 
-            //START STAGE_1_9 OWL DIALOGUE HERE
-            Invoke("StartTask2", owlVL_1_9_Length);
-
-            //Stage Advancing Flag
-            bandageApplied = true;
+            Invoke("DelayedAdvancementFlagToggle", 4.0f);
         }
     }
 
-    private void Start()
+    private void DelayedAdvancementFlagToggle()
     {
-        //Find Reference to both WitchSenses script (Right & Left Hands)
-        _witchSenses_R = GameObject.FindGameObjectWithTag("RightHand").GetComponent<WitchSenses>();
-        _witchSenses_L = GameObject.FindGameObjectWithTag("LeftHand").GetComponent<WitchSenses>();
+        //Stage Advancing Flag
+        _advancementBool = true;
     }
 
-    //Timed Function here
-    private void StartTask2()
+    private void UnhideUIPrompt()
     {
-        ND_stage_1_9.ToggleStageAdvancingFlag();
+        uiPrompt.EnableUI();
+        uiPrompt.GetComponent<Animator>().SetTrigger("UI_Show");
     }
 }
