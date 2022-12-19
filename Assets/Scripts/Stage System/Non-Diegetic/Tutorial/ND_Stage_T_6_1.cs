@@ -1,22 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ND_Stage_T_6_1 : Stage
 {
     //Private Variables
-    private bool _advancementBool;
+    private bool _tutorialInitiated;
     private bool _conditionMet;
 
     //Public Variables
-    public ND_Stage_T_6_2 ND_stage_T_6_2;
+    public ND_Stage_T_6_2A ND_stage_T_6_2A;
+
+    //Serialized Variables
+    [SerializeField] private InputActionReference inventoryButton_L;
+    [SerializeField] private InputActionReference inventoryButton_R;
 
     public override Stage RunCurrentStage()
     {
-        if (_advancementBool)
+        //If tutorial hasn't started yet...
+        if (_tutorialInitiated == false)
         {
-            Debug.Log("Stage_T_6_1 completed! Next Stage: " + ND_stage_T_6_2);
-            return ND_stage_T_6_2;
+            //Set Flag
+            _tutorialInitiated = true;
+
+            //Start tutorial
+            Invoke("UnhideUIPrompt", 2.0f);
+        }
+
+        if (inventoryButton_L.action.ReadValue<float>() != 0.0f || inventoryButton_R.action.ReadValue<float>() != 0.0f && _conditionMet == false)
+        {
+            //Set Flag
+            _conditionMet = true;
+
+            //Hide the UI Prompt
+            uiPrompt.GetComponent<Animator>().SetTrigger("UI_Hide");
+            uiPrompt.Invoke("DisableUI", 0.3f);
+
+            Debug.Log("Stage_T_6_1 completed! Next Stage: " + ND_stage_T_6_2A);
+            return ND_stage_T_6_2A;
         }
         else
         {
@@ -24,21 +46,9 @@ public class ND_Stage_T_6_1 : Stage
         }
     }
 
-    public void ToggleStageAdvancingFlag()
+    private void UnhideUIPrompt()
     {
-        if (StageManager.Instance.currentStage == this)
-        {
-            if (_conditionMet == false)
-            {
-                _conditionMet = true;
-
-                //Causes
-                //Start Owl Voice Commentary for next Stage 
-                AudioManager.Instance.ShootAudioEvent_Owl_VL_T_6_2();
-
-                //Stage Advancing Flag
-                _advancementBool = true;
-            }
-        }
+        uiPrompt.EnableUI();
+        uiPrompt.GetComponent<Animator>().SetTrigger("UI_Show");
     }
 }

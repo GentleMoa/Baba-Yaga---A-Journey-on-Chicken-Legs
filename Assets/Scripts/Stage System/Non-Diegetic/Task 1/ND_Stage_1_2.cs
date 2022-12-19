@@ -5,10 +5,11 @@ using UnityEngine;
 public class ND_Stage_1_2 : Stage
 {
     //Private Variables
-    private bool hatchedRemoved;
+    private bool _tutorialInitiated;
+    private bool _advancementBool;
     private bool _conditionMet;
-    private WitchSenses _witchSenses_R;
-    private WitchSenses _witchSenses_L;
+    private ND_Highlighting _highlightingScript_L;
+    private ND_Highlighting _highlightingScript_R;
 
     //Public Variables
     public ND_Stage_1_3 ND_stage_1_3;
@@ -17,10 +18,31 @@ public class ND_Stage_1_2 : Stage
     [SerializeField] private GameObject borage;
     [SerializeField] private GameObject hatchet;
 
+    void Start()
+    {
+        //Find Reference to both ND_Highlighting scripts (Right & Left Hands)
+        _highlightingScript_L = GameObject.FindGameObjectWithTag("LeftHand").GetComponent<ND_Highlighting>();
+        _highlightingScript_R = GameObject.FindGameObjectWithTag("RightHand").GetComponent<ND_Highlighting>();
+    }
+
     public override Stage RunCurrentStage()
     {
-        if (hatchedRemoved == true)
+        //If tutorial hasn't started yet...
+        if (_tutorialInitiated == false)
         {
+            //Set Flag
+            _tutorialInitiated = true;
+
+            //Start tutorial
+            Invoke("UnhideUIPrompt", 2.0f);
+        }
+
+        if (_advancementBool == true)
+        {
+            //Hide the UI Prompt
+            uiPrompt.GetComponent<Animator>().SetTrigger("UI_Hide");
+            uiPrompt.Invoke("DisableUI", 0.3f);
+
             Debug.Log("Stage_1_2 completed! Next Stage: " + ND_stage_1_3);
             return ND_stage_1_3;
         }
@@ -36,39 +58,33 @@ public class ND_Stage_1_2 : Stage
         {
             _conditionMet = true;
 
-            //Causes
-            //Start Owl Voice Commentary for next Stage 
-            AudioManager.Instance.ShootAudioEvent_Owl_VL_1_3();
+            //Add borage to highlightedObjects list
+            _highlightingScript_L.highlightedObjects.Add(borage);
+            _highlightingScript_R.highlightedObjects.Add(borage);
+            //Remove hatchet from highlightedObjects list
+            _highlightingScript_L.highlightedObjects.Remove(hatchet);
+            _highlightingScript_R.highlightedObjects.Remove(hatchet);
 
-            if (_witchSenses_R != null && _witchSenses_L != null)
+            //If highlighting is currently active...
+            if (_highlightingScript_L._highlightingActive || _highlightingScript_R._highlightingActive)
             {
-                //Enable Highlight effect for Borage
-                _witchSenses_R.highlightedObjects.Add(borage);
-                _witchSenses_L.highlightedObjects.Add(borage);
-                //Disable Highlight effect for Hatchet
-                _witchSenses_R.highlightedObjects.Remove(hatchet);
-                _witchSenses_L.highlightedObjects.Remove(hatchet);
-                //Disable Emission effect for Hatchet
-                hatchet.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
+                //Enable highlighting effect for borage
+                borage.GetComponentInChildren<ND_UI_Highlighter>(true).EnableHighlightingUI();
+                borage.GetComponentInChildren<ND_UI_Highlighter>(true).GrowUISize();
 
-                //If witch senses are alreay active, enable emission keyword for freshly added quest items
-                if (_witchSenses_R._witchSensesActive || _witchSenses_L._witchSensesActive)
-                {
-                    borage.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-                }
+                //Disable highlighting effect for hatchet
+                hatchet.GetComponentInChildren<ND_UI_Highlighter>(true).ShrinkUISize();
+                hatchet.GetComponentInChildren<ND_UI_Highlighter>(true).Invoke("DisableHighlightingUI", 0.3f);
             }
 
-
-
             //Stage Advancing Flag
-            hatchedRemoved = true;
+            _advancementBool = true;
         }
     }
 
-    private void Start()
+    private void UnhideUIPrompt()
     {
-        //Find Reference to both WitchSenses script (Right & Left Hands)
-        _witchSenses_R = GameObject.FindGameObjectWithTag("RightHand").GetComponent<WitchSenses>();
-        _witchSenses_L = GameObject.FindGameObjectWithTag("LeftHand").GetComponent<WitchSenses>();
+        uiPrompt.EnableUI();
+        uiPrompt.GetComponent<Animator>().SetTrigger("UI_Show");
     }
 }

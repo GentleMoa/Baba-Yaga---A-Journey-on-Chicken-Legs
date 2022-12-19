@@ -5,7 +5,8 @@ using UnityEngine;
 public class ND_Stage_1_5 : Stage
 {
     //Private Variables
-    private bool woolPlantGathered;
+    private bool _tutorialInitiated;
+    private bool _advancementBool;
     private bool _conditionMet;
 
     //Public Variables
@@ -13,8 +14,22 @@ public class ND_Stage_1_5 : Stage
 
     public override Stage RunCurrentStage()
     {
-        if (woolPlantGathered == true)
+        //If tutorial hasn't started yet...
+        if (_tutorialInitiated == false)
         {
+            //Set Flag
+            _tutorialInitiated = true;
+
+            //Start tutorial
+            Invoke("UnhideUIPrompt", 2.0f);
+        }
+
+        if (_advancementBool == true)
+        {
+            //Hide the UI Prompt
+            uiPrompt.GetComponent<Animator>().SetTrigger("UI_Hide");
+            uiPrompt.Invoke("DisableUI", 0.3f);
+
             Debug.Log("Stage_1_5 completed! Next Stage: " + ND_stage_1_6);
             return ND_stage_1_6;
         }
@@ -30,11 +45,13 @@ public class ND_Stage_1_5 : Stage
         {
             _conditionMet = true;
 
-            //Causes
-            //Start Owl Voice Commentary for next Stage 
-            AudioManager.Instance.ShootAudioEvent_Owl_VL_1_6();
-
-            woolPlantGathered = true;
+            _advancementBool = true;
         }
+    }
+
+    private void UnhideUIPrompt()
+    {
+        uiPrompt.EnableUI();
+        uiPrompt.GetComponent<Animator>().SetTrigger("UI_Show");
     }
 }

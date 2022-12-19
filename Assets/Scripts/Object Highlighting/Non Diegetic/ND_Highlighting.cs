@@ -64,13 +64,16 @@ public class ND_Highlighting : MonoBehaviour
                 //ENABLE HIGHLIGHTING UI AND PLAY ANIM
                 for (int i = 0; i < highlightedObjects.Count; i++)
                 {
-                    if (highlightedObjects[i].GetComponentInChildren<ND_UI_Highlighter>(true) != null)
+                    if (highlightedObjects[i] != null)
                     {
-                        highlightedObjects[i].GetComponentInChildren<ND_UI_Highlighter>(true).EnableHighlightingUI();
-                        highlightedObjects[i].GetComponentInChildren<ND_UI_Highlighter>(true).GrowUISize();
-                        //storageVariable = highlightedObjects[i].GetComponentInChildren(typeof(ND_UI_Highlighter), true) as ND_UI_Highlighter;
-                        //storageVariable.EnableHighlightingUI();
-                        //storageVariable.GrowUISize();
+                        if (highlightedObjects[i].GetComponentInChildren<ND_UI_Highlighter>(true) != null)
+                        {
+                            highlightedObjects[i].GetComponentInChildren<ND_UI_Highlighter>(true).EnableHighlightingUI();
+                            highlightedObjects[i].GetComponentInChildren<ND_UI_Highlighter>(true).GrowUISize();
+                            //storageVariable = highlightedObjects[i].GetComponentInChildren(typeof(ND_UI_Highlighter), true) as ND_UI_Highlighter;
+                            //storageVariable.EnableHighlightingUI();
+                            //storageVariable.GrowUISize();
+                        }
                     }
                 }
 

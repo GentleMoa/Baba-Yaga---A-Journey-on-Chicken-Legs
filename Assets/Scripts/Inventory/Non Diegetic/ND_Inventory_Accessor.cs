@@ -20,7 +20,16 @@ public class ND_Inventory_Accessor : MonoBehaviour
 
     //Private Variables
     private bool _secondaryButtonCooldown = false;
-    private GameObject heldObject;
+    public GameObject heldObject;
+    private ND_Highlighting _highlightingHand_L;
+    private ND_Highlighting _highlightingHand_R;
+
+    void Start()
+    {
+        //Find Reference to both ND_Highlighting scripts (Right & Left Hands)
+        _highlightingHand_L = GameObject.FindGameObjectWithTag("LeftHand").GetComponent<ND_Highlighting>();
+        _highlightingHand_R = GameObject.FindGameObjectWithTag("RightHand").GetComponent<ND_Highlighting>();
+    }
 
     void Update()
     {
@@ -152,6 +161,10 @@ public class ND_Inventory_Accessor : MonoBehaviour
 
                         break;
                 }
+
+                //Remove the held object from the highlighted objects list
+                _highlightingHand_L.highlightedObjects.Remove(this.gameObject);
+                _highlightingHand_R.highlightedObjects.Remove(this.gameObject);
 
                 //Disable the held Object
                 heldObject.SetActive(false);

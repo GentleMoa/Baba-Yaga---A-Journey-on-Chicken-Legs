@@ -13,7 +13,6 @@ public class ND_Stage_T_5_1 : Stage
     public ND_Stage_T_5_2 ND_stage_T_5_2;
 
     //Serialized Variables
-    //[SerializeField] private TextPromptAnimated uiPrompt;
     [SerializeField] private Animator houseAnimator;
     [SerializeField] private RigidbodyInPlaceHolder rbStatisScript;
 
@@ -24,9 +23,6 @@ public class ND_Stage_T_5_1 : Stage
         {
             //Set Flag
             _tutorialInitiated = true;
-
-            //Start tutorial
-            //Invoke("ShowUIPrompt", 2.0f);
 
             //Start tutorial
             Invoke("UnhideUIPrompt", 2.0f);
@@ -62,8 +58,7 @@ public class ND_Stage_T_5_1 : Stage
             //Disable Rigidbody Stasis of interactables inside the house after the anim is finished
             rbStatisScript.Invoke("DisableRigidbodyStasis", 29.0f);
 
-            //Stage Advancing Flag
-            _advancementBool = true;
+            Invoke("DelayedAdvancementFlagToggle", 20.0f);
         }
     }
 
@@ -78,11 +73,11 @@ public class ND_Stage_T_5_1 : Stage
         }
     }
 
-    //private void ShowUIPrompt()
-    //{
-    //    uiPrompt.EnableUI();
-    //    uiPrompt.GrowUISize();
-    //}
+    private void DelayedAdvancementFlagToggle()
+    {
+        //Stage Advancing Flag
+        _advancementBool = true;
+    }
 
     private void UnhideUIPrompt()
     {

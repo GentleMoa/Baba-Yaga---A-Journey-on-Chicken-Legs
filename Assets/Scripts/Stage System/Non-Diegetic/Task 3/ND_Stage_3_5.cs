@@ -5,20 +5,32 @@ using UnityEngine;
 public class ND_Stage_3_5 : Stage
 {
     //Private Variables
+    private bool _tutorialInitiated;
     private bool _advancemetBool;
     private bool _conditionMet;
 
     //Public Variables
     public ND_Stage_3_6 ND_stage_3_6;
 
-    //Serialized Variables
-    [SerializeField] private int owlVL_3_6_Length;
-
     public override Stage RunCurrentStage()
     {
+        //If tutorial hasn't started yet...
+        if (_tutorialInitiated == false)
+        {
+            //Set Flag
+            _tutorialInitiated = true;
+
+            //Start tutorial
+            Invoke("UnhideUIPrompt", 2.0f);
+        }
+
         if (_advancemetBool == true)
         {
-            Debug.Log("Stage_3_5 completed! Next Stage: " + ND_stage_3_6);
+            //Hide the UI Prompt
+            uiPrompt.GetComponent<Animator>().SetTrigger("UI_Hide");
+            uiPrompt.Invoke("DisableUI", 0.3f);
+
+            Debug.Log("ND_Stage_3_5 completed! Next Stage: " + ND_stage_3_6);
             return ND_stage_3_6;
         }
         else
@@ -34,20 +46,14 @@ public class ND_Stage_3_5 : Stage
         {
             _conditionMet = true;
 
-            //Causes
-            //Start Owl Voice Commentary for next Stage 
-            AudioManager.Instance.ShootAudioEvent_Owl_VL_3_6();
-
-
-            Invoke("BeginEnding", owlVL_3_6_Length);
-
             //Stage Advancing Flag
             _advancemetBool = true;
         }
     }
 
-    private void BeginEnding()
+    private void UnhideUIPrompt()
     {
-        ND_stage_3_6.ToggleStageAdvancingFlag();
+        uiPrompt.EnableUI();
+        uiPrompt.GetComponent<Animator>().SetTrigger("UI_Show");
     }
 }
