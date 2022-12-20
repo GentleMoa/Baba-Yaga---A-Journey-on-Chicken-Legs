@@ -10,9 +10,6 @@ public class ND_Stage_T_1_1 : Stage
     //Public Variables
     public ND_Stage_T_1_2 ND_stage_T_1_2;
 
-    //Serialized Variables
-    //[SerializeField] private TextPromptAnimated uiPrompt;
-
     public override Stage RunCurrentStage()
     {
         //If tutorial hasn't started yet...

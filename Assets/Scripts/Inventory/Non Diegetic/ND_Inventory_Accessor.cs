@@ -23,9 +23,17 @@ public class ND_Inventory_Accessor : MonoBehaviour
     public GameObject heldObject;
     private ND_Highlighting _highlightingHand_L;
     private ND_Highlighting _highlightingHand_R;
+    private AudioSource _audioSource;
+    private AudioClip _audioClip_AddItemToInventory;
 
     void Start()
     {
+        //Grab reference to the parent's AudioSource
+        _audioSource = GetComponent<AudioSource>();
+
+        //Get AudioClips from ResourceManager
+        _audioClip_AddItemToInventory = ResourceManager.Instance.audio_hat_inventory_stash;
+
         //Find Reference to both ND_Highlighting scripts (Right & Left Hands)
         _highlightingHand_L = GameObject.FindGameObjectWithTag("LeftHand").GetComponent<ND_Highlighting>();
         _highlightingHand_R = GameObject.FindGameObjectWithTag("RightHand").GetComponent<ND_Highlighting>();
@@ -48,6 +56,10 @@ public class ND_Inventory_Accessor : MonoBehaviour
             {
                 //ADD OBJECT TO INVENTORY
                 Debug.Log("Adding item to Inventory: + " + heldObject.name);
+
+                //Play Ding Audio
+                _audioSource.clip = _audioClip_AddItemToInventory;
+                _audioSource.Play();
 
                 //Switch structure to trigger behavior depending on the Item.id of the enteredObject
                 switch (heldObject.GetComponent<ItemController>().Item.id)

@@ -41,6 +41,10 @@ public class ResourceManager : MonoBehaviour
     public AudioClip audio_witchSenses_on;
     public AudioClip audio_witchSenses_off;
 
+    [Header("Paper 2D UI")]
+    public AudioClip audio_paperUI_open;
+    public AudioClip audio_paperUI_close;
+
     [Header("Trapdoor Action")]
     public AudioClip audio_trapdoor_open;
     public AudioClip audio_trapdoor_close;
