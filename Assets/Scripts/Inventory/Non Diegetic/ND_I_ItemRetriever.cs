@@ -12,9 +12,17 @@ public class ND_I_ItemRetriever : MonoBehaviour
     private Vector3 _hoverSize = new Vector3(1.25f, 1.25f, 1.0f);
     private ND_Highlighting _highlightingHand_L;
     private ND_Highlighting _highlightingHand_R;
+    private AudioSource _audioSource;
+    private AudioClip _audioClip_RetrieveItemFromInventory;
 
     void Start()
     {
+        //Grab reference to the parent's AudioSource
+        _audioSource = GetComponentInParent<AudioSource>();
+
+        //Get AudioClips from ResourceManager
+        _audioClip_RetrieveItemFromInventory = ResourceManager.Instance.audio_hat_inventory_retrieve;
+
         //Grab reference to the ND_I_ItemSlots Script on this same object
         _itemSlotScript = GetComponent<ND_I_ItemSlots>();
 
@@ -64,9 +72,9 @@ public class ND_I_ItemRetriever : MonoBehaviour
                     //Reset Flag after a delay
                     Invoke("ResetRetrievedFlag", 1.0f);
 
-                    //Play Audio
-                    //_audioSource.clip = _audioClip_HatInventoryRetrieve;
-                    //_audioSource.Play();
+                    //Play Ding Audio
+                    _audioSource.clip = _audioClip_RetrieveItemFromInventory;
+                    _audioSource.Play();
                 }
             }
         }
